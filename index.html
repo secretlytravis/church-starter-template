@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Example Church in Your City, ST. Sunday School at 9:15 AM, Worship at 10:30 AM, Wednesday Bible Study at 6:00 PM. We exist to lead every generation to know Jesus and follow Jesus.">
+<title>Example Church | Your City, ST</title>
+  <!-- PWA -->
+  <link rel="manifest" href="/assets/manifest.json">
+  <meta name="theme-color" content="#082846">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Example Church">
+  <link rel="apple-touch-icon" href="/assets/icons/favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Ubuntu:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --navy: #082846;
+  --navy-mid: #0d3b66;
+  --gold: #c8922a;
+  --gold-light: #e8b45a;
+  --cream: #f9f5ee;
+  --white: #ffffff;
+  --text-dark: #1a1a1a;
+  --text-mid: #4a4a4a;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  background: var(--navy-mid);
+  color: var(--white);
+  line-height: 1.7;
+}
+
+/* ── NAVIGATION ── */
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: rgba(8, 40, 70, 0.97);
+  backdrop-filter: blur(8px);
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  height: 64px;
+  border-bottom: 1px solid rgba(200, 146, 42, 0.25);
+}
+
+.nav-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.01em;
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: rgba(255,255,255,0.8);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--gold-light); }
+
+/* ── NAV DROPDOWN ── */
+.nav-dropdown { position: relative; }
+.nav-dropdown > a::after { content: ' ▾'; font-size: 10px; opacity: 0.7; }
+.dropdown-menu {
+  all: initial;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #082846;
+  border-top: 2px solid #c8922a;
+  border-radius: 0 0 2px 2px;
+  min-width: 210px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+  z-index: 9999;
+  font-family: Ubuntu, sans-serif;
+}
+.dropdown-menu::before {
+  content: '';
+  display: block;
+  height: 12px;
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+}
+.nav-dropdown.open .dropdown-menu { display: block; }
+.dropdown-menu a {
+  all: initial;
+  display: block;
+  width: 100%;
+  padding: 12px 20px;
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  font-family: Ubuntu, sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 400;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  box-sizing: border-box;
+}
+.dropdown-menu a:last-child { border-bottom: none; }
+.dropdown-menu a:hover { background: rgba(255,255,255,0.07); color: #e8b45a; }
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 64px;
+  left: 0;
+  width: 100%;
+  background: var(--navy);
+  z-index: 999;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(200,146,42,0.2);
+}
+.mobile-menu.open { display: block; }
+.mobile-menu a {
+  display: block;
+  padding: 12px 40px;
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  font-size: 15px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.mobile-menu a:hover { color: var(--gold-light); background: rgba(255,255,255,0.04); }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, rgba(8,40,70,0.82) 0%, rgba(8,40,70,0.92) 100%),
+              url('/assets/images/hero-placeholder.svg') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 100px 20px 100px;
+  position: relative;
+}
+
+.hero-eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.hero h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 24px;
+  max-width: 700px;
+}
+
+.hero-divider {
+  width: 60px;
+  height: 2px;
+  background: var(--gold);
+  margin: 0 auto 28px;
+}
+
+.hero-times {
+  font-size: 20px;
+  line-height: 2.2;
+  color: var(--white);
+  margin-bottom: 12px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.hero-address {
+  font-size: 20px;
+  color: var(--white);
+  margin-bottom: 36px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--white);
+  text-decoration: none;
+  padding: 14px 36px;
+  border-radius: 2px;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+.btn-secondary {
+  display: inline-block;
+  border: 1px solid rgba(255,255,255,0.4);
+  color: var(--white);
+  text-decoration: none;
+  padding: 13px 36px;
+  border-radius: 2px;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-left: 12px;
+  transition: border-color 0.2s, background 0.2s;
+}
+.btn-secondary:hover { border-color: var(--gold-light); background: rgba(255,255,255,0.06); }
+
+.hero-scroll {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  opacity: 0.45;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+.hero-scroll::after {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 32px;
+  background: white;
+}
+
+/* ── SECTION WRAPPER ── */
+.section-light {
+  background: var(--cream);
+  color: var(--text-dark);
+}
+.section-white {
+  background: var(--white);
+  color: var(--text-dark);
+}
+.section-navy {
+  background: var(--navy);
+  color: var(--white);
+}
+
+section { padding: 80px 20px; }
+.container { max-width: 960px; margin: 0 auto; }
+
+.section-label {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(26px, 4vw, 38px);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.section-divider {
+  width: 48px;
+  height: 2px;
+  background: var(--gold);
+  margin-bottom: 28px;
+}
+
+/* ── ABOUT ── */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-top: 0;
+}
+
+.about-text p {
+  font-size: 16px;
+  color: var(--text-mid);
+  margin-bottom: 16px;
+  line-height: 1.8;
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.stat-box {
+  background: var(--navy);
+  color: var(--white);
+  padding: 28px 20px;
+  border-radius: 2px;
+  text-align: center;
+}
+.stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  color: var(--gold-light);
+  display: block;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.stat-label {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+/* ── PASTOR ── */
+.pastor-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 60px;
+  align-items: start;
+  margin-top: 8px;
+}
+.pastor-photo {
+  width: 100%;
+  aspect-ratio: 3/4;
+  background: var(--navy);
+  border-radius: 2px;
+  border-top: 3px solid var(--gold);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pastor-photo-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  opacity: 0.6;
+}
+.pastor-photo-placeholder svg { width: 100%; height: auto; }
+.pastor-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.pastor-name-label {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.pastor-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(24px, 3vw, 34px);
+  color: var(--navy);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+.pastor-divider {
+  width: 40px;
+  height: 2px;
+  background: var(--gold);
+  margin-bottom: 24px;
+}
+.pastor-text {
+  font-size: 16px;
+  color: var(--text-mid);
+  line-height: 1.85;
+  margin-bottom: 14px;
+}
+@media (max-width: 768px) {
+  .pastor-grid { grid-template-columns: 1fr; gap: 32px; }
+  .pastor-photo { max-width: 240px; }
+}
+
+/* ── BELIEFS ── */
+.beliefs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.belief-card {
+  background: var(--white);
+  border-top: 3px solid var(--gold);
+  padding: 32px 28px;
+  border-radius: 0 0 2px 2px;
+}
+
+.belief-card h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: var(--navy);
+}
+
+.belief-card p {
+  font-size: 15px;
+  color: var(--text-mid);
+  line-height: 1.75;
+}
+.belief-card .scripture {
+  display: block;
+  margin-top: 14px;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--gold);
+  font-weight: 500;
+}
+.belief-more {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--navy-mid);
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(13,59,102,0.3);
+  padding-bottom: 1px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.belief-more:hover { color: var(--gold); border-color: var(--gold); }
+
+/* ── SERVICE TIMES ── */
+.times-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2px;
+  margin-top: 40px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.time-block {
+  padding: 32px 28px;
+  background: rgba(255,255,255,0.04);
+  transition: background 0.2s;
+}
+.time-block:hover { background: rgba(255,255,255,0.08); }
+
+.time-day {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 8px;
+}
+.time-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+.time-hour {
+  font-size: 14px;
+  opacity: 0.65;
+}
+
+/* ── LIVESTREAM ── */
+.stream-wrap {
+  margin-top: 40px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(200,146,42,0.2);
+}
+
+.stream-wrap iframe {
+  width: 100%;
+  height: 480px;
+  display: block;
+  border: none;
+}
+
+.stream-note {
+  background: rgba(200,146,42,0.08);
+  border-top: 1px solid rgba(200,146,42,0.15);
+  padding: 16px 24px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.65);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stream-note a {
+  color: var(--gold-light);
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+}
+.stream-note a:hover { text-decoration: underline; }
+
+/* ── CONTACT ── */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-top: 40px;
+}
+
+.contact-info p {
+  font-size: 15px;
+  color: var(--text-mid);
+  margin-bottom: 12px;
+  line-height: 1.8;
+}
+
+.contact-info strong {
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+.contact-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.07);
+}
+.contact-detail:first-child { border-top: 1px solid rgba(0,0,0,0.07); }
+
+.contact-icon {
+  width: 36px;
+  height: 36px;
+  background: var(--navy);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.contact-icon svg { width: 16px; height: 16px; stroke: var(--gold-light); fill: none; stroke-width: 1.8; }
+
+.contact-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin-bottom: 2px; }
+.contact-value { font-size: 15px; color: var(--text-dark); }
+
+/* Contact Form */
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  width: 100%;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 14px;
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  background: var(--white);
+  color: var(--text-dark);
+  margin-bottom: 14px;
+  transition: border-color 0.2s;
+  outline: none;
+  appearance: none;
+}
+.contact-form select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%234a4a4a' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+  cursor: pointer;
+}
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus { border-color: var(--navy-mid); }
+
+.contact-form textarea { min-height: 120px; resize: vertical; }
+
+.contact-form label {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-mid);
+  margin-bottom: 6px;
+}
+
+.btn-submit {
+  width: 100%;
+  background: var(--navy);
+  color: white;
+  border: none;
+  padding: 14px;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: background 0.2s;
+}
+.btn-submit:hover { background: var(--gold); }
+
+/* Map */
+.map-embed {
+  width: 100%;
+  height: 280px;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 24px;
+  border: 1px solid #e0e0e0;
+}
+.map-embed iframe { width: 100%; height: 100%; border: none; }
+
+/* ── CURIOUS ── */
+.curious-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
+}
+.curious-step {
+  padding: 32px 28px;
+  border-left: 3px solid var(--gold);
+  background: var(--cream);
+  border-radius: 0 2px 2px 0;
+}
+.curious-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  color: var(--gold);
+  opacity: 0.35;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+.curious-step h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  color: var(--navy);
+  margin-bottom: 12px;
+}
+.curious-step p {
+  font-size: 15px;
+  color: var(--text-mid);
+  line-height: 1.8;
+}
+
+/* ── SOCIAL ── */
+.social-links {
+  display: flex;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  background: var(--navy);
+  color: white;
+  padding: 10px 18px;
+  border-radius: 2px;
+  font-size: 13px;
+  transition: background 0.2s;
+}
+.social-link:hover { background: var(--gold); }
+.social-link svg { width: 16px; height: 16px; fill: currentColor; }
+
+/* ── FOOTER ── */
+footer {
+  background: #050f1a;
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.4);
+  border-top: 1px solid rgba(200,146,42,0.15);
+}
+
+footer a { color: var(--gold-light); text-decoration: none; }
+
+/* ── MOBILE ── */
+@media (max-width: 1080px) {
+  nav { padding: 0 20px; }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+
+  .hero { padding: 100px 20px 80px; }
+  .btn-secondary { display: none; }
+
+  .stream-wrap iframe { height: 240px; }
+  .stream-note { flex-direction: column; gap: 8px; align-items: flex-start; }
+}
+
+/* ── THANK YOU POPUP ── */
+.popup-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(8,40,70,0.85);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  backdrop-filter: blur(4px);
+}
+.popup-overlay.open { display: flex; }
+.popup-box {
+  background: var(--white);
+  border-radius: 4px;
+  border-top: 4px solid var(--gold);
+  padding: 48px 40px;
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  animation: popIn 0.25s ease;
+}
+@keyframes popIn {
+  from { opacity: 0; transform: translateY(-16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.popup-close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: #aaa;
+  line-height: 1;
+}
+.popup-close:hover { color: var(--text-dark); }
+.popup-icon { margin-bottom: 20px; }
+.popup-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+.popup-divider { width: 40px; height: 2px; background: var(--gold); margin: 0 auto 16px; }
+.popup-msg { font-size: 15px; color: var(--text-mid); line-height: 1.8; }
+
+</style>
+<link rel="stylesheet" href="/assets/css/site-enhancements.css">
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<!-- NAV -->
+<nav aria-label="Main navigation">
+  <a href="/index.html" class="nav-brand">Example Church</a>
+  <ul class="nav-links" role="list">
+    
+    <li><a href="/index.html">Home</a></li>
+    <li><a href="/pages/plan-your-visit.html">Visit</a></li>
+    <li><a href="/pages/sermons.html">Sermons</a></li>
+    <li class="nav-dropdown">
+      <a href="/pages/beliefs.html">Beliefs</a>
+      <div class="dropdown-menu">
+        <a href="/pages/beliefs.html">Statement of Faith</a>
+        <a href="/pages/new-believer.html">New Believer</a>
+      </div>
+    </li>
+    <li class="nav-dropdown">
+      <a href="/index.html#curious">Curious?</a>
+      <div class="dropdown-menu">
+        <a href="/pages/romans-road.html">The Romans Road</a>
+        <a href="/pages/ask-a-pastor.html">Ask a Pastor</a>
+        <a href="/pages/questions.html">Spiritual Questions</a>
+      </div>
+    </li>
+    <li class="nav-dropdown">
+      <a href="/pages/prayer-request.html">Prayer</a>
+      <div class="dropdown-menu">
+        <a href="/pages/need-help.html">Urgent Request</a>
+        <a href="/pages/prayer-request.html">Prayer Request</a>
+      </div>
+    </li>
+    <li class="nav-dropdown">
+      <a href="/pages/resources.html">Resources</a>
+      <div class="dropdown-menu">
+        <a href="/pages/resources.html">Resource Library</a>
+        <a href="/pages/glossary.html">Glossary</a>
+      </div>
+    </li>
+    <li><a href="/pages/staff.html">Staff</a></li>
+  
+  </ul>
+  <button class="hamburger" type="button" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile navigation">
+  <a href="/index.html" onclick="closeMenu()">Home</a>
+  <a href="/pages/plan-your-visit.html" onclick="closeMenu()">Plan Your Visit</a>
+  <a href="/pages/sermons.html" onclick="closeMenu()">Sermons</a>
+  <a href="/pages/beliefs.html" onclick="closeMenu()">Beliefs</a>
+  <a href="/pages/new-believer.html" onclick="closeMenu()" class="mobile-sub">New Believer</a>
+  <a href="/index.html#curious" onclick="closeMenu()">Curious?</a>
+  <a href="/pages/romans-road.html" onclick="closeMenu()" class="mobile-sub">The Romans Road</a>
+  <a href="/pages/ask-a-pastor.html" onclick="closeMenu()" class="mobile-sub">Ask a Pastor</a>
+  <a href="/pages/questions.html" onclick="closeMenu()" class="mobile-sub">Spiritual Questions</a>
+  <a href="/pages/prayer-request.html" onclick="closeMenu()">Prayer</a>
+  <a href="/pages/need-help.html" onclick="closeMenu()" class="mobile-sub">Urgent Request</a>
+  <a href="/pages/prayer-request.html" onclick="closeMenu()" class="mobile-sub">Prayer Request</a>
+  <a href="/pages/resources.html" onclick="closeMenu()">Resources</a>
+  <a href="/pages/glossary.html" onclick="closeMenu()" class="mobile-sub">Glossary</a>
+  <a href="/pages/staff.html" onclick="closeMenu()">Staff</a>
+</div>
+
+<!-- HERO -->
+<main>
+<div class="hero" role="banner">
+  <p class="hero-eyebrow">Your City, ST</p>
+  <h1 class="section-title" style="color:white; font-size: clamp(36px,6vw,64px);">Welcome to<br>Example Church</h1>
+  <div class="hero-divider"></div>
+  <p class="hero-times">
+    Sunday School &mdash; 9:15 AM<br>
+    <span style="display:inline-block; width:40px; height:1px; background:var(--gold); opacity:0.6; margin: 4px 0;"></span><br>
+    Worship Service &mdash; 10:30 AM<br>
+    <span style="display:inline-block; width:40px; height:1px; background:var(--gold); opacity:0.6; margin: 4px 0;"></span><br>
+    Wednesday Bible Study &mdash; 6:00 PM
+  </p>
+  <p class="hero-address">123 Church Street · Your City, ST</p>
+  <div>
+    <a href="/pages/plan-your-visit.html" class="btn-primary">Plan Your Visit</a>
+    <a href="#livestream" class="btn-secondary">Watch Live</a>
+  </div>
+  <span class="hero-scroll" aria-hidden="true">Scroll</span>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="section-light" aria-labelledby="about-heading">
+  <div class="container">
+    <p class="section-label">Our Story</p>
+    <h2 class="section-title" id="about-heading">A Church Built on the Word</h2>
+    <div class="section-divider"></div>
+    <p style="max-width:680px; font-size:16px; color:var(--text-mid); line-height:1.9; margin-bottom:40px;">At Example Church, you will find a community gathered around one purpose — the Word of God. We read it, sing it, and teach it together every week. We exist to lead every generation to know Jesus and follow Jesus. Whether you are visiting for the first time or have been with us for years, you are welcome here.</p>
+    <div style="background:var(--gold); color:white; padding:40px 48px; border-radius:2px; border-top:3px solid var(--navy); margin-bottom:40px; text-align:center;">
+      <p style="font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--navy); margin-bottom:16px; font-weight:500;">Our Mission</p>
+      <p style="font-family:'Playfair Display',serif; font-size:clamp(22px,3vw,32px); line-height:1.5; font-style:italic;">"We exist to lead every generation to know Jesus and follow Jesus."</p>
+    </div>
+    <div class="social-links">
+      <a href="https://www.youtube.com/@examplechurch" target="_blank" rel="noopener" class="social-link" aria-label="YouTube channel">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
+        YouTube
+      </a>
+      <a href="https://www.facebook.com/examplechurch" target="_blank" rel="noopener" class="social-link" aria-label="Facebook page">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        Facebook
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PASTOR -->
+<section id="pastor" class="section-white" aria-labelledby="pastor-heading">
+  <div class="container">
+    <p class="section-label">Our Pastor</p>
+    <h2 class="section-title" id="pastor-heading">Meet Our Shepherd</h2>
+    <div class="section-divider"></div>
+    <div class="pastor-grid">
+      <div class="pastor-photo">
+        <img src="/assets/images/pastor-placeholder.svg" alt="Pastor First Last">
+      </div>
+      <div class="pastor-bio">
+        <p class="pastor-name-label">Senior Pastor</p>
+        <h3 class="pastor-name">Pastor First Last</h3>
+        <div class="pastor-divider"></div>
+        <p class="pastor-text">First grew up in their hometown, and came to saving faith at age 13 — though it wasn't until years later, sitting under the expository preaching of God's Word, that he was broken over the life he was living and surrendered fully to following Christ. That moment led to a call to ministry confirmed through Romans 12, and a life devoted to preaching, discipleship, and shepherding God's people.</p>
+        <p class="pastor-text">He holds a Master of Divinity with a Specialization in Expository Preaching from their seminary and has served as Pastor of Example Church since YEAR. First and his wife Spouse Name have been married since 2004 and are blessed with three children — their family. When he's not in the Word or with his people, you'll find him hunting, fishing, or watching football with his family.</p>
+        <a href="#contact" class="btn-primary" style="margin-top: 24px; display: inline-block;">Get in Touch</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BELIEFS -->
+<section id="beliefs" class="section-white" aria-labelledby="beliefs-heading" style="background: var(--cream);">
+  <div class="container">
+    <p class="section-label" style="text-align:center;">Our Foundation</p>
+    <h2 class="section-title" style="text-align:center;" id="beliefs-heading">What We Believe</h2>
+    <div class="section-divider" style="margin: 0 auto 8px;"></div>
+    <div class="beliefs-grid">
+      <div class="belief-card">
+        <h4>The Bible</h4>
+        <p>The Holy Scriptures are the inspired, inerrant Word of God — the final and supreme authority for everything we believe, teach, and practice as followers of Christ.</p>
+        <span class="scripture"><a href="https://www.esv.org/2+Timothy+3:16-17" target="_blank" rel="noopener" style="color:inherit; text-decoration:none; border-bottom:1px dotted rgba(200,146,42,0.6);">2&nbsp;Timothy 3:16&ndash;17</a> · <a href="https://www.esv.org/2+Peter+1:20-21" target="_blank" rel="noopener" style="color:inherit; text-decoration:none; border-bottom:1px dotted rgba(200,146,42,0.6);">2&nbsp;Peter 1:20&ndash;21</a> · <a href="https://www.esv.org/Psalm+119:105" target="_blank" rel="noopener" style="color:inherit; text-decoration:none; border-bottom:1px dotted rgba(200,146,42,0.6);">Psalm 119:105</a></span>
+        <a href="/pages/beliefs.html#scripture" class="belief-more">Read more ›</a>
+      </div>
+      <div class="belief-card">
+        <h4>The Trinity</h4>
+        <p>We believe in one God, eternally existing in three distinct Persons: the Father, the Son, and the Holy Spirit. These three are one in essence, power, and glory — equal in every divine perfection — yet distinct in their personal properties and relations.</p>
+        <span class="scripture"><a href="https://www.esv.org/Matthew+28:19" target="_blank" rel="noopener" style="color:inherit; text-decoration:none; border-bottom:1px dotted rgba(200,146,42,0.6);">Matthew 28:19</a> · <a href="https://www.esv.org/2+Corinthians+13:14" target="_blank" rel="noopener" style="color:inherit; text-decoration:none; border-bottom:1px dotted rgba(200,146,42,0.6);">2&nbsp;Corinthians 13:14</a> · <a href="https://www.esv.org/Deuteronomy+6:4" target="_blank" rel="noopener" style="color:inherit; text-decoration:none; border-bottom:1px dotted rgba(200,146,42,0.6);">Deuteronomy 6:4</a></span>
+        <a href="/pages/beliefs.html#godhead" class="belief-more">Read more ›</a>
+      </div>
+      <div class="belief-card">
+        <h4>Salvation</h4>
+        <p>Salvation is by Grace alone, through Faith alone, in Jesus Christ alone. It is not earned by any effort or merit of our own, but freely given to all who trust in Him.</p>
+        <span class="scripture"><a href="https://www.esv.org/Ephesians+2:8-9" target="_blank" rel="noopener" style="color:inherit; text-decoration:none; border-bottom:1px dotted rgba(200,146,42,0.6);">Ephesians 2:8&ndash;9</a> · <a href="https://www.esv.org/Romans+5:1" target="_blank" rel="noopener" style="color:inherit; text-decoration:none; border-bottom:1px dotted rgba(200,146,42,0.6);">Romans 5:1</a> · <a href="https://www.esv.org/Acts+4:12" target="_blank" rel="noopener" style="color:inherit; text-decoration:none; border-bottom:1px dotted rgba(200,146,42,0.6);">Acts 4:12</a> · <a href="https://www.esv.org/Romans+3:28" target="_blank" rel="noopener" style="color:inherit; text-decoration:none; border-bottom:1px dotted rgba(200,146,42,0.6);">Romans 3:28</a></span>
+        <a href="/pages/beliefs.html#salvation" class="belief-more">Read more ›</a>
+      </div>
+      <div class="belief-card">
+        <h4>The Church</h4>
+        <p>The Church is the body of Christ, composed of all true believers — gathered to worship God, proclaim the gospel, and faithfully administer the Word and ordinances together.</p>
+        <span class="scripture"><a href="https://www.esv.org/Matthew+16:18" target="_blank" rel="noopener" style="color:inherit; text-decoration:none; border-bottom:1px dotted rgba(200,146,42,0.6);">Matthew 16:18</a> · <a href="https://www.esv.org/Acts+2:41-42" target="_blank" rel="noopener" style="color:inherit; text-decoration:none; border-bottom:1px dotted rgba(200,146,42,0.6);">Acts 2:41&ndash;42</a> · <a href="https://www.esv.org/Hebrews+10:24-25" target="_blank" rel="noopener" style="color:inherit; text-decoration:none; border-bottom:1px dotted rgba(200,146,42,0.6);">Hebrews 10:24&ndash;25</a> · <a href="https://www.esv.org/Ephesians+4:11-12" target="_blank" rel="noopener" style="color:inherit; text-decoration:none; border-bottom:1px dotted rgba(200,146,42,0.6);">Ephesians 4:11&ndash;12</a></span>
+        <a href="/pages/beliefs.html#church" class="belief-more">Read more ›</a>
+      </div>
+      <div class="belief-card">
+        <h4>Ordinances</h4>
+        <p>We observe two ordinances given by Christ — Believer's Baptism by full immersion as a public declaration of Faith, and the Lord's Supper, a remembrance of His Sacrificial Death until He Returns.</p>
+        <span class="scripture"><a href="https://www.esv.org/Matthew+28:19" target="_blank" rel="noopener" style="color:inherit; text-decoration:none; border-bottom:1px dotted rgba(200,146,42,0.6);">Matthew 28:19</a> · <a href="https://www.esv.org/Romans+6:3-4" target="_blank" rel="noopener" style="color:inherit; text-decoration:none; border-bottom:1px dotted rgba(200,146,42,0.6);">Romans 6:3&ndash;4</a> · <a href="https://www.esv.org/1+Corinthians+11:23-26" target="_blank" rel="noopener" style="color:inherit; text-decoration:none; border-bottom:1px dotted rgba(200,146,42,0.6);">1&nbsp;Corinthians 11:23&ndash;26</a></span>
+        <a href="/pages/beliefs.html#church" class="belief-more">Read more ›</a>
+      </div>
+      <div class="belief-card">
+        <h4>Missions</h4>
+        <p>The Lord Jesus calls every believer to make disciples of all nations. We take that seriously — beginning right here in our community and reaching outward to the ends of the earth.</p>
+        <span class="scripture"><a href="https://www.esv.org/Matthew+28:18-20" target="_blank" rel="noopener" style="color:inherit; text-decoration:none; border-bottom:1px dotted rgba(200,146,42,0.6);">Matthew 28:18&ndash;20</a> · <a href="https://www.esv.org/Acts+1:8" target="_blank" rel="noopener" style="color:inherit; text-decoration:none; border-bottom:1px dotted rgba(200,146,42,0.6);">Acts 1:8</a> · <a href="https://www.esv.org/Romans+10:14-15" target="_blank" rel="noopener" style="color:inherit; text-decoration:none; border-bottom:1px dotted rgba(200,146,42,0.6);">Romans 10:14&ndash;15</a> · <a href="https://www.esv.org/Revelation+7:9-10" target="_blank" rel="noopener" style="color:inherit; text-decoration:none; border-bottom:1px dotted rgba(200,146,42,0.6);">Revelation 7:9&ndash;10</a></span>
+        <a href="/pages/beliefs.html#end" class="belief-more">Read more ›</a>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top: 48px; padding-top: 32px; border-top: 1px solid rgba(0,0,0,0.07);">
+      <p style="font-size:15px; color:var(--text-mid); margin-bottom: 20px;">These are the convictions that shape everything we do. For our full statement of faith, or to read the <strong style="color:var(--text-dark);">Baptist Faith & Message 2000</strong> that we affirm, visit the links below.</p>
+      <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+        <a href="/pages/beliefs.html" class="btn-primary">Full Statement of Faith</a>
+        <a href="https://bfm.sbc.net/bfm2000/" target="_blank" rel="noopener" class="btn-secondary" style="color:var(--navy); border-color: var(--navy);">Baptist Faith & Message ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- LIVESTREAM -->
+<section id="livestream" class="section-navy" style="padding-top: 0;" aria-labelledby="stream-heading">
+  <div class="container">
+    <p class="section-label" style="text-align:center;">Online Worship</p>
+    <h2 class="section-title" style="text-align:center;" id="stream-heading">Watch Our Livestream</h2>
+    <div class="section-divider" style="margin: 0 auto 28px;"></div>
+    <div class="stream-wrap">
+      <div style="background: var(--navy-mid); aspect-ratio: 16/9; display:flex; flex-direction:column; align-items:center; justify-content:center; gap: 24px;">
+        <svg width="72" height="72" viewBox="0 0 24 24" fill="rgba(200,146,42,0.5)"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
+        <p style="color:rgba(255,255,255,0.7); font-size:15px; text-align:center; max-width:360px; line-height:1.7;">We go live every Sunday at 10:30 AM.<br>Click below to join us on YouTube.</p>
+        <a href="https://www.youtube.com/channel/YOUR_YOUTUBE_CHANNEL_ID/live" target="_blank" rel="noopener" class="btn-primary">Watch Live on YouTube ↗</a>
+      </div>
+      <div class="stream-note">
+        <span>Join us live each Sunday at 10:30 AM</span>
+        <a href="https://www.youtube.com/@examplechurch/streams" target="_blank" rel="noopener">View all streams on YouTube ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CURIOUS -->
+<section id="curious" class="section-white" aria-labelledby="curious-heading">
+  <div class="container">
+    <p class="section-label" style="text-align:center;">No pressure. No judgment.</p>
+    <h2 class="section-title" style="text-align:center;" id="curious-heading">Curious?</h2>
+    <div class="section-divider" style="margin: 0 auto 16px;"></div>
+    <p style="text-align:center; max-width:580px; margin: 0 auto 48px; font-size:16px; color:var(--text-mid); line-height:1.9;">
+      Maybe you're not sure what you believe yet. Maybe someone invited you and you're on the fence. Maybe life has gotten hard and you're looking for something more. Wherever you're coming from — you're welcome here, exactly as you are.
+    </p>
+    <div class="curious-steps">
+      <div class="curious-step">
+        <div class="curious-num" aria-hidden="true">01</div>
+        <h4>Just show up</h4>
+        <p>You don't need to have it all figured out. You don't need to dress a certain way or know all the right words. Come as you are — we mean that. Our doors open every Sunday at 9:15 AM, with worship beginning at 10:30 AM. Someone will greet you at the door, and if you have kids, we'll point you in the right direction.</p>
+      </div>
+      <div class="curious-step">
+        <div class="curious-num" aria-hidden="true">02</div>
+        <h4>See what it's like</h4>
+        <p>A typical Sunday includes music, prayer, and an expository message — a careful, verse-by-verse walk through the Bible that's honest and practical. Services run about an hour and a half. Guests are never expected to give during the offering, and you're never put on the spot. No obligations — just come and see.</p>
+      </div>
+      <div class="curious-step">
+        <div class="curious-num" aria-hidden="true">03</div>
+        <h4>Talk to someone</h4>
+        <p>If you have questions — about faith, about the Bible, about any of it — we'd love to have that conversation. Reach out anytime and we'll connect you with someone who's happy to talk, no strings attached.</p>
+      </div>
+    </div>
+
+    <!-- ROMANS ROAD CALLOUT -->
+    <div style="margin-top: 48px; background: var(--navy); border-radius: 2px; border-left: 4px solid var(--gold); padding: 36px 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px;">
+      <div>
+        <p style="font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold-light); font-weight:500; margin-bottom:8px;">Want to Know More?</p>
+        <h4 style="font-family:'Playfair Display',serif; font-size:22px; color:white; margin-bottom:10px;">The Gospel through the Romans Road</h4>
+        <p style="font-size:15px; color:rgba(255,255,255,0.7); max-width:480px; line-height:1.8;">The Bible lays out a clear path to salvation through the book of Romans. Walk through it here — no pressure, no obligation, just the gospel plainly presented.</p>
+      </div>
+      <a href="/pages/romans-road.html" class="btn-primary" style="white-space:nowrap; flex-shrink:0;">Walk the Romans Road →</a>
+    </div>
+
+    <div style="text-align:center; margin-top: 32px;">
+      <a href="#contact" class="btn-primary" style="background:transparent; border:1px solid var(--navy); color:var(--navy);">I'd like to reach out</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section-light" aria-labelledby="contact-heading">
+  <div class="container">
+    <p class="section-label">We'd Love to Hear from You</p>
+    <h2 class="section-title" id="contact-heading">Contact &amp; Location</h2>
+    <div class="section-divider"></div>
+    <div class="contact-grid">
+      <div>
+        <div class="contact-detail">
+          <div class="contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <div>
+            <p class="contact-label">Address</p>
+            <p class="contact-value">123 Church Street<br>Your City, ST 00000</p>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          </div>
+          <div>
+            <p class="contact-label">Phone</p>
+            <p class="contact-value"><a href="tel:5555555555" style="color: var(--navy-mid); text-decoration:none;">555-555-5555</a></p>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <div>
+            <p class="contact-label">Email</p>
+            <p class="contact-value"><a href="mailto:hello@examplechurch.org" style="color: var(--navy-mid); text-decoration:none;">hello@examplechurch.org</a></p>
+          </div>
+        </div>
+        <div class="map-embed">
+          <iframe
+            src="https://www.google.com/maps?q=123%20Church%20Street%2C%20Your%20City%2C%20ST%2000000&output=embed"
+            title="Example Church location map"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+
+      <!-- CONTACT FORM -->
+      <div>
+        <h3 style="font-family: 'Playfair Display', serif; font-size: 22px; margin-bottom: 20px; color: var(--navy);">Send Us a Message</h3>
+        <form class="contact-form" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" >
+          <input type="hidden" name="form-name" value="contact">
+          <p style="display:none;"><input name="bot-field"></p>
+          <label for="cf-name">Your Name</label>
+          <input type="text" id="cf-name" name="name" required placeholder="Jane Smith" autocomplete="name">
+
+          <label for="cf-email">Email Address</label>
+          <input type="email" id="cf-email" name="email" required placeholder="jane@example.com" autocomplete="email">
+
+          <label for="cf-phone">Phone Number <span style="font-weight:300; text-transform:none; letter-spacing:0;">(Optional)</span></label>
+          <input type="tel" id="cf-phone" name="phone" placeholder="228-555-0100" autocomplete="tel">
+
+          <label for="cf-reason">How Can We Help?</label>
+          <select id="cf-reason" name="reason" required>
+            <option value="" disabled selected>Select a reason…</option>
+            <option value="decision">I've made a decision to follow Jesus</option>
+            <option value="visit">I'd like to plan a visit</option>
+            <option value="question">I have a question about the church</option>
+            <option value="faith">I have questions about faith</option>
+            <option value="prayer">I have a prayer request</option>
+            <option value="other">Other</option>
+          </select>
+
+          <label for="cf-msg">Message</label>
+          <textarea id="cf-msg" name="message" required placeholder="How can we help?"></textarea>
+
+          <button type="button" class="btn-submit" onclick="submitContactForm()">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THANK YOU POPUP -->
+<div class="popup-overlay" id="thankYouPopup" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
+  <div class="popup-box">
+    <button class="popup-close" onclick="closePopup()" aria-label="Close">&times;</button>
+    <div class="popup-icon">
+      <svg width="56" height="56" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" stroke="#c8922a" stroke-width="2"/>
+        <polyline points="18,33 27,42 46,22" stroke="#c8922a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <h2 class="popup-title" id="popupTitle">Thank You</h2>
+    <div class="popup-divider"></div>
+    <p class="popup-msg" id="popupMsg">Your message has been received. We will be in touch with you soon.</p>
+  </div>
+</div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <p style="margin-bottom: 8px;">
+    <strong style="color: rgba(255,255,255,0.7);">Example Church</strong>
+  </p>
+  <p>123 Church Street · Your City, ST 00000 · <a href="tel:5555555555">555-555-5555</a></p>
+  <p style="margin-top: 16px;">© 2026 Example Church · <a href="mailto:hello@examplechurch.org">hello@examplechurch.org</a></p>
+</footer>
+
+<script>
+function toggleMenu(btn) {
+  var menu = document.getElementById('mobileMenu');
+  var open = menu.classList.toggle('open');
+  btn.setAttribute('aria-expanded', open);
+}
+function closeMenu() {
+  document.getElementById('mobileMenu').classList.remove('open');
+  document.querySelector('.hamburger').setAttribute('aria-expanded', 'false');
+}
+
+
+// Auto-select contact reason if coming from Romans Road
+var reason = sessionStorage.getItem('contactReason');
+if (reason) {
+  var select = document.getElementById('cf-reason');
+  if (select) {
+    select.value = reason;
+    sessionStorage.removeItem('contactReason');
+    // Scroll to contact section
+    var contact = document.getElementById('contact');
+    if (contact) contact.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
+// Dropdown menu — JS controlled so gap doesn't close it
+var dropdowns = document.querySelectorAll('.nav-dropdown');
+dropdowns.forEach(function(dd) {
+  var timeout;
+  dd.addEventListener('mouseenter', function() {
+    clearTimeout(timeout);
+    dd.classList.add('open');
+  });
+  dd.addEventListener('mouseleave', function() {
+    timeout = setTimeout(function() {
+      dd.classList.remove('open');
+    }, 120);
+  });
+  // Keep open if mouse enters the dropdown menu itself
+  var menu = dd.querySelector('.dropdown-menu');
+  if (menu) {
+    menu.addEventListener('mouseenter', function() {
+      clearTimeout(timeout);
+    });
+    menu.addEventListener('mouseleave', function() {
+      timeout = setTimeout(function() {
+        dd.classList.remove('open');
+      }, 120);
+    });
+  }
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', function(e) {
+  var menu = document.getElementById('mobileMenu');
+  var btn = document.querySelector('.hamburger');
+  if (menu.classList.contains('open') && !menu.contains(e.target) && !btn.contains(e.target)) {
+    closeMenu();
+  }
+});
+</script>
+
+  <!-- PWA Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js')
+          .then(function(reg) { console.log('Service worker registered:', reg.scope); })
+          .catch(function(err) { console.log('Service worker error:', err); });
+      });
+    }
+  
+function closePopup() {
+  document.getElementById('thankYouPopup').classList.remove('open');
+}
+// Close popup on overlay click
+document.getElementById('thankYouPopup').addEventListener('click', function(e) {
+  if (e.target === this) closePopup();
+});
+// Close on Escape key
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closePopup();
+});
+
+function submitContactForm() {
+  var form = document.querySelector('form[name="contact"]');
+  var required = form.querySelectorAll('[required]');
+  var valid = true;
+  required.forEach(function(field) {
+    if (!field.value.trim()) { field.focus(); valid = false; }
+  });
+  if (!valid) return;
+
+  var data = new FormData(form);
+  fetch('/', { method: 'POST', body: data })
+    .then(function() {
+      document.getElementById('popupMsg').textContent = 'Your message has been received. We will be in touch with you soon.';
+      document.getElementById('thankYouPopup').classList.add('open');
+      form.reset();
+    })
+    .catch(function() {
+      document.getElementById('popupMsg').textContent = 'Something went wrong. Please try again or call us at 555-555-5555.';
+      document.getElementById('thankYouPopup').classList.add('open');
+    });
+}
+
+</script>
+<script src="/assets/js/site-enhancements.js" defer></script>
+</body>
+</html>

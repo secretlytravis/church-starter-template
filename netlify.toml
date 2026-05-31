@@ -1,0 +1,121 @@
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
+
+[[redirects]]
+  from = "/api/sermons"
+  to = "/.netlify/functions/youtube-sermons"
+  status = 200
+
+[[redirects]]
+  from = "/api/youtube-sermons"
+  to = "/.netlify/functions/youtube-sermons"
+  status = 200
+
+[[redirects]]
+  from = "/ask-a-pastor.html"
+  to = "/pages/ask-a-pastor.html"
+  status = 301
+
+[[redirects]]
+  from = "/beliefs.html"
+  to = "/pages/beliefs.html"
+  status = 301
+
+[[redirects]]
+  from = "/discipleship.html"
+  to = "/pages/discipleship.html"
+  status = 301
+
+[[redirects]]
+  from = "/glossary.html"
+  to = "/pages/glossary.html"
+  status = 301
+
+[[redirects]]
+  from = "/need-help.html"
+  to = "/pages/need-help.html"
+  status = 301
+
+[[redirects]]
+  from = "/new-believer.html"
+  to = "/pages/new-believer.html"
+  status = 301
+
+[[redirects]]
+  from = "/plan-your-visit.html"
+  to = "/pages/plan-your-visit.html"
+  status = 301
+
+[[redirects]]
+  from = "/prayer-request.html"
+  to = "/pages/prayer-request.html"
+  status = 301
+
+[[redirects]]
+  from = "/questions.html"
+  to = "/pages/questions.html"
+  status = 301
+
+[[redirects]]
+  from = "/resources.html"
+  to = "/pages/resources.html"
+  status = 301
+
+[[redirects]]
+  from = "/romans-road.html"
+  to = "/pages/romans-road.html"
+  status = 301
+
+[[redirects]]
+  from = "/sermons.html"
+  to = "/pages/sermons.html"
+  status = 301
+
+[[redirects]]
+  from = "/staff.html"
+  to = "/pages/staff.html"
+  status = 301
+
+[[redirects]]
+  from = "/style-guide.html"
+  to = "/pages/style-guide.html"
+  status = 301
+
+[[redirects]]
+  from = "/thank-you.html"
+  to = "/pages/thank-you.html"
+  status = 301
+
+[[redirects]]
+  from = "/pastor-testimony.html"
+  to = "/testimonies/pastor-testimony.html"
+  status = 301
+
+[[redirects]]
+  from = "/administrator-testimony.html"
+  to = "/testimonies/administrator-testimony.html"
+  status = 301
+
+[[redirects]]
+  from = "/pianist-testimony.html"
+  to = "/testimonies/pianist-testimony.html"
+  status = 301
+
+[[redirects]]
+  from = "/worship-leader-testimony.html"
+  to = "/testimonies/worship-leader-testimony.html"
+  status = 301
+
+[[redirects]]
+  from = "/media-director-testimony.html"
+  to = "/testimonies/media-director-testimony.html"
+  status = 301
+
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404

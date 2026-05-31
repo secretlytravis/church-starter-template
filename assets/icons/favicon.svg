@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Rounded square border -->
+  <rect x="96" y="96" width="320" height="320" rx="32" ry="32"
+    fill="none" stroke="#c8922a" stroke-width="16"/>
+  <!-- Cross vertical bar -->
+  <rect x="228" y="140" width="56" height="232" rx="8" fill="none" stroke="#c8922a" stroke-width="16"/>
+  <!-- Cross horizontal bar -->
+  <rect x="152" y="216" width="208" height="56" rx="8" fill="none" stroke="#c8922a" stroke-width="16"/>
+</svg>

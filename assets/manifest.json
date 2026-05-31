@@ -1,0 +1,78 @@
+{
+  "name": "Example Church",
+  "short_name": "Example Church",
+  "description": "Example Church \u2014 Your City, ST. Sunday School 9:15 AM \u00b7 Worship 10:30 AM \u00b7 Wednesday Bible Study 6:00 PM.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#082846",
+  "theme_color": "#082846",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "categories": [
+    "religion",
+    "lifestyle"
+  ],
+  "icons": [
+    {
+      "src": "/assets/icons/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Sermons",
+      "short_name": "Sermons",
+      "description": "Watch our latest sermons",
+      "url": "/pages/sermons.html",
+      "icons": [
+        {
+          "src": "/assets/icons/favicon.svg",
+          "sizes": "any",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Prayer Request",
+      "short_name": "Prayer",
+      "description": "Submit a prayer request",
+      "url": "/pages/prayer-request.html",
+      "icons": [
+        {
+          "src": "/assets/icons/favicon.svg",
+          "sizes": "any",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Ask a Pastor",
+      "short_name": "Ask",
+      "description": "Ask a question about faith or Scripture",
+      "url": "/pages/ask-a-pastor.html",
+      "icons": [
+        {
+          "src": "/assets/icons/favicon.svg",
+          "sizes": "any",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Livestream",
+      "short_name": "Live",
+      "description": "Watch our Sunday livestream",
+      "url": "/index.html#livestream",
+      "icons": [
+        {
+          "src": "/assets/icons/favicon.svg",
+          "sizes": "any",
+          "type": "image/svg+xml"
+        }
+      ]
+    }
+  ]
+}

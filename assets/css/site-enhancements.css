@@ -1,0 +1,240 @@
+/* Shared enhancements layered on top of each page's built-in styles. */
+
+/* Keyboard accessibility: visible only when focused. */
+.skip-link {
+  position: fixed;
+  top: -48px;
+  left: 16px;
+  background: #ffffff;
+  color: #082846;
+  padding: 10px 14px;
+  border-radius: 2px;
+  z-index: 10000;
+  text-decoration: none;
+  font-size: 13px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+}
+
+.skip-link:focus { top: 16px; }
+
+/* Site-wide "Next Gathering" banner injected by /assets/js/site-enhancements.js. */
+.this-sunday {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 900;
+  background: #082846;
+  color: #ffffff;
+  border-top: 2px solid #c8922a;
+  box-shadow: 0 -8px 24px rgba(0,0,0,0.24);
+}
+
+.this-sunday-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.this-sunday-text {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px 12px;
+  align-items: baseline;
+  font-size: 14px;
+  color: rgba(255,255,255,0.82);
+}
+
+.this-sunday-text strong {
+  color: #e8b45a;
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.this-sunday-date {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.this-sunday-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.this-sunday-actions a,
+.this-sunday-actions button {
+  border-radius: 2px;
+  border: 1px solid rgba(255,255,255,0.28);
+  color: #ffffff;
+  background: transparent;
+  text-decoration: none;
+  padding: 8px 12px;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.this-sunday-actions a:first-child {
+  background: #c8922a;
+  border-color: #c8922a;
+}
+
+.this-sunday-actions button {
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  font-size: 18px;
+  line-height: 1;
+}
+
+body.has-this-sunday { padding-bottom: 62px; }
+
+/* Shared navigation controls used by desktop dropdowns and the mobile menu. */
+.nav-dropdown { position: relative; }
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #ffffff;
+  border-radius: 2px;
+}
+
+.nav-dropdown > a::after {
+  content: ' v';
+  font-size: 10px;
+  opacity: 0.7;
+}
+
+.dropdown-menu {
+  all: initial;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #082846;
+  border-top: 2px solid #c8922a;
+  border-radius: 0 0 2px 2px;
+  min-width: 220px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+  z-index: 9999;
+  font-family: Ubuntu, sans-serif;
+}
+
+.dropdown-menu::before {
+  content: '';
+  display: block;
+  height: 12px;
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+}
+
+.nav-dropdown.open .dropdown-menu,
+.nav-dropdown:hover .dropdown-menu,
+.nav-dropdown:focus-within .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu a {
+  all: initial;
+  display: block;
+  width: 100%;
+  padding: 12px 20px;
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  font-family: Ubuntu, sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 400;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  box-sizing: border-box;
+}
+
+.dropdown-menu a:hover {
+  background: rgba(255,255,255,0.07);
+  color: #e8b45a;
+}
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 64px;
+  left: 0;
+  width: 100%;
+  background: #082846;
+  z-index: 999;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(200,146,42,0.2);
+}
+
+.mobile-menu.open { display: block; }
+
+.mobile-menu a {
+  display: block;
+  padding: 11px 40px;
+  color: rgba(255,255,255,0.86);
+  text-decoration: none;
+  font-size: 15px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.mobile-menu a.mobile-sub {
+  padding-left: 56px;
+  font-size: 13px;
+  opacity: 0.76;
+  border-top: none;
+}
+
+.mobile-menu a:hover {
+  color: #e8b45a;
+  background: rgba(255,255,255,0.04);
+}
+
+/* Keep the fixed event banner usable on narrow screens. */
+@media (max-width: 760px) {
+  .this-sunday-inner {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .this-sunday-actions {
+    width: 100%;
+  }
+
+  .this-sunday-actions a {
+    flex: 1;
+    text-align: center;
+  }
+
+  body.has-this-sunday { padding-bottom: 128px; }
+}
+
+/* Match the breakpoint where page-level navigation usually hides desktop links. */
+@media (max-width: 1080px) {
+  .hamburger { display: flex; }
+}

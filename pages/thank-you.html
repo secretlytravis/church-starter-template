@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You | Example Church</title>
+<link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Ubuntu:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --navy: #082846;
+  --gold: #c8922a;
+  --gold-light: #e8b45a;
+  --cream: #f9f5ee;
+  --white: #ffffff;
+  --text-mid: #4a4a4a;
+}
+body {
+  font-family: 'Ubuntu', sans-serif;
+  background: var(--navy);
+  color: var(--white);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+.wrap { max-width: 540px; }
+.icon { margin-bottom: 28px; opacity: 0.9; }
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 5vw, 44px);
+  font-weight: 700;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+.divider { width: 48px; height: 2px; background: var(--gold); margin: 0 auto 24px; }
+p {
+  font-size: 16px;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.85;
+  margin-bottom: 14px;
+}
+.btn {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--white);
+  text-decoration: none;
+  padding: 14px 40px;
+  border-radius: 2px;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-top: 16px;
+  transition: background 0.2s;
+}
+.btn:hover { background: var(--gold-light); }
+</style>
+<link rel="stylesheet" href="/assets/css/site-enhancements.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="icon">
+      <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" stroke="#c8922a" stroke-width="2"/>
+        <polyline points="18,33 27,42 46,22" stroke="#c8922a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <h1>Thank You</h1>
+    <div class="divider"></div>
+    <p>Your message has been received. We will be in touch with you soon.</p>
+    <p>In the meantime, know that you are welcome here — and if your need is urgent, please don't hesitate to call us at <a href="tel:5555555555" style="color:var(--gold-light); text-decoration:none;">555-555-5555</a>.</p>
+    <a href="/index.html" class="btn">← Back to Home</a>
+  </div>
+<script src="/assets/js/site-enhancements.js" defer></script>
+</body>
+</html>

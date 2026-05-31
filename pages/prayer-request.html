@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Submit a prayer request to Example Church in Your City, ST. We believe in the power of prayer and we would be honored to pray with you.">
+<title>Prayer Request | Example Church</title>
+  <!-- PWA -->
+  <link rel="manifest" href="/assets/manifest.json">
+  <meta name="theme-color" content="#082846">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Example Church">
+  <link rel="apple-touch-icon" href="/assets/icons/favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Ubuntu:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --navy: #082846;
+  --navy-mid: #0d3b66;
+  --gold: #c8922a;
+  --gold-light: #e8b45a;
+  --cream: #f9f5ee;
+  --white: #ffffff;
+  --text-dark: #1a1a1a;
+  --text-mid: #4a4a4a;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  background: var(--cream);
+  color: var(--text-dark);
+  line-height: 1.7;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: rgba(8, 40, 70, 0.97);
+  backdrop-filter: blur(8px);
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  height: 64px;
+  border-bottom: 1px solid rgba(200, 146, 42, 0.25);
+}
+.nav-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.01em;
+  text-decoration: none;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+.nav-links a {
+  text-decoration: none;
+  color: rgba(255,255,255,0.8);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--gold-light); }
+
+/* ── NAV DROPDOWN ── */
+.nav-dropdown { position: relative; }
+.nav-dropdown > a::after { content: ' ▾'; font-size: 10px; opacity: 0.7; }
+.dropdown-menu {
+  all: initial;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #082846;
+  border-top: 2px solid #c8922a;
+  border-radius: 0 0 2px 2px;
+  min-width: 210px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+  z-index: 9999;
+  font-family: Ubuntu, sans-serif;
+}
+.dropdown-menu::before {
+  content: '';
+  display: block;
+  height: 12px;
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+}
+.nav-dropdown.open .dropdown-menu { display: block; }
+.dropdown-menu a {
+  all: initial;
+  display: block;
+  width: 100%;
+  padding: 12px 20px;
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  font-family: Ubuntu, sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 400;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  box-sizing: border-box;
+}
+.dropdown-menu a:last-child { border-bottom: none; }
+.dropdown-menu a:hover { background: rgba(255,255,255,0.07); color: #e8b45a; }
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: white;
+  border-radius: 2px;
+}
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 64px;
+  left: 0;
+  width: 100%;
+  background: var(--navy);
+  z-index: 999;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(200,146,42,0.2);
+}
+.mobile-menu.open { display: block; }
+.mobile-menu a {
+  display: block;
+  padding: 12px 40px;
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  font-size: 15px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.mobile-menu a:hover { color: var(--gold-light); background: rgba(255,255,255,0.04); }
+
+/* ── PAGE HEADER ── */
+.page-header {
+  background: var(--navy);
+  padding: 120px 20px 60px;
+  text-align: center;
+  border-bottom: 3px solid var(--gold);
+}
+.page-header .section-label {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 12px;
+  font-weight: 500;
+  display: block;
+}
+.page-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+.page-header p {
+  max-width: 580px;
+  margin: 0 auto;
+  font-size: 16px;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.8;
+}
+.header-divider {
+  width: 48px;
+  height: 2px;
+  background: var(--gold);
+  margin: 0 auto 20px;
+}
+
+/* ── LAYOUT ── */
+.container { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+.page-body { padding: 60px 20px; }
+
+/* ── VERSE ── */
+.verse-block {
+  background: var(--navy);
+  border-left: 4px solid var(--gold);
+  border-radius: 0 2px 2px 0;
+  padding: 24px 28px;
+  margin: 0 auto 48px;
+  max-width: 620px;
+  text-align: center;
+}
+.verse-ref {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  font-weight: 500;
+  margin-bottom: 10px;
+  display: block;
+}
+.verse-ref a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(232,180,90,0.5);
+}
+.verse-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  color: var(--white);
+  line-height: 1.7;
+  font-style: italic;
+}
+
+/* ── FORM GRID ── */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+.form-intro h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(22px, 3vw, 28px);
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+.form-intro-divider {
+  width: 36px;
+  height: 2px;
+  background: var(--gold);
+  margin-bottom: 20px;
+}
+.form-intro p {
+  font-size: 15px;
+  color: var(--text-mid);
+  line-height: 1.85;
+  margin-bottom: 16px;
+}
+.privacy-note {
+  background: var(--white);
+  border-left: 3px solid var(--gold);
+  padding: 16px 20px;
+  border-radius: 0 2px 2px 0;
+  font-size: 13px;
+  color: var(--text-mid);
+  line-height: 1.7;
+  margin-top: 24px;
+}
+.privacy-note strong { color: var(--text-dark); display: block; margin-bottom: 4px; }
+
+/* ── PRAYER FORM ── */
+.prayer-form label {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-mid);
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+.prayer-form input,
+.prayer-form textarea,
+.prayer-form select {
+  width: 100%;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 14px;
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  background: var(--white);
+  color: var(--text-dark);
+  margin-bottom: 16px;
+  transition: border-color 0.2s;
+  outline: none;
+  appearance: none;
+}
+.prayer-form select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%234a4a4a' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+  cursor: pointer;
+}
+.prayer-form input:focus,
+.prayer-form textarea:focus,
+.prayer-form select:focus { border-color: var(--navy-mid); }
+.prayer-form textarea { min-height: 160px; resize: vertical; }
+.prayer-form .opt-label {
+  font-weight: 300;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 12px;
+}
+.btn-submit {
+  width: 100%;
+  background: var(--navy);
+  color: white;
+  border: none;
+  padding: 15px;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: background 0.2s;
+  font-weight: 500;
+}
+.btn-submit:hover { background: var(--gold); }
+#form-status {
+  margin-top: 12px;
+  font-size: 14px;
+  line-height: 1.7;
+  display: none;
+  padding: 14px 16px;
+  border-radius: 2px;
+}
+#form-status.success {
+  background: #f0faf0;
+  border-left: 3px solid #4caf50;
+  color: #2e7d32;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: #050f1a;
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.4);
+  border-top: 1px solid rgba(200,146,42,0.15);
+}
+footer a { color: var(--gold-light); text-decoration: none; }
+
+/* ── MOBILE ── */
+@media (max-width: 1080px) {
+  nav { padding: 0 20px; }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .form-grid { grid-template-columns: 1fr; gap: 32px; }
+}
+
+/* ── THANK YOU POPUP ── */
+.popup-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(8,40,70,0.85);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  backdrop-filter: blur(4px);
+}
+.popup-overlay.open { display: flex; }
+.popup-box {
+  background: var(--white);
+  border-radius: 4px;
+  border-top: 4px solid var(--gold);
+  padding: 48px 40px;
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  animation: popIn 0.25s ease;
+}
+@keyframes popIn {
+  from { opacity: 0; transform: translateY(-16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.popup-close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: #aaa;
+  line-height: 1;
+}
+.popup-close:hover { color: var(--text-dark); }
+.popup-icon { margin-bottom: 20px; }
+.popup-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+.popup-divider { width: 40px; height: 2px; background: var(--gold); margin: 0 auto 16px; }
+.popup-msg { font-size: 15px; color: var(--text-mid); line-height: 1.8; }
+
+</style>
+<link rel="stylesheet" href="/assets/css/site-enhancements.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav aria-label="Main navigation">
+  <a href="/index.html" class="nav-brand">Example Church</a>
+  <ul class="nav-links" role="list">
+    
+    <li><a href="/index.html">Home</a></li>
+    <li><a href="/pages/plan-your-visit.html">Visit</a></li>
+    <li><a href="/pages/sermons.html">Sermons</a></li>
+    <li class="nav-dropdown">
+      <a href="/pages/beliefs.html">Beliefs</a>
+      <div class="dropdown-menu">
+        <a href="/pages/beliefs.html">Statement of Faith</a>
+        <a href="/pages/new-believer.html">New Believer</a>
+      </div>
+    </li>
+    <li class="nav-dropdown">
+      <a href="/index.html#curious">Curious?</a>
+      <div class="dropdown-menu">
+        <a href="/pages/romans-road.html">The Romans Road</a>
+        <a href="/pages/ask-a-pastor.html">Ask a Pastor</a>
+        <a href="/pages/questions.html">Spiritual Questions</a>
+      </div>
+    </li>
+    <li class="nav-dropdown">
+      <a href="/pages/prayer-request.html">Prayer</a>
+      <div class="dropdown-menu">
+        <a href="/pages/need-help.html">Urgent Request</a>
+        <a href="/pages/prayer-request.html">Prayer Request</a>
+      </div>
+    </li>
+    <li class="nav-dropdown">
+      <a href="/pages/resources.html">Resources</a>
+      <div class="dropdown-menu">
+        <a href="/pages/resources.html">Resource Library</a>
+        <a href="/pages/glossary.html">Glossary</a>
+      </div>
+    </li>
+    <li><a href="/pages/staff.html">Staff</a></li>
+  
+  </ul>
+  <button class="hamburger" type="button" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile navigation">
+  <a href="/index.html" onclick="closeMenu()">Home</a>
+  <a href="/pages/plan-your-visit.html" onclick="closeMenu()">Plan Your Visit</a>
+  <a href="/pages/sermons.html" onclick="closeMenu()">Sermons</a>
+  <a href="/pages/beliefs.html" onclick="closeMenu()">Beliefs</a>
+  <a href="/pages/new-believer.html" onclick="closeMenu()" class="mobile-sub">New Believer</a>
+  <a href="/index.html#curious" onclick="closeMenu()">Curious?</a>
+  <a href="/pages/romans-road.html" onclick="closeMenu()" class="mobile-sub">The Romans Road</a>
+  <a href="/pages/ask-a-pastor.html" onclick="closeMenu()" class="mobile-sub">Ask a Pastor</a>
+  <a href="/pages/questions.html" onclick="closeMenu()" class="mobile-sub">Spiritual Questions</a>
+  <a href="/pages/prayer-request.html" onclick="closeMenu()">Prayer</a>
+  <a href="/pages/need-help.html" onclick="closeMenu()" class="mobile-sub">Urgent Request</a>
+  <a href="/pages/prayer-request.html" onclick="closeMenu()" class="mobile-sub">Prayer Request</a>
+  <a href="/pages/resources.html" onclick="closeMenu()">Resources</a>
+  <a href="/pages/glossary.html" onclick="closeMenu()" class="mobile-sub">Glossary</a>
+  <a href="/pages/staff.html" onclick="closeMenu()">Staff</a>
+</div>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <span class="section-label">We Are Praying For You</span>
+  <h1>Prayer Requests</h1>
+  <div class="header-divider"></div>
+  <p>We believe God hears and answers prayer. Whatever you are carrying right now — we would be honored to carry it with you before the Lord.</p>
+</div>
+
+<main>
+<div class="page-body">
+  <div class="container">
+
+    <div class="verse-block">
+      <span class="verse-ref"><a href="https://www.esv.org/Philippians+4:6-7" target="_blank" rel="noopener">Philippians 4:6–7</a></span>
+      <p class="verse-text">"Do not be anxious about anything, but in everything by prayer and supplication with thanksgiving let your requests be made known to God. And the peace of God, which surpasses all understanding, will guard your hearts and your minds in Christ Jesus."</p>
+    </div>
+
+    <div class="form-grid">
+
+      <!-- LEFT: Intro -->
+      <div class="form-intro">
+        <h2>How Can We Pray for You?</h2>
+        <div class="form-intro-divider"></div>
+        <p>Prayer is not a formality here — it is something we take seriously. When you submit a request, it goes to our pastoral team and is brought before the Lord in prayer. We do not take that lightly.</p>
+        <p>You are welcome to share as much or as little as you are comfortable with. If your situation is sensitive, you can submit anonymously or mark your request as confidential — it will be prayed over privately by our pastor and not shared with the wider congregation.</p>
+        <p>If your need is urgent or you would like someone to reach out to you personally, please let us know in your request and we will be in touch.</p>
+        <div class="privacy-note">
+          <strong>A note on confidentiality</strong>
+          Requests marked confidential are seen only by our pastoral team and are never shared publicly or from the pulpit without your permission.
+        </div>
+      </div>
+
+      <!-- RIGHT: Form -->
+      <div>
+        <form class="prayer-form" name="prayer" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" >
+          <input type="hidden" name="form-name" value="prayer">
+          <p style="display:none;"><input name="bot-field"></p>
+
+          <label for="pr-name">Your Name <span class="opt-label">(Optional)</span></label>
+          <input type="text" id="pr-name" name="name" placeholder="You may remain anonymous" autocomplete="name">
+
+          <label for="pr-email">Email Address <span class="opt-label">(Optional — if you'd like us to follow up)</span></label>
+          <input type="email" id="pr-email" name="email" placeholder="jane@example.com" autocomplete="email">
+
+          <label for="pr-phone">Phone Number <span class="opt-label">(Optional)</span></label>
+          <input type="tel" id="pr-phone" name="phone" placeholder="228-555-0100" autocomplete="tel">
+
+          <label for="pr-type">Type of Request</label>
+          <select id="pr-type" name="type" required>
+            <option value="" disabled selected>Select one…</option>
+            <option value="health">Health &amp; Healing</option>
+            <option value="family">Family &amp; Relationships</option>
+            <option value="grief">Grief &amp; Loss</option>
+            <option value="financial">Financial Need</option>
+            <option value="spiritual">Spiritual Growth</option>
+            <option value="salvation">Salvation of a Loved One</option>
+            <option value="guidance">Guidance &amp; Decisions</option>
+            <option value="other">Other</option>
+          </select>
+
+          <label for="pr-request">Your Request <span class="opt-label">(Share as much or as little as you like)</span></label>
+          <textarea id="pr-request" name="request" required placeholder="Tell us how we can pray for you…"></textarea>
+
+          <label style="display:flex; align-items:center; gap:10px; text-transform:none; letter-spacing:0; font-size:14px; cursor:pointer; margin-bottom:20px;">
+            <input type="checkbox" id="pr-confidential" name="confidential" value="yes" style="width:auto; margin-bottom:0; cursor:pointer;">
+            Keep this request confidential — pastoral team only
+          </label>
+
+          <button type="button" class="btn-submit" onclick="submitPrayerForm()">Submit Prayer Request</button>
+          <p id="form-status" role="status"></p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- THANK YOU POPUP -->
+<div class="popup-overlay" id="thankYouPopup" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
+  <div class="popup-box">
+    <button class="popup-close" onclick="closePopup()" aria-label="Close">&times;</button>
+    <div class="popup-icon">
+      <svg width="56" height="56" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" stroke="#c8922a" stroke-width="2"/>
+        <polyline points="18,33 27,42 46,22" stroke="#c8922a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <h2 class="popup-title" id="popupTitle">Thank You</h2>
+    <div class="popup-divider"></div>
+    <p class="popup-msg" id="popupMsg">Your prayer request has been received. We will be praying for you.</p>
+  </div>
+</div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <p style="margin-bottom: 8px;">
+    <strong style="color: rgba(255,255,255,0.7);">Example Church</strong>
+  </p>
+  <p>123 Church Street · Your City, ST 00000 · <a href="tel:5555555555">555-555-5555</a></p>
+  <p style="margin-top: 16px;">© 2026 Example Church · <a href="mailto:hello@examplechurch.org">hello@examplechurch.org</a></p>
+</footer>
+
+<script>
+function toggleMenu(btn) {
+  var menu = document.getElementById('mobileMenu');
+  var open = menu.classList.toggle('open');
+  btn.setAttribute('aria-expanded', open);
+}
+function closeMenu() {
+  document.getElementById('mobileMenu').classList.remove('open');
+  document.querySelector('.hamburger').setAttribute('aria-expanded', 'false');
+}
+document.addEventListener('click', function(e) {
+  var menu = document.getElementById('mobileMenu');
+  var btn = document.querySelector('.hamburger');
+  if (menu.classList.contains('open') && !menu.contains(e.target) && !btn.contains(e.target)) {
+    closeMenu();
+  }
+});
+
+// Dropdown menu
+var dropdowns = document.querySelectorAll('.nav-dropdown');
+dropdowns.forEach(function(dd) {
+  var timeout;
+  dd.addEventListener('mouseenter', function() {
+    clearTimeout(timeout);
+    dd.classList.add('open');
+  });
+  dd.addEventListener('mouseleave', function() {
+    timeout = setTimeout(function() { dd.classList.remove('open'); }, 120);
+  });
+  var menu = dd.querySelector('.dropdown-menu');
+  if (menu) {
+    menu.addEventListener('mouseenter', function() { clearTimeout(timeout); });
+    menu.addEventListener('mouseleave', function() {
+      timeout = setTimeout(function() { dd.classList.remove('open'); }, 120);
+    });
+  }
+});
+</script>
+
+  <!-- PWA Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js')
+          .then(function(reg) { console.log('Service worker registered:', reg.scope); })
+          .catch(function(err) { console.log('Service worker error:', err); });
+      });
+    }
+  
+function closePopup() {
+  document.getElementById('thankYouPopup').classList.remove('open');
+}
+document.getElementById('thankYouPopup').addEventListener('click', function(e) {
+  if (e.target === this) closePopup();
+});
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closePopup();
+});
+
+function submitPrayerForm() {
+  var form = document.querySelector('form[name="prayer"]');
+  var required = form.querySelectorAll('[required]');
+  var valid = true;
+  required.forEach(function(field) {
+    if (!field.value.trim()) { field.focus(); valid = false; }
+  });
+  if (!valid) return;
+
+  var data = new FormData(form);
+  fetch('/', { method: 'POST', body: data })
+    .then(function() {
+      document.getElementById('popupMsg').textContent = 'Your prayer request has been received. We will be praying for you.';
+      document.getElementById('thankYouPopup').classList.add('open');
+      form.reset();
+    })
+    .catch(function() {
+      document.getElementById('popupMsg').textContent = 'Something went wrong. Please try again or call us at 555-555-5555.';
+      document.getElementById('thankYouPopup').classList.add('open');
+    });
+}
+
+</script>
+<script src="/assets/js/site-enhancements.js" defer></script>
+</body>
+</html>

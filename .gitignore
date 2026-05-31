@@ -1,0 +1,8 @@
+.env
+.env.*
+!.env.example
+node_modules/
+.netlify/
+.local-sermons-server.*
+backups/
+files.zip

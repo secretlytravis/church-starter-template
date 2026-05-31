@@ -1,0 +1,20 @@
+{
+  "churchName": "Example Church",
+  "shortName": "Example Church",
+  "tagline": "Leading every generation to know Jesus and follow Jesus.",
+  "domain": "examplechurch.org",
+  "city": "Your City",
+  "state": "ST",
+  "postalCode": "00000",
+  "streetAddress": "123 Church Street",
+  "phoneDisplay": "555-555-5555",
+  "phoneHref": "5555555555",
+  "email": "hello@examplechurch.org",
+  "youtubeHandle": "examplechurch",
+  "youtubeChannelId": "YOUR_YOUTUBE_CHANNEL_ID",
+  "facebookUrl": "https://www.facebook.com/examplechurch",
+  "pastorName": "Pastor First Last",
+  "pastorShortName": "First",
+  "pastorSpouseName": "Spouse Name",
+  "pastorStartYear": "YEAR"
+}

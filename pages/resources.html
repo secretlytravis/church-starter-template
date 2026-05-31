@@ -1,0 +1,1750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Recommended books and resources for every stage of the Christian life. Example Church, Your City, ST.">
+<title>Resources | Example Church</title>
+<link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Ubuntu:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --navy: #082846;
+  --navy-mid: #0d3b66;
+  --gold: #c8922a;
+  --gold-light: #e8b45a;
+  --cream: #f9f5ee;
+  --white: #ffffff;
+  --text-dark: #1a1a1a;
+  --text-mid: #4a4a4a;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  background: var(--cream);
+  color: var(--text-dark);
+  line-height: 1.7;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: rgba(8, 40, 70, 0.97);
+  backdrop-filter: blur(8px);
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  height: 64px;
+  border-bottom: 1px solid rgba(200, 146, 42, 0.25);
+}
+.nav-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.01em;
+  text-decoration: none;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+.nav-links a {
+  text-decoration: none;
+  color: rgba(255,255,255,0.8);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--gold-light); }
+
+/* ── NAV DROPDOWN ── */
+.nav-dropdown { position: relative; }
+.nav-dropdown > a::after { content: ' ▾'; font-size: 10px; opacity: 0.7; }
+.dropdown-menu {
+  all: initial;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #082846;
+  border-top: 2px solid #c8922a;
+  border-radius: 0 0 2px 2px;
+  min-width: 210px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+  z-index: 9999;
+  font-family: Ubuntu, sans-serif;
+}
+.dropdown-menu::before {
+  content: '';
+  display: block;
+  height: 12px;
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+}
+.nav-dropdown.open .dropdown-menu { display: block; }
+.dropdown-menu a {
+  all: initial;
+  display: block;
+  width: 100%;
+  padding: 12px 20px;
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  font-family: Ubuntu, sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 400;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  box-sizing: border-box;
+}
+.dropdown-menu a:last-child { border-bottom: none; }
+.dropdown-menu a:hover { background: rgba(255,255,255,0.07); color: #e8b45a; }
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: white;
+  border-radius: 2px;
+}
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 64px;
+  left: 0;
+  width: 100%;
+  background: var(--navy);
+  z-index: 999;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(200,146,42,0.2);
+}
+.mobile-menu.open { display: block; }
+.mobile-menu a {
+  display: block;
+  padding: 12px 40px;
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  font-size: 15px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.mobile-menu a:hover { color: var(--gold-light); background: rgba(255,255,255,0.04); }
+
+/* ── PAGE HEADER ── */
+.page-header {
+  background: var(--navy);
+  padding: 120px 20px 60px;
+  text-align: center;
+  border-bottom: 3px solid var(--gold);
+}
+.page-header .section-label {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 12px;
+  font-weight: 500;
+  display: block;
+}
+.page-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+.page-header p {
+  max-width: 580px;
+  margin: 0 auto;
+  font-size: 16px;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.8;
+}
+.header-divider {
+  width: 48px;
+  height: 2px;
+  background: var(--gold);
+  margin: 0 auto 20px;
+}
+
+/* ── TOC ── */
+/* Resource search and filters */
+.resource-tools {
+  background: var(--white);
+  border-bottom: 1px solid rgba(0,0,0,0.07);
+  padding: 24px 20px;
+}
+.resource-tools-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: grid;
+  gap: 14px;
+}
+.resource-search {
+  width: 100%;
+  border: 1px solid rgba(0,0,0,0.14);
+  border-left: 4px solid var(--gold);
+  border-radius: 0 2px 2px 0;
+  background: var(--cream);
+  padding: 14px 16px;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 15px;
+  color: var(--text-dark);
+}
+.resource-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.resource-filters button {
+  border: 1px solid rgba(8,40,70,0.18);
+  background: var(--white);
+  color: var(--navy-mid);
+  padding: 9px 12px;
+  border-radius: 2px;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.resource-filters button.active {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: var(--white);
+}
+.resource-count {
+  font-size: 13px;
+  color: var(--text-mid);
+}
+.resource-empty {
+  display: none;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 42px 20px;
+  color: var(--text-mid);
+  text-align: center;
+}
+.resource-section.is-hidden { display: none; }
+.book-card.is-hidden,
+.online-card.is-hidden { display: none; }
+
+/* ── LAYOUT ── */
+.container { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+
+/* ── RESOURCE SECTIONS ── */
+.resource-section {
+  padding: 60px 20px;
+  border-bottom: 1px solid rgba(0,0,0,0.07);
+}
+.resource-section:nth-child(even) { background: var(--white); }
+.resource-section:nth-child(odd) { background: var(--cream); }
+
+.section-label {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 500;
+  margin-bottom: 8px;
+  display: block;
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+.section-divider {
+  width: 40px;
+  height: 2px;
+  background: var(--gold);
+  margin-bottom: 12px;
+}
+.section-desc {
+  font-size: 15px;
+  color: var(--text-mid);
+  line-height: 1.85;
+  max-width: 680px;
+  margin-bottom: 36px;
+}
+
+/* ── BOOK GRID ── */
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+.book-card {
+  background: var(--white);
+  border-top: 3px solid var(--gold);
+  border-radius: 0 0 2px 2px;
+  padding: 24px 22px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.resource-section:nth-child(even) .book-card { background: var(--cream); }
+.book-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+.book-tag {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 500;
+  margin-bottom: 8px;
+  display: block;
+}
+.book-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
+  color: var(--navy);
+  font-weight: 700;
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+.book-author {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 12px;
+  font-style: italic;
+}
+.book-desc {
+  font-size: 14px;
+  color: var(--text-mid);
+  line-height: 1.75;
+}
+
+/* ── ONLINE RESOURCE GRID ── */
+.online-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+.online-card {
+  background: var(--white);
+  border-left: 4px solid var(--gold);
+  border-radius: 0 2px 2px 0;
+  padding: 20px 22px;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.online-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+.online-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
+  color: var(--navy);
+  font-weight: 700;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.online-name span { font-size: 13px; color: var(--gold); font-family: 'Ubuntu', sans-serif; font-weight: 400; }
+.online-desc {
+  font-size: 14px;
+  color: var(--text-mid);
+  line-height: 1.75;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: #050f1a;
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.4);
+  border-top: 1px solid rgba(200,146,42,0.15);
+}
+footer a { color: var(--gold-light); text-decoration: none; }
+
+/* ── MOBILE ── */
+@media (max-width: 1080px) {
+  nav { padding: 0 20px; }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .book-grid { grid-template-columns: 1fr; }
+  .online-grid { grid-template-columns: 1fr; }
+  .verse-intro-grid { grid-template-columns: 1fr !important; }
+}
+</style>
+<link rel="stylesheet" href="/assets/css/site-enhancements.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav aria-label="Main navigation">
+  <a href="/index.html" class="nav-brand">Example Church</a>
+  <ul class="nav-links" role="list">
+    
+    <li><a href="/index.html">Home</a></li>
+    <li><a href="/pages/plan-your-visit.html">Visit</a></li>
+    <li><a href="/pages/sermons.html">Sermons</a></li>
+    <li class="nav-dropdown">
+      <a href="/pages/beliefs.html">Beliefs</a>
+      <div class="dropdown-menu">
+        <a href="/pages/beliefs.html">Statement of Faith</a>
+        <a href="/pages/new-believer.html">New Believer</a>
+      </div>
+    </li>
+    <li class="nav-dropdown">
+      <a href="/index.html#curious">Curious?</a>
+      <div class="dropdown-menu">
+        <a href="/pages/romans-road.html">The Romans Road</a>
+        <a href="/pages/ask-a-pastor.html">Ask a Pastor</a>
+        <a href="/pages/questions.html">Spiritual Questions</a>
+      </div>
+    </li>
+    <li class="nav-dropdown">
+      <a href="/pages/prayer-request.html">Prayer</a>
+      <div class="dropdown-menu">
+        <a href="/pages/need-help.html">Urgent Request</a>
+        <a href="/pages/prayer-request.html">Prayer Request</a>
+      </div>
+    </li>
+    <li class="nav-dropdown">
+      <a href="/pages/resources.html">Resources</a>
+      <div class="dropdown-menu">
+        <a href="/pages/resources.html">Resource Library</a>
+        <a href="/pages/glossary.html">Glossary</a>
+      </div>
+    </li>
+    <li><a href="/pages/staff.html">Staff</a></li>
+  
+  </ul>
+  <button class="hamburger" type="button" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile navigation">
+  <a href="/index.html" onclick="closeMenu()">Home</a>
+  <a href="/pages/plan-your-visit.html" onclick="closeMenu()">Plan Your Visit</a>
+  <a href="/pages/sermons.html" onclick="closeMenu()">Sermons</a>
+  <a href="/pages/beliefs.html" onclick="closeMenu()">Beliefs</a>
+  <a href="/pages/new-believer.html" onclick="closeMenu()" class="mobile-sub">New Believer</a>
+  <a href="/index.html#curious" onclick="closeMenu()">Curious?</a>
+  <a href="/pages/romans-road.html" onclick="closeMenu()" class="mobile-sub">The Romans Road</a>
+  <a href="/pages/ask-a-pastor.html" onclick="closeMenu()" class="mobile-sub">Ask a Pastor</a>
+  <a href="/pages/questions.html" onclick="closeMenu()" class="mobile-sub">Spiritual Questions</a>
+  <a href="/pages/prayer-request.html" onclick="closeMenu()">Prayer</a>
+  <a href="/pages/need-help.html" onclick="closeMenu()" class="mobile-sub">Urgent Request</a>
+  <a href="/pages/prayer-request.html" onclick="closeMenu()" class="mobile-sub">Prayer Request</a>
+  <a href="/pages/resources.html" onclick="closeMenu()">Resources</a>
+  <a href="/pages/glossary.html" onclick="closeMenu()" class="mobile-sub">Glossary</a>
+  <a href="/pages/staff.html" onclick="closeMenu()">Staff</a>
+</div>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <span class="section-label">For Your Growth</span>
+  <h1>Resources</h1>
+  <div class="header-divider"></div>
+  <p>Recommended books and trusted online resources for every stage of the Christian life — from brand new believer to seasoned saint.</p>
+</div>
+
+<!-- SCRIPTURE & EXPLANATION -->
+<div style="background: var(--white); border-bottom: 1px solid rgba(0,0,0,0.07); padding: 56px 20px;">
+  <div style="max-width: 760px; margin: 0 auto;">
+    <div class="verse-intro-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 40px;">
+      <div style="background: var(--cream); border-left: 4px solid var(--gold); padding: 24px 24px; border-radius: 0 2px 2px 0;">
+        <span style="font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); font-weight:500; display:block; margin-bottom:10px;"><a href="https://www.esv.org/2+Peter+3:18" target="_blank" rel="noopener" style="color:inherit; text-decoration:none; border-bottom:1px dotted rgba(200,146,42,0.6);">2 Peter 3:18</a></span>
+        <p style="font-family:'Playfair Display',serif; font-size:17px; font-style:italic; color:var(--text-dark); line-height:1.7;">"But grow in the grace and knowledge of our Lord and Savior Jesus Christ."</p>
+      </div>
+      <div style="background: var(--cream); border-left: 4px solid var(--gold); padding: 24px 24px; border-radius: 0 2px 2px 0;">
+        <span style="font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); font-weight:500; display:block; margin-bottom:10px;"><a href="https://www.esv.org/Romans+12:2" target="_blank" rel="noopener" style="color:inherit; text-decoration:none; border-bottom:1px dotted rgba(200,146,42,0.6);">Romans 12:2</a></span>
+        <p style="font-family:'Playfair Display',serif; font-size:17px; font-style:italic; color:var(--text-dark); line-height:1.7;">"Do not be conformed to this world, but be transformed by the renewal of your mind, that by testing you may discern what is the will of God, what is good and acceptable and perfect."</p>
+      </div>
+    </div>
+    <p style="font-size:16px; color:var(--text-mid); line-height:1.9; margin-bottom:16px;">The Christian life does not stand still. Peter's command to grow is not a suggestion — it is a call to ongoing, intentional pursuit of deeper knowledge of Christ and His Word. A faith that stops growing is a faith that begins to drift.</p>
+    <p style="font-size:16px; color:var(--text-mid); line-height:1.9;">Paul's vision in Romans 12 is of a believer whose mind is being actively renewed — shaped by Scripture rather than by the surrounding culture. That kind of transformation does not happen by accident. It requires reading, thinking, sitting under faithful preaching, and returning again and again to the Word. The resources on this page are tools for that work — not substitutes for Scripture, but faithful guides that point you back to it.</p>
+  </div>
+</div>
+
+<!-- SEARCH & FILTERS -->
+<section class="resource-tools" aria-label="Search and filter resources">
+  <div class="resource-tools-inner">
+    <input class="resource-search" id="resourceSearch" type="search" placeholder="Search by title, author, topic, or description..." aria-label="Search resources">
+    <div class="resource-filters" aria-label="Resource filters">
+      <button type="button" class="active" data-resource-filter="all">All</button>
+      <button type="button" data-resource-filter="foundations">Foundations</button>
+      <button type="button" data-resource-filter="theology">Theology</button>
+      <button type="button" data-resource-filter="apologetics">Apologetics</button>
+      <button type="button" data-resource-filter="prayer">Prayer</button>
+      <button type="button" data-resource-filter="discipleship">Discipleship</button>
+      <button type="button" data-resource-filter="suffering">Suffering</button>
+      <button type="button" data-resource-filter="church">Church</button>
+      <button type="button" data-resource-filter="family">Family</button>
+      <button type="button" data-resource-filter="missions">Missions</button>
+      <button type="button" data-resource-filter="preaching">Preaching</button>
+      <button type="button" data-resource-filter="biography">History</button>
+      <button type="button" data-resource-filter="online">Online</button>
+    </div>
+    <p class="resource-count" id="resourceCount" aria-live="polite"></p>
+  </div>
+</section>
+
+
+<main>
+
+  <!-- PASTOR'S PICKS -->
+  <div class="resource-section" id="pastorpicks" style="background: var(--navy);">
+    <div class="container">
+      <span class="section-label" style="color:var(--gold-light);">A Personal Recommendation</span>
+      <h2 class="section-title" style="color:var(--white);">Your Pastor's Picks</h2>
+      <div class="section-divider"></div>
+      <p class="section-desc" style="color:rgba(255,255,255,0.7);">If you're not sure where to start, start here. These are books Your Pastor personally recommends — ones that have shaped his own faith and ministry.</p>
+      <div class="book-grid">
+        <div class="book-card" style="background:rgba(255,255,255,0.06); border-top-color:#e8b45a;">
+          <span class="book-tag" style="color:var(--gold-light);">Start Here</span>
+          <h3 class="book-title" style="color:var(--white);">Knowing God</h3>
+          <p class="book-author" style="color:rgba(255,255,255,0.5);">J.I. Packer</p>
+          <p class="book-desc" style="color:rgba(255,255,255,0.75);">If you only read one book this year, read this one. A rich, warm, and life-changing exploration of who God is and what it means to truly know Him.</p>
+        </div>
+        <div class="book-card" style="background:rgba(255,255,255,0.06); border-top-color:#e8b45a;">
+          <span class="book-tag" style="color:var(--gold-light);">Recommended</span>
+          <h3 class="book-title" style="color:var(--white);">Spiritual Disciplines for the Christian Life</h3>
+          <p class="book-author" style="color:rgba(255,255,255,0.5);">Donald Whitney</p>
+          <p class="book-desc" style="color:rgba(255,255,255,0.75);">The most practical book on growing as a Christian. If you want to read your Bible, pray, and worship with more consistency and depth — this is the book.</p>
+        </div>
+        <div class="book-card" style="background:rgba(255,255,255,0.06); border-top-color:#e8b45a;">
+          <span class="book-tag" style="color:var(--gold-light);">Recommended</span>
+          <h3 class="book-title" style="color:var(--white);">Grasping God's Word</h3>
+          <p class="book-author" style="color:rgba(255,255,255,0.5);">J. Scott Duvall &amp; J. Daniel Hays</p>
+          <p class="book-desc" style="color:rgba(255,255,255,0.75);">The book that will teach you how to read and interpret the Bible for yourself. Essential for anyone who wants to go deeper than surface-level Bible reading.</p>
+        </div>
+        <div class="book-card" style="background:rgba(255,255,255,0.06); border-top-color:#e8b45a;">
+          <span class="book-tag" style="color:var(--gold-light);">Recommended</span>
+          <h3 class="book-title" style="color:var(--white);">The Pursuit of Holiness</h3>
+          <p class="book-author" style="color:rgba(255,255,255,0.5);">Jerry Bridges</p>
+          <p class="book-desc" style="color:rgba(255,255,255,0.75);">A gospel-saturated, honest call to take holiness seriously. Bridges writes with humility and warmth — this book will convict and encourage you at the same time.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOUNDATIONS -->
+  <div class="resource-section" id="foundations">
+    <div class="container">
+      <span class="section-label">Starting Point</span>
+      <h2 class="section-title">Foundations</h2>
+      <div class="section-divider"></div>
+      <p class="section-desc">Whether you are brand new to the faith or simply want to get back to basics, these books cover the essentials — the gospel, the Christian life, and what it means to follow Jesus. A solid foundation for every believer at every stage.</p>
+      <div class="book-grid">
+        <div class="book-card">
+          <span class="book-tag">New Believer</span>
+          <h3 class="book-title">Starting Point</h3>
+          <p class="book-author">Andy Stanley</p>
+          <p class="book-desc">A conversational guide for anyone beginning their faith journey — honest, accessible, and rooted in Scripture.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">New Believer</span>
+          <h3 class="book-title">Basic Christianity</h3>
+          <p class="book-author">John R. W. Stott</p>
+          <p class="book-desc">A classic introduction to the Christian faith — who Jesus is, why He came, and what it means to follow Him. Clear, concise, and trustworthy.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Gospel</span>
+          <h3 class="book-title">The Gospel</h3>
+          <p class="book-author">Greg Gilbert</p>
+          <p class="book-desc">A short, clear explanation of what the gospel actually is and why it matters — ideal for someone who just trusted Christ or wants to share their faith.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Gospel</span>
+          <h3 class="book-title">What Is the Gospel?</h3>
+          <p class="book-author">Greg Gilbert</p>
+          <p class="book-desc">Traces the core message of Christianity through Scripture — sin, God, Christ, and response. One of the clearest short treatments of the gospel available.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Classic</span>
+          <h3 class="book-title">Mere Christianity</h3>
+          <p class="book-author">C.S. Lewis</p>
+          <p class="book-desc">One of the most influential Christian books of the 20th century. Lewis makes the case for the faith with clarity, wit, and disarming honesty.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Christian Living</span>
+          <h3 class="book-title">Knowing God</h3>
+          <p class="book-author">J.I. Packer</p>
+          <p class="book-desc">A rich, warm study of the character of God — who He is and what it means to truly know Him. A book that changes how you read the Bible.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Holiness</span>
+          <h3 class="book-title">The Pursuit of Holiness</h3>
+          <p class="book-author">Jerry Bridges</p>
+          <p class="book-desc">A warm, practical, gospel-saturated call to take personal holiness seriously — not out of fear, but out of love for the God who has made us His own.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Classic</span>
+          <h3 class="book-title">The Pursuit of God</h3>
+          <p class="book-author">A.W. Tozer</p>
+          <p class="book-desc">A timeless devotional classic — a passionate, poetic call to pursue a deeper, more personal knowledge of God. Few books have stirred more Christians toward genuine hunger for God.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Classic</span>
+          <h3 class="book-title">The Pilgrim's Progress</h3>
+          <p class="book-author">John Bunyan</p>
+          <p class="book-desc">The most widely read Christian book outside the Bible. An allegory of the Christian life from conversion to glory — vivid, convicting, and endlessly rich. Every believer should read it at least once.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Disciplines</span>
+          <h3 class="book-title">Spiritual Disciplines for the Christian Life</h3>
+          <p class="book-author">Donald Whitney</p>
+          <p class="book-desc">The most practical and thorough guide to the spiritual disciplines available. Bible intake, prayer, fasting, worship, journaling — each covered with care.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Disciplines</span>
+          <h3 class="book-title">Disciplines of a Godly Man</h3>
+          <p class="book-author">R. Kent Hughes</p>
+          <p class="book-desc">A practical, honest guide to the spiritual disciplines every Christian man needs — prayer, Scripture, integrity, marriage, and more.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Bible Study</span>
+          <h3 class="book-title">Grasping God's Word</h3>
+          <p class="book-author">J. Scott Duvall &amp; J. Daniel Hays</p>
+          <p class="book-desc">The standard textbook for learning to read, interpret, and apply the Bible faithfully. Used in seminaries worldwide — including seminary. Invaluable for anyone who wants to study Scripture seriously.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">C.S. Lewis</span>
+          <h3 class="book-title">The Screwtape Letters</h3>
+          <p class="book-author">C.S. Lewis</p>
+          <p class="book-desc">A senior demon writes letters of advice to a junior demon on how to corrupt a new Christian. Wickedly clever and deeply convicting — Lewis at his most creative and spiritually incisive.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Church Life</span>
+          <h3 class="book-title">Church Discipline</h3>
+          <p class="book-author">Jonathan Leeman (9Marks)</p>
+          <p class="book-desc">A clear, biblical treatment of why church discipline matters — what it is, how it works, and why a church that practices it lovingly is a healthier church. Essential reading for new members.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Doctrine</span>
+          <h3 class="book-title">50 Core Truths of the Christian Faith</h3>
+          <p class="book-author">Stephen Wellum</p>
+          <p class="book-desc">Fifty essential doctrines every Christian should know — each explained clearly and grounded in Scripture. A solid foundation for anyone wanting to understand what they believe and why.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Christian Living</span>
+          <h3 class="book-title">Desiring God</h3>
+          <p class="book-author">John Piper</p>
+          <p class="book-desc">The book that introduced Christian Hedonism to a generation — the radical idea that God is most glorified in us when we are most satisfied in Him. Life-changing for new and growing believers alike.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Apologetics</span>
+          <h3 class="book-title">The Reason for God</h3>
+          <p class="book-author">Timothy Keller</p>
+          <p class="book-desc">Written for skeptics and doubters, Keller engages the most common objections to Christianity with intelligence and grace — one of the best entry points for someone on the edge of faith.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Theology</span>
+          <h3 class="book-title">None Like Him</h3>
+          <p class="book-author">Jen Wilkin</p>
+          <p class="book-desc">A warm, accessible exploration of ten attributes of God that belong to Him alone — and what it means to worship a God who is truly unlike us in the best possible ways.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Gospel</span>
+          <h3 class="book-title">God Is the Gospel</h3>
+          <p class="book-author">John Piper</p>
+          <p class="book-desc">The deepest gift of the gospel is not forgiveness or heaven — it is God Himself. Piper makes the case that seeing and savoring God is the heart of salvation.</p>
+        </div>
+
+        <div class="book-card">
+          <span class="book-tag">Assurance</span>
+          <h3 class="book-title">Stop Asking Jesus Into Your Heart</h3>
+          <p class="book-author">J.D. Greear</p>
+          <p class="book-desc">A clear, pastoral book for believers who struggle with assurance. It explains the difference between trusting Christ and constantly rechecking whether you meant it enough.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Bible Reading</span>
+          <h3 class="book-title">Women of the Word</h3>
+          <p class="book-author">Jen Wilkin</p>
+          <p class="book-desc">A practical method for studying Scripture with both heart and mind. Helpful for women and men who want a stronger, less random approach to Bible reading.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Christian Living</span>
+          <h3 class="book-title">The Discipline of Grace</h3>
+          <p class="book-author">Jerry Bridges</p>
+          <p class="book-desc">Explains how grace trains believers in holiness without turning obedience into self-salvation. A steady follow-up to The Pursuit of Holiness.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Catechism</span>
+          <h3 class="book-title">The New City Catechism</h3>
+          <p class="book-author">The Gospel Coalition</p>
+          <p class="book-desc">A simple question-and-answer tool for learning core Christian doctrine with children, small groups, or new believers.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SOAR -->
+  <div class="resource-section" id="theology">
+    <div class="container">
+      <span class="section-label">Going Deeper</span>
+      <h2 class="section-title">Theology &amp; Doctrine</h2>
+      <div class="section-divider"></div>
+      <p class="section-desc">For the Christian who wants to think carefully and deeply about what they believe and why — grounded in Scripture and shaped by centuries of faithful theology. These books will sharpen your mind and strengthen your convictions.</p>
+      <div class="book-grid">
+        <div class="book-card">
+          <span class="book-tag">Theology</span>
+          <h3 class="book-title">Systematic Theology</h3>
+          <p class="book-author">Wayne Grudem</p>
+          <p class="book-desc">The standard one-volume systematic theology for evangelical Christians. Comprehensive, accessible, and always anchored in Scripture. A reference you will return to for life.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Theology</span>
+          <h3 class="book-title">The Holiness of God</h3>
+          <p class="book-author">R.C. Sproul</p>
+          <p class="book-desc">A transformative look at who God is and what His holiness demands. Sproul writes with conviction and clarity — few books have reshaped more believers' view of God.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Philosophy</span>
+          <h3 class="book-title">Truth and Method</h3>
+          <p class="book-author">Hans-Georg Gadamer</p>
+          <p class="book-desc">A landmark work in philosophical hermeneutics — Gadamer's exploration of how understanding and interpretation work. Foundational reading for anyone serious about how we know truth and read texts, including Scripture.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Commentary Series</span>
+          <h3 class="book-title">Christ-Centered Exposition</h3>
+          <p class="book-author">David Platt, Tony Merida &amp; Daniel Akin (gen. eds.)</p>
+          <p class="book-desc">A commentary series written specifically for pastors, teachers, and serious Bible students — expository, Christ-centered, and accessible. Each volume walks through a book of the Bible with faithful exposition and practical application. An excellent companion for personal study or sermon preparation. Available for most books of the Bible from <a href="https://www.lifeway.com" target="_blank" rel="noopener" style="color:var(--gold); text-decoration:none; border-bottom:1px dotted rgba(200,146,42,0.5);">LifeWay ↗</a></p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Theology</span>
+          <h3 class="book-title">The Attributes of God</h3>
+          <p class="book-author">A.W. Tozer</p>
+          <p class="book-desc">A companion to The Pursuit of God — Tozer explores ten attributes of God with devotional depth and pastoral warmth. Reading this book changes how you pray and how you worship.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Theology</span>
+          <h3 class="book-title">Reformed Theology</h3>
+          <p class="book-author">R.C. Sproul</p>
+          <p class="book-desc">A clear, accessible introduction to Reformed theology — what it is, where it comes from, and why it matters. Sproul at his most inviting for readers new to these doctrines.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Theology</span>
+          <h3 class="book-title">The Institutes of the Christian Religion</h3>
+          <p class="book-author">John Calvin (abridged)</p>
+          <p class="book-desc">One of the most important theological works in Christian history. The abridged edition makes Calvin's magnum opus accessible to serious students without requiring a seminary education.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Theology</span>
+          <h3 class="book-title">Christian Theology</h3>
+          <p class="book-author">Millard Erickson</p>
+          <p class="book-desc">A comprehensive one-volume systematic theology — more academic than Grudem but equally thorough. A trusted reference for pastors, teachers, and serious students of the Word.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Theology</span>
+          <h3 class="book-title">Reformed Dogmatics</h3>
+          <p class="book-author">Herman Bavinck</p>
+          <p class="book-desc">A four-volume masterwork of Reformed systematic theology — widely regarded as one of the greatest theological achievements in church history. Bavinck writes with both rigorous scholarship and pastoral warmth. An essential reference for any serious student of doctrine.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Baptist Identity</span>
+          <h3 class="book-title">Baptist Faith &amp; Message 2000</h3>
+          <p class="book-author">Southern Baptist Convention</p>
+          <p class="book-desc">The confession of faith Example Church affirms. A faithful summary of biblical doctrine that has shaped Baptist churches for generations. <a href="https://bfm.sbc.net/bfm2000/" target="_blank" rel="noopener" style="color:var(--gold); text-decoration:none; border-bottom:1px dotted rgba(200,146,42,0.5);">Read it free online ↗</a></p>
+        </div>
+
+
+        <div class="book-card">
+          <span class="book-tag">Doctrine</span>
+          <h3 class="book-title">Everyone's a Theologian</h3>
+          <p class="book-author">R.C. Sproul</p>
+          <p class="book-desc">A friendly introduction to the major doctrines of the Christian faith. Sproul makes theology feel less intimidating without making it thin.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Biblical Theology</span>
+          <h3 class="book-title">God's Big Picture</h3>
+          <p class="book-author">Vaughan Roberts</p>
+          <p class="book-desc">A short, clear guide to the storyline of Scripture from creation to new creation. Excellent for seeing how the Bible holds together.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Scripture</span>
+          <h3 class="book-title">Taking God at His Word</h3>
+          <p class="book-author">Kevin DeYoung</p>
+          <p class="book-desc">A concise, readable defense of the authority, clarity, necessity, and sufficiency of Scripture.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Doctrine</span>
+          <h3 class="book-title">Concise Theology</h3>
+          <p class="book-author">J.I. Packer</p>
+          <p class="book-desc">Short chapters on essential Christian doctrines. A useful reference when you want a trustworthy explanation without opening a massive textbook.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- APOLOGETICS -->
+  <div class="resource-section" id="apologetics">
+    <div class="container">
+      <span class="section-label">Defending the Faith</span>
+      <h2 class="section-title">Apologetics</h2>
+      <div class="section-divider"></div>
+      <p class="section-desc">Every believer should be able to give a reason for the hope within them. These books equip you to engage honest questions about Christianity with confidence, clarity, and grace.</p>
+      <div class="book-grid">
+        <div class="book-card">
+          <span class="book-tag">Apologetics</span>
+          <h3 class="book-title">Mere Christianity</h3>
+          <p class="book-author">C.S. Lewis</p>
+          <p class="book-desc">The most widely read apologetic work of the 20th century. Lewis dismantles objections and makes the case for the Christian faith with logic, wit, and disarming honesty.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Apologetics</span>
+          <h3 class="book-title">The Case for Christ</h3>
+          <p class="book-author">Lee Strobel</p>
+          <p class="book-desc">A former atheist journalist investigates the historical, scientific, and psychological evidence for Jesus — interviewing leading scholars across multiple disciplines.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Apologetics</span>
+          <h3 class="book-title">The Case for Faith</h3>
+          <p class="book-author">Lee Strobel</p>
+          <p class="book-desc">Tackles the eight toughest objections to Christianity — from the existence of evil to the fate of the unevangelized — with honesty, research, and pastoral care.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Apologetics</span>
+          <h3 class="book-title">Tactics</h3>
+          <p class="book-author">Greg Koukl</p>
+          <p class="book-desc">A practical, conversational guide to defending the faith in everyday conversation — teaching you to ask the right questions and navigate spiritual dialogue with confidence and grace.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Apologetics</span>
+          <h3 class="book-title">I Don't Have Enough Faith to Be an Atheist</h3>
+          <p class="book-author">Norman Geisler &amp; Frank Turek</p>
+          <p class="book-desc">A systematic, evidence-based case for the truth of Christianity — from the existence of God to the reliability of Scripture. Thorough, rigorous, and accessible.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Apologetics</span>
+          <h3 class="book-title">Reasonable Faith</h3>
+          <p class="book-author">William Lane Craig</p>
+          <p class="book-desc">The most philosophically rigorous apologetics work available for a general audience — covering the existence of God, the resurrection, and the problem of evil with careful argumentation.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Apologetics</span>
+          <h3 class="book-title">Cold-Case Christianity</h3>
+          <p class="book-author">J. Warner Wallace</p>
+          <p class="book-desc">A homicide detective applies cold-case investigative techniques to the claims of Christianity — examining the evidence for the resurrection with the tools of forensic science.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Apologetics</span>
+          <h3 class="book-title">The Problem of Pain</h3>
+          <p class="book-author">C.S. Lewis</p>
+          <p class="book-desc">Lewis wrestles honestly with why a good God allows suffering — one of the clearest and most compassionate treatments of the problem of evil for a general audience.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Apologetics</span>
+          <h3 class="book-title">The Language of God</h3>
+          <p class="book-author">Francis Collins</p>
+          <p class="book-desc">The former director of the Human Genome Project makes the case that science and faith are not in conflict — a compelling read for anyone wrestling with evolution, genetics, and belief.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Apologetics</span>
+          <h3 class="book-title">Stealing from God</h3>
+          <p class="book-author">Frank Turek</p>
+          <p class="book-desc">Turek argues that atheists must borrow from God in order to argue against Him — using reason, morality, science, and evil as evidence that requires a theistic foundation.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Apologetics</span>
+          <h3 class="book-title">On Guard</h3>
+          <p class="book-author">William Lane Craig</p>
+          <p class="book-desc">A more accessible companion to Reasonable Faith — equipping everyday Christians to defend the faith using the cosmological argument, the resurrection, and the problem of evil.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Worldview</span>
+          <h3 class="book-title">The Story of Reality</h3>
+          <p class="book-author">Greg Koukl</p>
+          <p class="book-desc">A worldview-level apologetics book that presents Christianity as the story that makes sense of everything — creation, fall, redemption, and restoration. Pairs naturally with Tactics.</p>
+        </div>
+
+        <div class="book-card">
+          <span class="book-tag">Reliability</span>
+          <h3 class="book-title">Can We Trust the Gospels?</h3>
+          <p class="book-author">Peter J. Williams</p>
+          <p class="book-desc">A short and careful case for the historical reliability of the Gospel accounts, written with clarity and restraint.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Resurrection</span>
+          <h3 class="book-title">The Son Rises</h3>
+          <p class="book-author">William Lane Craig</p>
+          <p class="book-desc">A focused defense of the resurrection of Jesus. More compact than Craig's larger apologetics works and useful for serious seekers.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Skepticism</span>
+          <h3 class="book-title">Confronting Christianity</h3>
+          <p class="book-author">Rebecca McLaughlin</p>
+          <p class="book-desc">Engages modern objections about hypocrisy, sexuality, suffering, science, and exclusivity with intelligence and compassion.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Worldview</span>
+          <h3 class="book-title">The Universe Next Door</h3>
+          <p class="book-author">James W. Sire</p>
+          <p class="book-desc">A classic introduction to major worldviews and how Christianity compares with them. Helpful for college students and thoughtful readers.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRAYER -->
+  <div class="resource-section" id="prayer">
+    <div class="container">
+      <span class="section-label">Spiritual Disciplines</span>
+      <h2 class="section-title">Prayer</h2>
+      <div class="section-divider"></div>
+      <p class="section-desc">Books that will deepen your prayer life — not with formulas, but with a greater understanding of who you are praying to and why it matters.</p>
+      <div class="book-grid">
+        <div class="book-card">
+          <span class="book-tag">Prayer</span>
+          <h3 class="book-title">Prayer</h3>
+          <p class="book-author">Timothy Keller</p>
+          <p class="book-desc">A thorough, beautifully written guide to prayer that draws on Augustine, Luther, and Calvin while remaining deeply practical and personal.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Prayer</span>
+          <h3 class="book-title">A Praying Life</h3>
+          <p class="book-author">Paul Miller</p>
+          <p class="book-desc">Honest, warm, and practical — Miller writes about prayer the way real people actually struggle with it. One of the most helpful books on prayer in a generation.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Prayer</span>
+          <h3 class="book-title">Praying the Bible</h3>
+          <p class="book-author">Donald Whitney</p>
+          <p class="book-desc">A simple, transformative method for using Scripture as the fuel for your prayers — eliminating the feeling of running out of things to say.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Prayer</span>
+          <h3 class="book-title">The Valley of Vision</h3>
+          <p class="book-author">Arthur Bennett (ed.)</p>
+          <p class="book-desc">A collection of Puritan prayers and devotions — humble, God-centered, and Scripture-soaked. Reading these prayers will reshape how you think about prayer and about God.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Prayer</span>
+          <h3 class="book-title">With Christ in the School of Prayer</h3>
+          <p class="book-author">Andrew Murray</p>
+          <p class="book-desc">A devotional classic built around Jesus's teaching on prayer — 31 chapters designed to be read slowly, one at a time, as a guide to deeper intercession.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Prayer</span>
+          <h3 class="book-title">Communion with God</h3>
+          <p class="book-author">John Owen</p>
+          <p class="book-desc">A Puritan classic on the believer's communion with each person of the Trinity — Father, Son, and Holy Spirit. Dense but deeply rewarding for the serious student of prayer and theology.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Prayer</span>
+          <h3 class="book-title">The Practice of the Presence of God</h3>
+          <p class="book-author">Brother Lawrence</p>
+          <p class="book-desc">A short, timeless classic by a 17th-century monk who found profound communion with God in the most ordinary tasks of daily life. One of the most widely read devotional books in history.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Liturgy</span>
+          <h3 class="book-title">Every Moment Holy</h3>
+          <p class="book-author">Douglas McKelvey</p>
+          <p class="book-desc">A beautifully written collection of liturgies for everyday moments — waking up, going to work, experiencing loss, sitting with the dying. Teaches you to see all of life as worship.</p>
+        </div>
+
+        <div class="book-card">
+          <span class="book-tag">Prayer</span>
+          <h3 class="book-title">The Lord's Prayer</h3>
+          <p class="book-author">R.C. Sproul</p>
+          <p class="book-desc">A short exposition of the prayer Jesus taught His disciples, showing how it shapes worship, dependence, confession, and hope.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Prayer</span>
+          <h3 class="book-title">A Call to Prayer</h3>
+          <p class="book-author">J.C. Ryle</p>
+          <p class="book-desc">A brief, searching classic that calls believers back to private prayer with directness, warmth, and urgency.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Psalms</span>
+          <h3 class="book-title">Answering God</h3>
+          <p class="book-author">Eugene Peterson</p>
+          <p class="book-desc">A reflective guide to praying the Psalms and letting Scripture teach us the language of honest prayer.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- SUFFERING -->
+  <div class="resource-section" id="suffering">
+    <div class="container">
+      <span class="section-label">In Hard Times</span>
+      <h2 class="section-title">Suffering &amp; Grief</h2>
+      <div class="section-divider"></div>
+      <p class="section-desc">Few things test our faith like suffering. These books don't offer easy answers — they offer something better: the truth about God, and the comfort that comes from knowing Him in the dark.</p>
+      <div class="book-grid">
+        <div class="book-card">
+          <span class="book-tag">Suffering</span>
+          <h3 class="book-title">Walking with God Through Pain and Suffering</h3>
+          <p class="book-author">Timothy Keller</p>
+          <p class="book-desc">Keller's most pastoral work — a thorough, compassionate examination of suffering from biblical, theological, and personal perspectives. A book to give and to keep.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Suffering</span>
+          <h3 class="book-title">A Grief Observed</h3>
+          <p class="book-author">C.S. Lewis</p>
+          <p class="book-desc">Lewis's raw, honest journal written after the death of his wife — not a theology of grief but the lived experience of it. Devastatingly honest and ultimately hopeful.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Suffering</span>
+          <h3 class="book-title">When the Darkness Will Not Lift</h3>
+          <p class="book-author">John Piper</p>
+          <p class="book-desc">A short, tender book for those struggling with spiritual depression and darkness — offering biblical hope without minimizing the reality of the struggle.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Suffering</span>
+          <h3 class="book-title">Suffering and the Sovereignty of God</h3>
+          <p class="book-author">John Piper &amp; Justin Taylor (eds.)</p>
+          <p class="book-desc">A collection of biblical, theological, and personal reflections on suffering — anchored in the conviction that God is sovereign over all things, including our pain.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Suffering</span>
+          <h3 class="book-title">Joni</h3>
+          <p class="book-author">Joni Eareckson Tada</p>
+          <p class="book-desc">The autobiography of a woman who became a quadriplegic at 17 and found radical faith in Christ through it. One of the most powerful testimonies of suffering and grace ever written.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Suffering</span>
+          <h3 class="book-title">Dark Clouds, Deep Mercy</h3>
+          <p class="book-author">Mark Vroegop</p>
+          <p class="book-desc">A biblical exploration of lament — how the psalms of lament teach us to cry out to God honestly in our pain, and why that is a mark of faith rather than a failure of it.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Memoir</span>
+          <h3 class="book-title">When Breath Becomes Air</h3>
+          <p class="book-author">Paul Kalanithi</p>
+          <p class="book-desc">A neurosurgeon diagnosed with terminal cancer reflects on mortality, meaning, and what makes a life worth living. Not explicitly Christian but profoundly honest — one of the most moving books on facing death ever written.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Grief</span>
+          <h3 class="book-title">Lament for a Son</h3>
+          <p class="book-author">Nicholas Wolterstorff</p>
+          <p class="book-desc">A philosopher's raw and tender grief after the death of his 25-year-old son in a climbing accident. Short, beautiful, and profoundly honest about suffering and faith.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Biography</span>
+          <h3 class="book-title">The Hiding Place</h3>
+          <p class="book-author">Corrie ten Boom</p>
+          <p class="book-desc">The true story of a Dutch watchmaker's family who hid Jews during the Holocaust and were sent to a concentration camp — and the extraordinary faith that sustained them. One of the greatest Christian testimonies ever written.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">C.S. Lewis</span>
+          <h3 class="book-title">Surprised by Joy</h3>
+          <p class="book-author">C.S. Lewis</p>
+          <p class="book-desc">Lewis's spiritual autobiography — tracing his journey from atheism to faith through grief, longing, and the relentless pursuit of Joy. Essential reading for understanding both Lewis and the nature of conversion.</p>
+        </div>
+
+        <div class="book-card">
+          <span class="book-tag">Comfort</span>
+          <h3 class="book-title">Beside Still Waters</h3>
+          <p class="book-author">Charles Spurgeon</p>
+          <p class="book-desc">A devotional collection from Spurgeon for seasons of anxiety, grief, illness, and spiritual weariness.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Grief</span>
+          <h3 class="book-title">Seasons of Sorrow</h3>
+          <p class="book-author">Tim Challies</p>
+          <p class="book-desc">A father's honest reflections after the sudden death of his son. Tender, biblical, and written from inside real grief.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Depression</span>
+          <h3 class="book-title">Spurgeon's Sorrows</h3>
+          <p class="book-author">Zack Eswine</p>
+          <p class="book-desc">A compassionate look at depression through the life and preaching of Charles Spurgeon, full of pastoral wisdom for sufferers and caregivers.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MARRIAGE & FAMILY -->
+  <div class="resource-section" id="family">
+    <div class="container">
+      <span class="section-label">Christian Living</span>
+      <h2 class="section-title">Marriage &amp; Family</h2>
+      <div class="section-divider"></div>
+      <p class="section-desc">The home is the first place the Christian life is lived out. These books take Scripture seriously and offer practical, gospel-rooted guidance for marriage and parenting.</p>
+      <div class="book-grid">
+        <div class="book-card">
+          <span class="book-tag">Marriage</span>
+          <h3 class="book-title">The Meaning of Marriage</h3>
+          <p class="book-author">Timothy &amp; Kathy Keller</p>
+          <p class="book-desc">A theologically rich and practically wise look at what marriage is, what it pictures, and how the gospel transforms it. Ideal for engaged couples and those already married.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Marriage</span>
+          <h3 class="book-title">Sacred Marriage</h3>
+          <p class="book-author">Gary Thomas</p>
+          <p class="book-desc">Reframes marriage not primarily as a path to happiness, but as a means of holiness — a perspective that changes everything about how you approach your spouse.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Marriage</span>
+          <h3 class="book-title">Catching Foxes</h3>
+          <p class="book-author">John Henderson</p>
+          <p class="book-desc">A biblical guide to identifying and addressing the small compromises and patterns that quietly erode a marriage — helping couples catch the "little foxes" before they spoil the vine.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Parenting</span>
+          <h3 class="book-title">Shepherding a Child's Heart</h3>
+          <p class="book-author">Tedd Tripp</p>
+          <p class="book-desc">A gospel-centered approach to parenting that focuses on the heart rather than behavior — one of the most widely recommended parenting books in evangelical circles.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Parenting</span>
+          <h3 class="book-title">Family Worship</h3>
+          <p class="book-author">Donald Whitney</p>
+          <p class="book-desc">A short, compelling case for daily family worship — reading Scripture, praying, and singing together as a household. Practical and achievable for any family.</p>
+        </div>
+
+        <div class="book-card">
+          <span class="book-tag">Marriage</span>
+          <h3 class="book-title">When Sinners Say I Do</h3>
+          <p class="book-author">Dave Harvey</p>
+          <p class="book-desc">A gospel-centered marriage book that starts with the reality of sin and points couples toward grace, repentance, and faithful love.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Parenting</span>
+          <h3 class="book-title">Parenting</h3>
+          <p class="book-author">Paul David Tripp</p>
+          <p class="book-desc">A big-picture vision for parenting that focuses on shepherding hearts, depending on grace, and seeing children as image-bearers.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Parenting</span>
+          <h3 class="book-title">The Tech-Wise Family</h3>
+          <p class="book-author">Andy Crouch</p>
+          <p class="book-desc">A wise, practical framework for technology in the home, helping families build habits that serve love, worship, and attention.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Family Discipleship</span>
+          <h3 class="book-title">Habits of the Household</h3>
+          <p class="book-author">Justin Whitmel Earley</p>
+          <p class="book-desc">Practical rhythms for family discipleship in ordinary moments: waking, mealtimes, discipline, bedtime, and everyday conversation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- CHURCH -->
+  <div class="resource-section" id="church">
+    <div class="container">
+      <span class="section-label">The Body of Christ</span>
+      <h2 class="section-title">The Church</h2>
+      <div class="section-divider"></div>
+      <p class="section-desc">The local church is the God-ordained context for the Christian life. These books will help you understand what the church is, why it matters, and how to be a healthy and committed member of one.</p>
+      <div class="book-grid">
+        <div class="book-card">
+          <span class="book-tag">Ecclesiology</span>
+          <h3 class="book-title">The Church</h3>
+          <p class="book-author">Mark Dever</p>
+          <p class="book-desc">A thorough biblical treatment of what the church is, how it should function, and what makes it healthy. One of the most important books on ecclesiology for everyday Christians.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Church Health</span>
+          <h3 class="book-title">What Is a Healthy Church?</h3>
+          <p class="book-author">Mark Dever (9Marks)</p>
+          <p class="book-desc">A short, accessible introduction to the nine marks of a healthy church — what to look for, what to commit to, and what to build together as a congregation.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Church Life</span>
+          <h3 class="book-title">Church Discipline</h3>
+          <p class="book-author">Jonathan Leeman (9Marks)</p>
+          <p class="book-desc">A clear, biblical treatment of why church discipline matters — what it is, how it works, and why a church that practices it lovingly is a healthier, more honest church.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Church Life</span>
+          <h3 class="book-title">Why We Love the Church</h3>
+          <p class="book-author">Kevin DeYoung &amp; Ted Kluck</p>
+          <p class="book-desc">A warm, humorous, and theologically grounded defense of the local church — written for the generation that is tempted to be spiritual without being churched.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Membership</span>
+          <h3 class="book-title">Church Membership</h3>
+          <p class="book-author">Jonathan Leeman (9Marks)</p>
+          <p class="book-desc">Makes the biblical case for meaningful church membership — what it is, why it matters, and what you are committing to when you join a local congregation.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Preaching</span>
+          <h3 class="book-title">Expositional Preaching</h3>
+          <p class="book-author">David Helm (9Marks)</p>
+          <p class="book-desc">A clear explanation of what expository preaching is and why it matters — helpful for any church member who wants to understand what their pastor is doing and why.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Ministry</span>
+          <h3 class="book-title">The Deliberate Church</h3>
+          <p class="book-author">Mark Dever &amp; Paul Alexander</p>
+          <p class="book-desc">A practical guide to building a ministry on the gospel rather than on programs, personalities, or pragmatism — for pastors and church leaders who want to do ministry with intentionality.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Biblical Theology</span>
+          <h3 class="book-title">Biblical Theology</h3>
+          <p class="book-author">Nick Roark &amp; Robert Cline</p>
+          <p class="book-desc">A short, accessible introduction to how the whole Bible fits together — tracing the major themes of Scripture from Genesis to Revelation. Ideal for small groups and new members classes.</p>
+        </div>
+
+        <div class="book-card">
+          <span class="book-tag">Membership</span>
+          <h3 class="book-title">What Is a Healthy Church Member?</h3>
+          <p class="book-author">Thabiti Anyabwile</p>
+          <p class="book-desc">A companion to healthy church books that focuses on the member's role: listening, praying, following, serving, and guarding the gospel.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Leadership</span>
+          <h3 class="book-title">Biblical Eldership</h3>
+          <p class="book-author">Alexander Strauch</p>
+          <p class="book-desc">A thorough biblical case for elder-led congregational care. Especially helpful for leaders and members who want to understand church leadership.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Unity</span>
+          <h3 class="book-title">Love Your Church</h3>
+          <p class="book-author">Tony Merida</p>
+          <p class="book-desc">A warm, accessible call to belong, gather, care, serve, honor, witness, and send as part of a local church family.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EVANGELISM & MISSIONS -->
+  <div class="resource-section" id="missions">
+    <div class="container">
+      <span class="section-label">The Great Commission</span>
+      <h2 class="section-title">Evangelism &amp; Missions</h2>
+      <div class="section-divider"></div>
+      <p class="section-desc">Every believer is called to share the gospel. These books will equip and motivate you to do it — whether next door or around the world.</p>
+      <div class="book-grid">
+        <div class="book-card">
+          <span class="book-tag">Evangelism</span>
+          <h3 class="book-title">Evangelism &amp; the Sovereignty of God</h3>
+          <p class="book-author">J.I. Packer</p>
+          <p class="book-desc">Resolves the apparent tension between God's sovereignty and human responsibility in evangelism — and shows why a high view of God's sovereignty fuels rather than hinders sharing the gospel.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Apologetics</span>
+          <h3 class="book-title">Tactics</h3>
+          <p class="book-author">Greg Koukl</p>
+          <p class="book-desc">A practical, conversational guide to defending the Christian faith — teaching you how to ask the right questions and navigate spiritual conversations with confidence and grace.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Missions</span>
+          <h3 class="book-title">Let the Nations Be Glad</h3>
+          <p class="book-author">John Piper</p>
+          <p class="book-desc">The biblical and theological foundation for world missions — worship as the fuel of missions, prayer as the power, and suffering as the path. A defining book for anyone with a heart for the nations.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Missions</span>
+          <h3 class="book-title">Peace Child</h3>
+          <p class="book-author">Don Richardson</p>
+          <p class="book-desc">The remarkable true story of a missionary couple among a treacherous tribe in New Guinea — and the miraculous cultural key God provided to unlock the gospel for them. A missions classic.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Biography</span>
+          <h3 class="book-title">Through Gates of Splendor</h3>
+          <p class="book-author">Elisabeth Elliot</p>
+          <p class="book-desc">The story of five missionaries martyred by the Auca tribe in Ecuador in 1956 — and the extraordinary grace that followed. One of the most powerful missions stories ever told.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Missions</span>
+          <h3 class="book-title">The Insanity of God</h3>
+          <p class="book-author">Nik Ripken</p>
+          <p class="book-desc">A missionary's journey into the persecuted church around the world — and what he discovered about the power of faith under fire. One of the most gripping missions books of the last decade.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Missions</span>
+          <h3 class="book-title">Aiming at Amazon</h3>
+          <p class="book-author">Steve Saint</p>
+          <p class="book-desc">The son of Nate Saint — one of the five martyred missionaries — continues his father's legacy with an account of ongoing mission to the Waodani people. A story of redemption and faithfulness across generations.</p>
+        </div>
+
+        <div class="book-card">
+          <span class="book-tag">Evangelism</span>
+          <h3 class="book-title">Honest Evangelism</h3>
+          <p class="book-author">Rico Tice</p>
+          <p class="book-desc">A realistic and encouraging book for ordinary Christians who feel nervous about sharing the gospel.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Missions</span>
+          <h3 class="book-title">Missionary Patriarch</h3>
+          <p class="book-author">John G. Paton</p>
+          <p class="book-desc">The autobiography of John Paton, missionary to the New Hebrides. A stirring account of courage, sacrifice, and gospel endurance.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Evangelism</span>
+          <h3 class="book-title">Tell the Truth</h3>
+          <p class="book-author">Will Metzger</p>
+          <p class="book-desc">A careful, Scripture-rich guide to gospel presentation that emphasizes truth, love, and dependence on God.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Missions</span>
+          <h3 class="book-title">Finish the Mission</h3>
+          <p class="book-author">John Piper & David Mathis (eds.)</p>
+          <p class="book-desc">A collection of essays connecting missions to the glory of God, unreached peoples, sending churches, and joyful sacrifice.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DISCIPLESHIP -->
+  <div class="resource-section" id="discipleship">
+    <div class="container">
+      <span class="section-label">Making Disciples</span>
+      <h2 class="section-title">Discipleship</h2>
+      <div class="section-divider"></div>
+      <p class="section-desc">Discipleship is not a program — it is one Christian walking alongside another, opening the Word, asking hard questions, and modeling a life surrendered to Christ. These resources will help you both be discipled and make disciples.</p>
+      <div class="book-grid">
+        <div class="book-card">
+          <span class="book-tag">Discipleship</span>
+          <h3 class="book-title">The Master Plan of Evangelism</h3>
+          <p class="book-author">Robert Coleman</p>
+          <p class="book-desc">A classic study of how Jesus discipled His twelve — and what that model means for the church today. Short, convicting, and deeply practical for anyone investing in another person's faith.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Discipleship</span>
+          <h3 class="book-title">Discipling</h3>
+          <p class="book-author">Mark Dever (9Marks)</p>
+          <p class="book-desc">A clear, biblical guide to one-on-one discipleship — what it is, how to start, and what to do when you meet. The most practical starting point for anyone who wants to invest in another believer.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Discipleship</span>
+          <h3 class="book-title">The Cost of Discipleship</h3>
+          <p class="book-author">Dietrich Bonhoeffer</p>
+          <p class="book-desc">A sobering, prophetic call to take discipleship seriously — written by a man who ultimately gave his life for his convictions. Bonhoeffer's distinction between cheap grace and costly grace remains one of the most important in modern Christian thought.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Discipleship</span>
+          <h3 class="book-title">Multiply</h3>
+          <p class="book-author">Francis Chan</p>
+          <p class="book-desc">A disciple-making resource designed to be used in relationship — walking through the essentials of the Christian faith together. Written to be passed on, not just read.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Discipleship</span>
+          <h3 class="book-title">Growing Up</h3>
+          <p class="book-author">Robby Gallaty</p>
+          <p class="book-desc">A practical guide to intentional discipleship built around the D-Group model — small, committed groups of 3 to 5 people meeting weekly to read Scripture, memorize verses, and hold one another accountable.</p>
+        </div>
+
+
+        <div class="book-card">
+          <span class="book-tag">Spiritual Growth</span>
+          <h3 class="book-title">Habits of Grace</h3>
+          <p class="book-author">David Mathis</p>
+          <p class="book-desc">A helpful guide to Bible intake, prayer, and fellowship as ordinary means of grace for everyday Christians.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Mentoring</span>
+          <h3 class="book-title">Side by Side</h3>
+          <p class="book-author">Edward T. Welch</p>
+          <p class="book-desc">A gentle, practical book about helping one another through need, weakness, and ordinary friendship in the body of Christ.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Discipleship</span>
+          <h3 class="book-title">Gospel-Centered Discipleship</h3>
+          <p class="book-author">Jonathan K. Dodson</p>
+          <p class="book-desc">Connects disciple-making to the gospel itself, keeping growth rooted in grace rather than mere behavior management.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Scripture Memory</span>
+          <h3 class="book-title">An Approach to Extended Memorization of Scripture</h3>
+          <p class="book-author">Andrew Davis</p>
+          <p class="book-desc">A compact, practical method for memorizing larger portions of the Bible and keeping Scripture close at hand.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BIOGRAPHY & CHURCH HISTORY -->
+  <div class="resource-section" id="biography">
+    <div class="container">
+      <span class="section-label">The Cloud of Witnesses</span>
+      <h2 class="section-title">Biography &amp; Church History</h2>
+      <div class="section-divider"></div>
+      <p class="section-desc">The Christian faith has a history — and that history is full of men and women who trusted God in extraordinary circumstances. Reading their stories will strengthen your own faith and connect you to the long line of believers who came before you.</p>
+      <div class="book-grid">
+        <div class="book-card">
+          <span class="book-tag">Biography</span>
+          <h3 class="book-title">Here I Stand</h3>
+          <p class="book-author">Roland Bainton</p>
+          <p class="book-desc">The definitive biography of Martin Luther — his life, his convictions, and the Reformation he ignited. One of the most important stories in the history of the Christian church, told with scholarship and narrative power.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Biography</span>
+          <h3 class="book-title">George Whitefield</h3>
+          <p class="book-author">Arnold Dallimore</p>
+          <p class="book-desc">A two-volume biography of the great 18th-century evangelist whose preaching sparked revival on both sides of the Atlantic. Dallimore's work is the gold standard for Whitefield scholarship.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Biography</span>
+          <h3 class="book-title">John Newton</h3>
+          <p class="book-author">Jonathan Aitken</p>
+          <p class="book-desc">The story of the slave trader turned pastor who wrote "Amazing Grace" — a life of profound sin, dramatic conversion, and decades of faithful ministry. One of the great conversion stories in Christian history.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Biography</span>
+          <h3 class="book-title">William Tyndale</h3>
+          <p class="book-author">David Teems</p>
+          <p class="book-desc">The man who gave us the English Bible — who was hunted, betrayed, and martyred for translating Scripture into the language of the people. A story of courage, conviction, and the cost of faithfulness.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Autobiography</span>
+          <h3 class="book-title">The Autobiography of George Müller</h3>
+          <p class="book-author">George Müller</p>
+          <p class="book-desc">The story of a man who cared for over 10,000 orphans without ever making his financial needs known to anyone but God — a living testimony to the power of prayer and radical faith.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Biography</span>
+          <h3 class="book-title">The Hiding Place</h3>
+          <p class="book-author">Corrie ten Boom</p>
+          <p class="book-desc">The true story of a Dutch family who hid Jews during the Holocaust and were sent to a concentration camp — and the extraordinary faith that sustained them through unimaginable suffering.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Biography</span>
+          <h3 class="book-title">Through Gates of Splendor</h3>
+          <p class="book-author">Elisabeth Elliot</p>
+          <p class="book-desc">Five missionaries martyred by the Auca tribe in Ecuador in 1956 — and the extraordinary grace that followed. One of the most powerful missions and martyrdom stories in modern Christian history.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Church History</span>
+          <h3 class="book-title">Church History in Plain Language</h3>
+          <p class="book-author">Bruce Shelley</p>
+          <p class="book-desc">The most readable one-volume church history available — from the apostles to the present day. Every Christian should have some understanding of how the faith was passed down through the centuries.</p>
+        </div>
+
+        <div class="book-card">
+          <span class="book-tag">Church History</span>
+          <h3 class="book-title">The Story of Christianity</h3>
+          <p class="book-author">Justo L. Gonzalez</p>
+          <p class="book-desc">A readable two-volume history of the church with strong narrative flow and broad historical coverage.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Biography</span>
+          <h3 class="book-title">A Chance to Die</h3>
+          <p class="book-author">Elisabeth Elliot</p>
+          <p class="book-desc">The life of Amy Carmichael, missionary to India, told with depth, honesty, and spiritual seriousness.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Biography</span>
+          <h3 class="book-title">To the Golden Shore</h3>
+          <p class="book-author">Courtney Anderson</p>
+          <p class="book-desc">The classic biography of Adoniram Judson, Baptist missionary to Burma. Long, rich, and deeply moving.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Church History</span>
+          <h3 class="book-title">The Reformation</h3>
+          <p class="book-author">Stephen Nichols</p>
+          <p class="book-desc">A concise introduction to the people, doctrines, and lasting importance of the Protestant Reformation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PREACHING -->
+  <div class="resource-section" id="preaching">
+    <div class="container">
+      <span class="section-label">Hearing and Handling the Word</span>
+      <h2 class="section-title">Preaching</h2>
+      <div class="section-divider"></div>
+      <p class="section-desc">Resources for pastors, teachers, small group leaders, and church members who want to understand faithful preaching. These books focus on letting Scripture set the agenda and pointing hearers to Christ.</p>
+      <div class="book-grid">
+        <div class="book-card">
+          <span class="book-tag">Exposition</span>
+          <h3 class="book-title">Expositional Preaching</h3>
+          <p class="book-author">David Helm</p>
+          <p class="book-desc">A short, clear guide to preaching that makes the main point of the passage the main point of the message. Useful for pastors and church members alike.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Preaching</span>
+          <h3 class="book-title">Preaching and Preachers</h3>
+          <p class="book-author">D. Martyn Lloyd-Jones</p>
+          <p class="book-desc">A classic set of lectures on the calling, urgency, and spiritual weight of preaching the Word of God.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Preaching</span>
+          <h3 class="book-title">Christ-Centered Preaching</h3>
+          <p class="book-author">Bryan Chapell</p>
+          <p class="book-desc">A seminary standard that helps preachers move from accurate explanation to gospel-shaped proclamation and application.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Exposition</span>
+          <h3 class="book-title">Biblical Preaching</h3>
+          <p class="book-author">Haddon Robinson</p>
+          <p class="book-desc">A foundational book on developing and delivering expository sermons with unity, clarity, and purpose.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Preaching</span>
+          <h3 class="book-title">Between Two Worlds</h3>
+          <p class="book-author">John Stott</p>
+          <p class="book-desc">A thoughtful classic on bridging the world of Scripture and the world of the listener without compromising either one.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Application</span>
+          <h3 class="book-title">Preaching with Purpose</h3>
+          <p class="book-author">Jay Adams</p>
+          <p class="book-desc">A practical guide to preaching that presses toward biblical change, clear structure, and meaningful application.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Preaching</span>
+          <h3 class="book-title">The Supremacy of God in Preaching</h3>
+          <p class="book-author">John Piper</p>
+          <p class="book-desc">A short, stirring call for preaching that is God-centered, worshipful, serious, and joyful.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Teaching</span>
+          <h3 class="book-title">Teaching to Change Lives</h3>
+          <p class="book-author">Howard Hendricks</p>
+          <p class="book-desc">A helpful book for teachers and small group leaders who want to communicate biblical truth with clarity and love.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Pastoral Ministry</span>
+          <h3 class="book-title">The Pastor's Book</h3>
+          <p class="book-author">R. Kent Hughes</p>
+          <p class="book-desc">A practical reference for worship services, weddings, funerals, ordinances, public prayer, and the rhythms of pastoral ministry.</p>
+        </div>
+        <div class="book-card">
+          <span class="book-tag">Hermeneutics</span>
+          <h3 class="book-title">Invitation to Biblical Interpretation</h3>
+          <p class="book-author">Andreas Kostenberger & Richard Patterson</p>
+          <p class="book-desc">A serious guide to interpreting Scripture by genre, context, canon, and theology. Best for pastors, teachers, and advanced students.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ONLINE RESOURCES -->
+  <div class="resource-section" id="online" style="background: var(--navy);">
+    <div class="container">
+      <span class="section-label" style="color:var(--gold-light);">Trusted Websites</span>
+      <h2 class="section-title" style="color:var(--white);">Online Resources</h2>
+      <div class="section-divider"></div>
+      <p class="section-desc" style="color:rgba(255,255,255,0.7);">These are ministries and organizations we trust to handle the Word faithfully. Bookmark them and return often.</p>
+      <div class="online-grid">
+
+        <a href="https://www.ligonier.org" target="_blank" rel="noopener" class="online-card">
+          <div class="online-name">Ligonier Ministries <span>&#8599;</span></div>
+          <p class="online-desc">R.C. Sproul's ministry — a treasure of sermons, articles, and teaching on theology and the Christian life. Free and exhaustive.</p>
+        </a>
+
+        <a href="https://www.desiringgod.org" target="_blank" rel="noopener" class="online-card">
+          <div class="online-name">Desiring God <span>&#8599;</span></div>
+          <p class="online-desc">John Piper's ministry — thousands of free sermons, articles, and devotionals centered on Christian Hedonism and the glory of God.</p>
+        </a>
+
+        <a href="https://www.thegospelcoalition.org" target="_blank" rel="noopener" class="online-card">
+          <div class="online-name">The Gospel Coalition <span>&#8599;</span></div>
+          <p class="online-desc">A network of gospel-centered churches with a robust library of articles, podcasts, reviews, and resources for pastors and laypeople alike.</p>
+        </a>
+
+        <a href="https://www.sbts.edu" target="_blank" rel="noopener" class="online-card">
+          <div class="online-name">Southern Seminary <span>&#8599;</span></div>
+          <p class="online-desc">Southern Baptist Theological Seminary — free lectures, courses, and resources from one of the world's leading evangelical seminaries.</p>
+        </a>
+
+        <a href="https://www.founders.org" target="_blank" rel="noopener" class="online-card">
+          <div class="online-name">Founders Ministries <span>&#8599;</span></div>
+          <p class="online-desc">A ministry committed to the recovery of the gospel and the reformation of local churches — with sermons, articles, and resources rooted in the historic Baptist and Reformed tradition.</p>
+        </a>
+
+        <a href="https://www.gotquestions.org" target="_blank" rel="noopener" class="online-card">
+          <div class="online-name">GotQuestions.org <span>&#8599;</span></div>
+          <p class="online-desc">A massive, searchable library of answers to biblical and theological questions — written clearly and rooted in Scripture. An excellent first stop for anyone with a question about the Bible or the Christian faith.</p>
+        </a>
+
+        <a href="https://www.biblicaltraining.org" target="_blank" rel="noopener" class="online-card">
+          <div class="online-name">BiblicalTraining.org <span>&#8599;</span></div>
+          <p class="online-desc">Free seminary-level courses taught by leading evangelical scholars — covering Bible, theology, church history, and ministry. World-class theological education available to anyone with an internet connection.</p>
+        </a>
+
+        <a href="https://www.mbts.edu" target="_blank" rel="noopener" class="online-card">
+          <div class="online-name">Midwestern Seminary <span>&#8599;</span></div>
+          <p class="online-desc">a seminary — sermons, articles, and theological resources from one of the SBC's leading seminaries, committed to being a seminary in the churches.</p>
+        </a>
+
+        <a href="https://www.nobts.edu" target="_blank" rel="noopener" class="online-card">
+          <div class="online-name">New Orleans Seminary <span>&#8599;</span></div>
+          <p class="online-desc">their seminary — where Your Pastor received his training. Resources, chapel messages, and theological education.</p>
+        </a>
+
+        <a href="https://www.esv.org" target="_blank" rel="noopener" class="online-card">
+          <div class="online-name">ESV Bible <span>&#8599;</span></div>
+          <p class="online-desc">The full English Standard Version Bible online — free, with cross-references, study notes, and audio. The translation Example Church preaches from.</p>
+        </a>
+
+        <a href="https://www.bible.com" target="_blank" rel="noopener" class="online-card">
+          <div class="online-name">Bible.com <span>&#8599;</span></div>
+          <p class="online-desc">Free Bible app with hundreds of translations, reading plans, audio, and devotionals. A great tool for building a daily reading habit on any device.</p>
+        </a>
+
+        <a href="https://bfm.sbc.net/bfm2000/" target="_blank" rel="noopener" class="online-card">
+          <div class="online-name">Baptist Faith &amp; Message <span>&#8599;</span></div>
+          <p class="online-desc">The full text of the Baptist Faith & Message 2000 — the statement of faith Example Church affirms. Free online.</p>
+        </a>
+
+
+        <a href="https://www.9marks.org" target="_blank" rel="noopener" class="online-card">
+          <div class="online-name">9Marks <span>&#8599;</span></div>
+          <p class="online-desc">Articles, books, courses, and journals on healthy churches, preaching, membership, discipline, discipleship, evangelism, and missions.</p>
+        </a>
+
+        <a href="https://www.crossway.org/articles/" target="_blank" rel="noopener" class="online-card">
+          <div class="online-name">Crossway Articles <span>&#8599;</span></div>
+          <p class="online-desc">Accessible articles, book excerpts, and study helps from a trusted evangelical publisher.</p>
+        </a>
+
+        <a href="https://bibleproject.com" target="_blank" rel="noopener" class="online-card">
+          <div class="online-name">BibleProject <span>&#8599;</span></div>
+          <p class="online-desc">Free videos and reading plans that help readers see the structure, themes, and storyline of Scripture.</p>
+        </a>
+
+        <a href="https://www.monergism.com" target="_blank" rel="noopener" class="online-card">
+          <div class="online-name">Monergism <span>&#8599;</span></div>
+          <p class="online-desc">A large library of classic and contemporary Reformed books, articles, sermons, and lectures.</p>
+        </a>
+
+        <a href="https://founders.org" target="_blank" rel="noopener" class="online-card">
+          <div class="online-name">Founders Ministries <span>&#8599;</span></div>
+          <p class="online-desc">Baptist resources on theology, church life, pastoral ministry, and confessional faithfulness.</p>
+        </a>
+
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<p class="resource-empty" id="resourceEmpty">No resources matched that search. Try a broader term like "Bible", "prayer", "gospel", or "church".</p>
+
+<!-- FOOTER -->
+<footer>
+  <p style="margin-bottom: 8px;">
+    <strong style="color: rgba(255,255,255,0.7);">Example Church</strong>
+  </p>
+  <p>123 Church Street · Your City, ST 00000 · <a href="tel:5555555555">555-555-5555</a></p>
+  <p style="margin-top: 16px;">© 2026 Example Church · <a href="mailto:hello@examplechurch.org">hello@examplechurch.org</a></p>
+</footer>
+
+<script>
+function toggleMenu(btn) {
+  var menu = document.getElementById('mobileMenu');
+  var open = menu.classList.toggle('open');
+  btn.setAttribute('aria-expanded', open);
+}
+function closeMenu() {
+  document.getElementById('mobileMenu').classList.remove('open');
+  document.querySelector('.hamburger').setAttribute('aria-expanded', 'false');
+}
+document.addEventListener('click', function(e) {
+  var menu = document.getElementById('mobileMenu');
+  var btn = document.querySelector('.hamburger');
+  if (menu.classList.contains('open') && !menu.contains(e.target) && !btn.contains(e.target)) {
+    closeMenu();
+  }
+});
+
+// Dropdown menu — JS controlled so gap doesn't close it
+var dropdowns = document.querySelectorAll('.nav-dropdown');
+dropdowns.forEach(function(dd) {
+  var timeout;
+  dd.addEventListener('mouseenter', function() {
+    clearTimeout(timeout);
+    dd.classList.add('open');
+  });
+  dd.addEventListener('mouseleave', function() {
+    timeout = setTimeout(function() { dd.classList.remove('open'); }, 120);
+  });
+  var menu = dd.querySelector('.dropdown-menu');
+  if (menu) {
+    menu.addEventListener('mouseenter', function() { clearTimeout(timeout); });
+    menu.addEventListener('mouseleave', function() {
+      timeout = setTimeout(function() { dd.classList.remove('open'); }, 120);
+    });
+  }
+});
+
+// Resource search and filters
+(function() {
+  var search = document.getElementById('resourceSearch');
+  var buttons = document.querySelectorAll('[data-resource-filter]');
+  var sections = document.querySelectorAll('.resource-section');
+  var count = document.getElementById('resourceCount');
+  var empty = document.getElementById('resourceEmpty');
+  var filter = 'all';
+
+  function cardsIn(section) {
+    return section.querySelectorAll('.book-card, .online-card');
+  }
+
+  function sectionMatchesFilter(section) {
+    if (filter === 'all') return true;
+    if (filter === 'online') return section.id === 'online';
+    if (filter === 'foundations') return section.id === 'foundations' || section.id === 'pastorpicks';
+    return section.id === filter;
+  }
+
+  function applyResourceFilters() {
+    var term = (search.value || '').trim().toLowerCase();
+    var visibleCards = 0;
+    var visibleSections = 0;
+
+    sections.forEach(function(section) {
+      var sectionAllowed = sectionMatchesFilter(section);
+      var cards = cardsIn(section);
+      var sectionHasVisibleCard = false;
+
+      cards.forEach(function(card) {
+        var text = card.innerText.toLowerCase();
+        var matches = sectionAllowed && (!term || text.indexOf(term) > -1);
+        card.classList.toggle('is-hidden', !matches);
+        if (matches) {
+          sectionHasVisibleCard = true;
+          visibleCards++;
+        }
+      });
+
+      section.classList.toggle('is-hidden', !sectionHasVisibleCard);
+      if (sectionHasVisibleCard) visibleSections++;
+    });
+
+    count.textContent = visibleCards + ' resource' + (visibleCards === 1 ? '' : 's') + ' shown';
+    empty.style.display = visibleCards ? 'none' : 'block';
+  }
+
+  if (!search) return;
+
+  buttons.forEach(function(button) {
+    button.addEventListener('click', function() {
+      buttons.forEach(function(btn) { btn.classList.remove('active'); });
+      button.classList.add('active');
+      filter = button.getAttribute('data-resource-filter');
+      applyResourceFilters();
+    });
+  });
+
+  search.addEventListener('input', applyResourceFilters);
+  applyResourceFilters();
+})();
+</script>
+<script src="/assets/js/site-enhancements.js" defer></script>
+</body>
+</html>

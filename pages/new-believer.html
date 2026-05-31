@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="New to the faith? Here are the first steps every new believer should take. Example Church, Your City, ST.">
+<title>New Believer | Example Church</title>
+  <!-- PWA -->
+  <link rel="manifest" href="/assets/manifest.json">
+  <meta name="theme-color" content="#082846">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Example Church">
+  <link rel="apple-touch-icon" href="/assets/icons/favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Ubuntu:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --navy: #082846;
+  --navy-mid: #0d3b66;
+  --gold: #c8922a;
+  --gold-light: #e8b45a;
+  --cream: #f9f5ee;
+  --white: #ffffff;
+  --text-dark: #1a1a1a;
+  --text-mid: #4a4a4a;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  background: var(--cream);
+  color: var(--text-dark);
+  line-height: 1.7;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: rgba(8, 40, 70, 0.97);
+  backdrop-filter: blur(8px);
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  height: 64px;
+  border-bottom: 1px solid rgba(200, 146, 42, 0.25);
+}
+.nav-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.01em;
+  text-decoration: none;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+.nav-links a {
+  text-decoration: none;
+  color: rgba(255,255,255,0.8);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--gold-light); }
+
+/* ── NAV DROPDOWN ── */
+.nav-dropdown { position: relative; }
+.nav-dropdown > a::after { content: ' ▾'; font-size: 10px; opacity: 0.7; }
+.dropdown-menu {
+  all: initial;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #082846;
+  border-top: 2px solid #c8922a;
+  border-radius: 0 0 2px 2px;
+  min-width: 210px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+  z-index: 9999;
+  font-family: Ubuntu, sans-serif;
+}
+.dropdown-menu::before {
+  content: '';
+  display: block;
+  height: 12px;
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+}
+.nav-dropdown.open .dropdown-menu { display: block; }
+.dropdown-menu a {
+  all: initial;
+  display: block;
+  width: 100%;
+  padding: 12px 20px;
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  font-family: Ubuntu, sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 400;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  box-sizing: border-box;
+}
+.dropdown-menu a:last-child { border-bottom: none; }
+.dropdown-menu a:hover { background: rgba(255,255,255,0.07); color: #e8b45a; }
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: white;
+  border-radius: 2px;
+}
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 64px;
+  left: 0;
+  width: 100%;
+  background: var(--navy);
+  z-index: 999;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(200,146,42,0.2);
+}
+.mobile-menu.open { display: block; }
+.mobile-menu a {
+  display: block;
+  padding: 12px 40px;
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  font-size: 15px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.mobile-menu a:hover { color: var(--gold-light); background: rgba(255,255,255,0.04); }
+
+/* ── PAGE HEADER ── */
+.page-header {
+  background: var(--navy);
+  padding: 120px 20px 60px;
+  text-align: center;
+  border-bottom: 3px solid var(--gold);
+}
+.page-header .section-label {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 12px;
+  font-weight: 500;
+  display: block;
+}
+.page-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+.page-header p {
+  max-width: 580px;
+  margin: 0 auto;
+  font-size: 16px;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.8;
+}
+.header-divider {
+  width: 48px;
+  height: 2px;
+  background: var(--gold);
+  margin: 0 auto 20px;
+}
+
+/* ── LAYOUT ── */
+.container { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+
+/* ── STEPS ── */
+.steps-wrap { padding: 60px 20px; }
+
+.step {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 28px;
+  margin-bottom: 56px;
+  align-items: start;
+}
+.step-num {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--navy);
+  border: 2px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  color: var(--gold-light);
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+.step-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(22px, 3vw, 28px);
+  color: var(--navy);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+.step-divider {
+  width: 32px;
+  height: 2px;
+  background: var(--gold);
+  margin-bottom: 16px;
+}
+.step-content p {
+  font-size: 16px;
+  color: var(--text-mid);
+  line-height: 1.85;
+  margin-bottom: 16px;
+}
+.step-connector {
+  width: 2px;
+  height: 32px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+  margin: -40px 0 -16px 23px;
+  opacity: 0.4;
+}
+
+/* Scripture quote block */
+.verse-block {
+  background: var(--white);
+  border-left: 4px solid var(--gold);
+  border-radius: 0 2px 2px 0;
+  padding: 20px 24px;
+  margin: 20px 0;
+}
+.verse-ref {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 500;
+  margin-bottom: 10px;
+  display: block;
+}
+.verse-ref a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(200,146,42,0.6);
+}
+.verse-ref a:hover { color: var(--gold-light); }
+.verse-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  color: var(--text-dark);
+  line-height: 1.7;
+  font-style: italic;
+}
+
+/* Church emphasis callout */
+.church-callout {
+  background: var(--navy);
+  border-radius: 2px;
+  padding: 32px 36px;
+  margin: 24px 0;
+  border-left: 4px solid var(--gold);
+}
+.church-callout p {
+  color: rgba(255,255,255,0.85);
+  font-size: 16px;
+  line-height: 1.85;
+  margin-bottom: 0;
+}
+.church-callout p + p { margin-top: 12px; }
+.church-callout strong { color: var(--gold-light); }
+
+/* ── CTA ── */
+.cta-wrap {
+  background: var(--navy);
+  padding: 60px 20px;
+  text-align: center;
+  border-top: 3px solid var(--gold);
+}
+.cta-wrap h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(24px, 3vw, 32px);
+  color: var(--white);
+  margin-bottom: 14px;
+}
+.cta-wrap p {
+  font-size: 15px;
+  color: rgba(255,255,255,0.65);
+  max-width: 520px;
+  margin: 0 auto 32px;
+  line-height: 1.85;
+}
+
+/* ── BUTTONS ── */
+.btn-primary {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--white);
+  text-decoration: none;
+  padding: 15px 40px;
+  border-radius: 2px;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: background 0.2s, transform 0.15s;
+  margin: 6px;
+}
+.btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+.btn-outline {
+  display: inline-block;
+  border: 1px solid rgba(255,255,255,0.35);
+  color: var(--white);
+  text-decoration: none;
+  padding: 14px 40px;
+  border-radius: 2px;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 400;
+  transition: border-color 0.2s, background 0.2s;
+  margin: 6px;
+}
+.btn-outline:hover { border-color: var(--gold-light); background: rgba(255,255,255,0.06); }
+
+/* ── FOOTER ── */
+footer {
+  background: #050f1a;
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.4);
+  border-top: 1px solid rgba(200,146,42,0.15);
+}
+footer a { color: var(--gold-light); text-decoration: none; }
+
+/* ── MOBILE ── */
+@media (max-width: 1080px) {
+  nav { padding: 0 20px; }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .step { grid-template-columns: 36px 1fr; gap: 16px; }
+  .step-num { width: 36px; height: 36px; font-size: 16px; }
+  .step-connector { margin-left: 17px; }
+  .church-callout { padding: 24px 20px; }
+}
+</style>
+<link rel="stylesheet" href="/assets/css/site-enhancements.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav aria-label="Main navigation">
+  <a href="/index.html" class="nav-brand">Example Church</a>
+  <ul class="nav-links" role="list">
+    
+    <li><a href="/index.html">Home</a></li>
+    <li><a href="/pages/plan-your-visit.html">Visit</a></li>
+    <li><a href="/pages/sermons.html">Sermons</a></li>
+    <li class="nav-dropdown">
+      <a href="/pages/beliefs.html">Beliefs</a>
+      <div class="dropdown-menu">
+        <a href="/pages/beliefs.html">Statement of Faith</a>
+        <a href="/pages/new-believer.html">New Believer</a>
+      </div>
+    </li>
+    <li class="nav-dropdown">
+      <a href="/index.html#curious">Curious?</a>
+      <div class="dropdown-menu">
+        <a href="/pages/romans-road.html">The Romans Road</a>
+        <a href="/pages/ask-a-pastor.html">Ask a Pastor</a>
+        <a href="/pages/questions.html">Spiritual Questions</a>
+      </div>
+    </li>
+    <li class="nav-dropdown">
+      <a href="/pages/prayer-request.html">Prayer</a>
+      <div class="dropdown-menu">
+        <a href="/pages/need-help.html">Urgent Request</a>
+        <a href="/pages/prayer-request.html">Prayer Request</a>
+      </div>
+    </li>
+    <li class="nav-dropdown">
+      <a href="/pages/resources.html">Resources</a>
+      <div class="dropdown-menu">
+        <a href="/pages/resources.html">Resource Library</a>
+        <a href="/pages/glossary.html">Glossary</a>
+      </div>
+    </li>
+    <li><a href="/pages/staff.html">Staff</a></li>
+  
+  </ul>
+  <button class="hamburger" type="button" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile navigation">
+  <a href="/index.html" onclick="closeMenu()">Home</a>
+  <a href="/pages/plan-your-visit.html" onclick="closeMenu()">Plan Your Visit</a>
+  <a href="/pages/sermons.html" onclick="closeMenu()">Sermons</a>
+  <a href="/pages/beliefs.html" onclick="closeMenu()">Beliefs</a>
+  <a href="/pages/new-believer.html" onclick="closeMenu()" class="mobile-sub">New Believer</a>
+  <a href="/index.html#curious" onclick="closeMenu()">Curious?</a>
+  <a href="/pages/romans-road.html" onclick="closeMenu()" class="mobile-sub">The Romans Road</a>
+  <a href="/pages/ask-a-pastor.html" onclick="closeMenu()" class="mobile-sub">Ask a Pastor</a>
+  <a href="/pages/questions.html" onclick="closeMenu()" class="mobile-sub">Spiritual Questions</a>
+  <a href="/pages/prayer-request.html" onclick="closeMenu()">Prayer</a>
+  <a href="/pages/need-help.html" onclick="closeMenu()" class="mobile-sub">Urgent Request</a>
+  <a href="/pages/prayer-request.html" onclick="closeMenu()" class="mobile-sub">Prayer Request</a>
+  <a href="/pages/resources.html" onclick="closeMenu()">Resources</a>
+  <a href="/pages/glossary.html" onclick="closeMenu()" class="mobile-sub">Glossary</a>
+  <a href="/pages/staff.html" onclick="closeMenu()">Staff</a>
+</div>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <span class="section-label">You've Made a Decision</span>
+  <h1>Now What?</h1>
+  <div class="header-divider"></div>
+  <p>If you've trusted Jesus Christ as your Lord and Savior, that is the greatest thing that has ever happened to you. Here are the first steps every new believer needs to take.</p>
+</div>
+
+<main>
+<div class="steps-wrap">
+  <div class="container">
+
+    <!-- Step 1 -->
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h2>Tell someone.</h2>
+        <div class="step-divider"></div>
+        <p>The first thing Jesus calls a new believer to do is go public with their faith. Not because it earns anything — salvation is already secure — but because confession is a natural overflow of genuine belief. If you've trusted Christ, say so.</p>
+        <div class="verse-block">
+          <span class="verse-ref"><a href="https://www.esv.org/Romans+10:9" target="_blank" rel="noopener">Romans 10:9</a></span>
+          <p class="verse-text">"Because, if you confess with your mouth that Jesus is Lord and believe in your heart that God raised him from the dead, you will be saved."</p>
+        </div>
+        <p>Tell a family member. Tell a friend. Tell us. There is something powerful about saying out loud what God has done in your heart — it strengthens your own faith and opens the door for others to hear the gospel. Don't keep it to yourself.</p>
+      </div>
+    </div>
+
+    <div class="step-connector"></div>
+
+    <!-- Step 2 -->
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h2>Read your Bible.</h2>
+        <div class="step-divider"></div>
+        <p>The Bible is how God speaks to you. It is not a rule book or a history lesson — it is the living Word of a Father who wants you to know Him. As a new believer, the single most important habit you can build is opening it every day.</p>
+        <div class="verse-block">
+          <span class="verse-ref"><a href="https://www.esv.org/2+Timothy+3:16-17" target="_blank" rel="noopener">2 Timothy 3:16–17</a></span>
+          <p class="verse-text">"All Scripture is breathed out by God and profitable for teaching, for reproof, for correction, and for training in righteousness, that the man of God may be complete, equipped for every good work."</p>
+        </div>
+        <p>A good place to start is the Gospel of John — it was written specifically so that you might believe that Jesus is the Son of God and have life in His name. Read slowly. Ask questions. The goal is not to finish chapters — it is to meet Christ on every page.</p>
+        <div class="verse-block">
+          <span class="verse-ref"><a href="https://www.esv.org/1+Peter+2:2" target="_blank" rel="noopener">1 Peter 2:2</a></span>
+          <p class="verse-text">"Like newborn infants, long for the pure spiritual milk, that by it you may grow up into salvation."</p>
+        </div>
+        <p>We recommend starting with a trustworthy translation. The <a href="https://www.esv.org" target="_blank" rel="noopener" style="color:var(--gold); text-decoration:none; border-bottom:1px dotted rgba(200,146,42,0.5);">English Standard Version (ESV)</a> is accurate, readable, and the translation our church preaches from. The <strong>Christian Standard Bible (CSB)</strong> is another excellent choice — clear and faithful to the original languages. Either one is a solid place to start. Both are available free through <a href="https://www.bible.com" target="_blank" rel="noopener" style="color:var(--gold); text-decoration:none; border-bottom:1px dotted rgba(200,146,42,0.5);">Bible.com</a>, a free Bible app that also offers reading plans, audio, and daily devotionals — a great tool for building a consistent habit.</p>
+      </div>
+    </div>
+
+    <div class="step-connector"></div>
+
+    <!-- Step 3 -->
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h2>Learn to pray.</h2>
+        <div class="step-divider"></div>
+        <p>Prayer is simply talking to God — honestly, regularly, and with faith that He hears you. It is not a performance and it does not require special words. Jesus taught His disciples to pray not to impress anyone but to communicate with their Father.</p>
+        <div class="verse-block">
+          <span class="verse-ref"><a href="https://www.esv.org/Philippians+4:6-7" target="_blank" rel="noopener">Philippians 4:6–7</a></span>
+          <p class="verse-text">"Do not be anxious about anything, but in everything by prayer and supplication with thanksgiving let your requests be made known to God. And the peace of God, which surpasses all understanding, will guard your hearts and your minds in Christ Jesus."</p>
+        </div>
+        <p>Pray in the morning before the day takes over. Pray when you're worried. Pray when you're grateful. Pray when you've sinned and need to confess. God is not far off — He is your Father, and He invites you to come to Him freely and often.</p>
+        <div class="verse-block">
+          <span class="verse-ref"><a href="https://www.esv.org/1+Thessalonians+5:17" target="_blank" rel="noopener">1 Thessalonians 5:17</a></span>
+          <p class="verse-text">"Pray without ceasing."</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="step-connector"></div>
+
+    <!-- Step 4 -->
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <h2>Find a good church.</h2>
+        <div class="step-divider"></div>
+        <p>Before you can be baptized or become a member, you need to find the right church. This is one of the most important decisions you will make as a new believer — and it deserves real thought. Not every church that calls itself a church is faithfully preaching the gospel.</p>
+        <div class="verse-block">
+          <span class="verse-ref"><a href="https://www.esv.org/Acts+2:42" target="_blank" rel="noopener">Acts 2:42</a></span>
+          <p class="verse-text">"And they devoted themselves to the apostles' teaching and the fellowship, to the breaking of bread and the prayers."</p>
+        </div>
+        <p>Look for a church that preaches the Bible faithfully — verse by verse, without apology. Look for a church that takes the gospel seriously, loves its members honestly, and is committed to making disciples. Doctrine matters. Culture matters. Don't just find the closest one or the biggest one — find a faithful one.</p>
+        <p>And here is the honest truth — as a new believer, you may not know what good doctrine looks like yet. You may not know what to listen for in a sermon, what questions to ask, or what red flags to watch out for. That is completely normal and nothing to be ashamed of. It takes time to grow in discernment, and that is exactly why we want to help. You should not have to navigate this alone.</p>
+        <div class="church-callout">
+          <p>If you are in the Your City area, we would genuinely love for that church to be Example Church. We are not just saying that — we want to know you, walk with you, and see you grow. Our doors open every Sunday at 9:15 AM and there will be people there who are glad you came.</p>
+          <p><strong>Not in our area? That is okay — we still want to help.</strong> We know how much it matters to land in the right place, and we would rather take the time to point you somewhere faithful than leave you to figure it out alone. Reach out and let's find you a church together.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="step-connector"></div>
+
+    <!-- Step 5 -->
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-content">
+        <h2>Get baptized.</h2>
+        <div class="step-divider"></div>
+        <p>Baptism is not what saves you — Christ alone saves. But baptism is the first act of obedience Jesus calls every believer to. It is a public declaration of what has happened in your heart: you have died to your old life and been raised to walk in newness of life with Christ.</p>
+        <div class="verse-block">
+          <span class="verse-ref"><a href="https://www.esv.org/Matthew+28:19" target="_blank" rel="noopener">Matthew 28:19</a></span>
+          <p class="verse-text">"Go therefore and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit."</p>
+        </div>
+        <div class="verse-block">
+          <span class="verse-ref"><a href="https://www.esv.org/Romans+6:3-4" target="_blank" rel="noopener">Romans 6:3–4</a></span>
+          <p class="verse-text">"Do you not know that all of us who have been baptized into Christ Jesus were baptized into his death? We were buried therefore with him by baptism into death, in order that, just as Christ was raised from the dead by the glory of the Father, we too might walk in newness of life."</p>
+        </div>
+        <p>Every church approaches baptism a little differently, and that is okay. Some churches will baptize you quickly after a profession of faith. Others may want to spend time with you first — watching for fruit in your life, asking questions, and making sure you understand what you are declaring. Some will ask you to write out or fill in a confession of faith before you are baptized. None of these approaches are wrong — they reflect a church's desire to take both baptism and discipleship seriously.</p>
+        <p>The most important thing is that you do not put it off indefinitely. Talk to your pastor or a church leader about the process.</p>
+      </div>
+    </div>
+
+    <div class="step-connector"></div>
+
+    <!-- Step 6 -->
+    <div class="step">
+      <div class="step-num">6</div>
+      <div class="step-content">
+        <h2>Join a church — and mean it.</h2>
+        <div class="step-divider"></div>
+        <p>Finding a church and joining a church are two different things. Joining means covenanting with a body of believers — committing to gather, to serve, to give, and to be known. The New Testament never imagines a believer floating outside a local church. From the moment of Pentecost, those who believed were added to a community.</p>
+        <div class="verse-block">
+          <span class="verse-ref"><a href="https://www.esv.org/Acts+2:41-42" target="_blank" rel="noopener">Acts 2:41–42</a></span>
+          <p class="verse-text">"So those who received his word were baptized, and there were added that day about three thousand souls. And they devoted themselves to the apostles' teaching and the fellowship, to the breaking of bread and the prayers."</p>
+        </div>
+        <div class="church-callout">
+          <p>You cannot be discipled without a church. You cannot observe the Lord's Supper without a church. You cannot be held accountable, encouraged, corrected, or sent on mission without a church. <strong>The local church is not a supplement to your faith — it is the God-ordained context for it.</strong></p>
+        </div>
+        <div class="verse-block">
+          <span class="verse-ref"><a href="https://www.esv.org/Hebrews+10:24-25" target="_blank" rel="noopener">Hebrews 10:24–25</a></span>
+          <p class="verse-text">"And let us consider how to stir up one another to love and good works, not neglecting to meet together, as is the habit of some, but encouraging one another, and all the more as you see the Day drawing near."</p>
+        </div>
+        <p>Don't just attend — commit. Show up even when you don't feel like it. Serve. Give. Let people know you and know them. That is what membership means.</p>
+      </div>
+    </div>
+
+    <div class="step-connector"></div>
+
+    <!-- Step 7 -->
+    <div class="step">
+      <div class="step-num">7</div>
+      <div class="step-content">
+        <h2>Find someone to disciple you.</h2>
+        <div class="step-divider"></div>
+        <p>Every new believer needs someone further down the road to walk alongside them. This is discipleship — one Christian pouring into another, sharing the Word, asking hard questions, and modeling what a life surrendered to Christ looks like.</p>
+        <div class="verse-block">
+          <span class="verse-ref"><a href="https://www.esv.org/2+Timothy+2:2" target="_blank" rel="noopener">2 Timothy 2:2</a></span>
+          <p class="verse-text">"And what you have heard from me in the presence of many witnesses entrust to faithful men, who will be able to teach others also."</p>
+        </div>
+        <p>This is one of the reasons a local church is so indispensable. It is the natural place where discipleship happens — where older believers invest in newer ones, and the faith is passed from one generation to the next. You were not saved to figure this out on your own.</p>
+        <p>If you have trusted Christ and want someone to meet with you, open the Word with you, and help you take your first steps — reach out to us. That conversation is one of the things we are here for.</p>
+      </div>
+    </div>
+
+    <div class="step-connector"></div>
+
+    <!-- Step 8 -->
+    <div class="step">
+      <div class="step-num">8</div>
+      <div class="step-content">
+        <h2>Expect the fight — and don't be surprised.</h2>
+        <div class="step-divider"></div>
+        <p>Following Jesus is the greatest life there is — but no one promised it would be easy. The moment you surrendered to Christ, you entered a war. The world, the flesh, and the Enemy will all push back. You will struggle. You will sin. There will be days it feels like nothing has changed.</p>
+        <div class="verse-block">
+          <span class="verse-ref"><a href="https://www.esv.org/Romans+8:38-39" target="_blank" rel="noopener">Romans 8:38–39</a></span>
+          <p class="verse-text">"For I am sure that neither death nor life, nor angels nor rulers, nor things present nor things to come, nor powers, nor height nor depth, nor anything else in all creation, will be able to separate us from the love of God in Christ Jesus our Lord."</p>
+        </div>
+        <p>Nothing can undo what God has done. Your salvation is not based on your performance — it is secured by Christ's. When you fall, confess it, get back up, and press on. The Christian life is not about being perfect. It is about being forgiven, and kept, by One who is.</p>
+        <div class="verse-block">
+          <span class="verse-ref"><a href="https://www.esv.org/Philippians+1:6" target="_blank" rel="noopener">Philippians 1:6</a></span>
+          <p class="verse-text">"And I am sure of this, that he who began a good work in you will bring it to completion at the day of Jesus Christ."</p>
+        </div>
+        <p>He started this. He will finish it. You are not on your own.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-wrap">
+  <h2>We Want to Walk With You</h2>
+  <p>If you have just trusted Christ, or if you have questions about any of these steps, please reach out. You do not have to figure this out alone — that is exactly what we are here for.</p>
+  <a href="/index.html#contact" onclick="sessionStorage.setItem('contactReason','decision')" class="btn-primary">Get in Touch</a>
+  <a href="/pages/romans-road.html" class="btn-outline">← Back to the Romans Road</a>
+</div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <p style="margin-bottom: 8px;">
+    <strong style="color: rgba(255,255,255,0.7);">Example Church</strong>
+  </p>
+  <p>123 Church Street · Your City, ST 00000 · <a href="tel:5555555555">555-555-5555</a></p>
+  <p style="margin-top: 16px;">© 2026 Example Church · <a href="mailto:hello@examplechurch.org">hello@examplechurch.org</a></p>
+</footer>
+
+<script>
+function toggleMenu(btn) {
+  var menu = document.getElementById('mobileMenu');
+  var open = menu.classList.toggle('open');
+  btn.setAttribute('aria-expanded', open);
+}
+function closeMenu() {
+  document.getElementById('mobileMenu').classList.remove('open');
+  document.querySelector('.hamburger').setAttribute('aria-expanded', 'false');
+}
+document.addEventListener('click', function(e) {
+  var menu = document.getElementById('mobileMenu');
+  var btn = document.querySelector('.hamburger');
+  if (menu.classList.contains('open') && !menu.contains(e.target) && !btn.contains(e.target)) {
+    closeMenu();
+  }
+});
+
+// Dropdown menu — JS controlled so gap doesn't close it
+var dropdowns = document.querySelectorAll('.nav-dropdown');
+dropdowns.forEach(function(dd) {
+  var timeout;
+  dd.addEventListener('mouseenter', function() {
+    clearTimeout(timeout);
+    dd.classList.add('open');
+  });
+  dd.addEventListener('mouseleave', function() {
+    timeout = setTimeout(function() {
+      dd.classList.remove('open');
+    }, 120);
+  });
+  var menu = dd.querySelector('.dropdown-menu');
+  if (menu) {
+    menu.addEventListener('mouseenter', function() { clearTimeout(timeout); });
+    menu.addEventListener('mouseleave', function() {
+      timeout = setTimeout(function() { dd.classList.remove('open'); }, 120);
+    });
+  }
+});
+</script>
+
+  <!-- PWA Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js')
+          .then(function(reg) { console.log('Service worker registered:', reg.scope); })
+          .catch(function(err) { console.log('Service worker error:', err); });
+      });
+    }
+  </script>
+<script src="/assets/js/site-enhancements.js" defer></script>
+</body>
+</html>
