@@ -3,1623 +3,374 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Style Guide | Example Church</title>
+<title>How to Make a Church Style Guide | Church Starter Template</title>
+<link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Ubuntu:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
-  --navy: #082846;
-  --navy-mid: #0d3b66;
-  --gold: #c8922a;
-  --gold-light: #e8b45a;
-  --cream: #f9f5ee;
+  --navy: #18362f;
+  --navy-mid: #2f5d50;
+  --gold: #b86f3a;
+  --gold-light: #d99a5e;
+  --cream: #f6f1e8;
   --white: #ffffff;
-  --text-dark: #1a1a1a;
-  --text-mid: #4a4a4a;
+  --text-dark: #17211d;
+  --text-mid: #52615a;
 }
-
+html { scroll-behavior: smooth; }
 body {
-  font-family: 'Ubuntu', sans-serif;
-  background: #f0f0f0;
-  color: var(--text-dark);
-  line-height: 1.7;
-}
-
-/* ── GUIDE LAYOUT ── */
-.guide-header {
-  background: var(--navy);
-  padding: 60px 40px;
-  border-bottom: 4px solid var(--gold);
-}
-.guide-header h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 42px;
-  color: var(--white);
-  margin-bottom: 8px;
-}
-.guide-header p {
-  font-size: 15px;
-  color: rgba(255,255,255,0.6);
-}
-.guide-header .badge {
-  display: inline-block;
-  background: rgba(200,146,42,0.2);
-  border: 1px solid var(--gold);
-  color: var(--gold-light);
-  font-size: 11px;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  padding: 4px 12px;
-  border-radius: 2px;
-  margin-bottom: 16px;
-}
-
-.guide-nav {
-  background: var(--white);
-  border-bottom: 1px solid rgba(0,0,0,0.1);
-  padding: 16px 40px;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 24px;
-}
-.guide-nav a {
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-mid);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s;
-}
-.guide-nav a:hover { color: var(--gold); }
-
-.guide-body {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 48px 40px;
-}
-
-/* ── SECTIONS ── */
-.sg-section {
-  margin-bottom: 72px;
-}
-.sg-section-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 28px;
-  color: var(--navy);
-  margin-bottom: 6px;
-  padding-bottom: 12px;
-  border-bottom: 2px solid var(--gold);
-}
-.sg-section-desc {
-  font-size: 14px;
-  color: var(--text-mid);
-  margin: 12px 0 28px;
-  line-height: 1.8;
-}
-
-/* ── SUBSECTIONS ── */
-.sg-sub {
-  margin-bottom: 36px;
-}
-.sg-sub-label {
-  font-size: 11px;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--gold);
-  font-weight: 500;
-  margin-bottom: 14px;
-  display: block;
-}
-
-/* ── SWATCHES ── */
-.swatches {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-.swatch {
-  width: 160px;
-}
-.swatch-color {
-  height: 80px;
-  border-radius: 4px 4px 0 0;
-  border: 1px solid rgba(0,0,0,0.08);
-}
-.swatch-info {
-  background: var(--white);
-  padding: 10px 12px;
-  border: 1px solid rgba(0,0,0,0.08);
-  border-top: none;
-  border-radius: 0 0 4px 4px;
-}
-.swatch-name {
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--text-dark);
-  display: block;
-  margin-bottom: 2px;
-}
-.swatch-hex {
-  font-size: 12px;
-  color: #888;
-  font-family: monospace;
-  display: block;
-}
-.swatch-var {
-  font-size: 11px;
-  color: #aaa;
-  font-family: monospace;
-  display: block;
-  margin-top: 2px;
-}
-
-/* ── TYPOGRAPHY SPECIMENS ── */
-.type-specimen {
-  background: var(--white);
-  border: 1px solid rgba(0,0,0,0.08);
-  border-radius: 4px;
-  padding: 24px 28px;
-  margin-bottom: 12px;
-  display: flex;
-  align-items: baseline;
-  gap: 28px;
-}
-.type-meta {
-  min-width: 160px;
-  flex-shrink: 0;
-}
-.type-meta-name {
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--text-dark);
-  display: block;
-}
-.type-meta-detail {
-  font-size: 11px;
-  color: #999;
-  font-family: monospace;
-  display: block;
-  margin-top: 2px;
-  line-height: 1.6;
-}
-.type-sample { flex: 1; }
-
-/* ── BUTTONS ── */
-.btn-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  align-items: center;
-  background: var(--white);
-  padding: 28px;
-  border: 1px solid rgba(0,0,0,0.08);
-  border-radius: 4px;
-  margin-bottom: 12px;
-}
-.btn-row.dark {
-  background: var(--navy);
-}
-.btn-label {
-  font-size: 11px;
-  color: #999;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  min-width: 120px;
-}
-.btn-label.light { color: rgba(255,255,255,0.4); }
-
-.btn-primary {
-  display: inline-block;
-  background: var(--gold);
-  color: var(--white);
-  text-decoration: none;
-  padding: 14px 36px;
-  border-radius: 2px;
-  font-size: 14px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-weight: 500;
-  border: none;
-  cursor: pointer;
-  transition: background 0.2s, transform 0.15s;
-}
-.btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
-
-.btn-secondary {
-  display: inline-block;
-  border: 1px solid rgba(255,255,255,0.4);
-  color: var(--white);
-  text-decoration: none;
-  padding: 13px 36px;
-  border-radius: 2px;
-  font-size: 14px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-weight: 400;
-  cursor: pointer;
-  background: transparent;
-  transition: border-color 0.2s, background 0.2s;
-}
-.btn-secondary:hover { border-color: var(--gold-light); background: rgba(255,255,255,0.06); }
-
-.btn-outline-navy {
-  display: inline-block;
-  border: 1px solid var(--navy);
-  color: var(--navy);
-  text-decoration: none;
-  padding: 13px 36px;
-  border-radius: 2px;
-  font-size: 14px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-weight: 400;
-  cursor: pointer;
-  background: transparent;
-  transition: background 0.2s, color 0.2s;
-}
-.btn-outline-navy:hover { background: var(--navy); color: var(--white); }
-
-.btn-submit {
-  background: var(--navy);
-  color: white;
-  border: none;
-  padding: 14px 36px;
-  font-family: 'Ubuntu', sans-serif;
-  font-size: 14px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  cursor: pointer;
-  border-radius: 2px;
-  font-weight: 500;
-  transition: background 0.2s;
-}
-.btn-submit:hover { background: var(--gold); }
-
-/* ── COMPONENTS ── */
-.component-row {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 16px;
-  margin-bottom: 12px;
-}
-
-/* belief card */
-.belief-card {
-  background: var(--white);
-  border-top: 3px solid var(--gold);
-  padding: 28px 24px;
-  border-radius: 0 0 2px 2px;
-}
-.belief-card h4 {
-  font-family: 'Playfair Display', serif;
-  font-size: 20px;
-  margin-bottom: 10px;
-  color: var(--navy);
-}
-.belief-card p { font-size: 15px; color: var(--text-mid); line-height: 1.75; }
-.scripture {
-  display: block;
-  margin-top: 14px;
-  font-size: 12px;
-  letter-spacing: 0.06em;
-  color: var(--gold);
-  font-weight: 500;
-}
-.belief-more {
-  display: inline-block;
-  margin-top: 10px;
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--navy-mid);
-  text-decoration: none;
-  font-weight: 500;
-  border-bottom: 1px solid rgba(13,59,102,0.3);
-  padding-bottom: 1px;
-}
-
-/* verse block */
-.verse-block {
-  background: var(--white);
-  border-left: 4px solid var(--gold);
-  border-radius: 0 2px 2px 0;
-  padding: 20px 24px;
-  margin-bottom: 0;
-}
-.verse-ref {
-  font-size: 11px;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--gold);
-  font-weight: 500;
-  margin-bottom: 10px;
-  display: block;
-}
-.verse-text {
-  font-family: 'Playfair Display', serif;
-  font-size: 18px;
-  color: var(--text-dark);
-  line-height: 1.7;
-  font-style: italic;
-}
-
-/* section label / title / divider */
-.section-label {
-  font-size: 11px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--gold);
-  font-weight: 500;
-  display: block;
-  margin-bottom: 8px;
-}
-.section-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 32px;
-  font-weight: 700;
-  color: var(--navy);
-  margin-bottom: 8px;
-}
-.section-divider {
-  width: 40px;
-  height: 2px;
-  background: var(--gold);
-  margin-bottom: 16px;
-}
-
-/* curious step */
-.curious-step {
-  padding: 28px 24px;
-  border-left: 3px solid var(--gold);
+  font-family: Ubuntu, sans-serif;
   background: var(--cream);
-  border-radius: 0 2px 2px 0;
-}
-.curious-num {
-  font-family: 'Playfair Display', serif;
-  font-size: 36px;
-  color: var(--gold);
-  opacity: 0.35;
-  line-height: 1;
-  margin-bottom: 10px;
-}
-.curious-step h4 {
-  font-family: 'Playfair Display', serif;
-  font-size: 20px;
-  color: var(--navy);
-  margin-bottom: 10px;
-}
-.curious-step p { font-size: 15px; color: var(--text-mid); line-height: 1.8; }
-
-/* form elements */
-.form-demo {
-  background: var(--white);
-  border: 1px solid rgba(0,0,0,0.08);
-  border-radius: 4px;
-  padding: 28px;
-}
-.form-demo label {
-  display: block;
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-mid);
-  margin-bottom: 6px;
-  font-weight: 500;
-}
-.form-demo input,
-.form-demo textarea,
-.form-demo select {
-  width: 100%;
-  font-family: 'Ubuntu', sans-serif;
-  font-size: 14px;
-  padding: 12px 16px;
-  border: 1px solid #ddd;
-  border-radius: 2px;
-  background: var(--white);
   color: var(--text-dark);
-  margin-bottom: 16px;
-  outline: none;
-  appearance: none;
-}
-.form-demo select {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%234a4a4a' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 14px center;
-  padding-right: 36px;
-}
-
-/* spacing scale */
-.spacing-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  align-items: flex-end;
-}
-.spacing-item {
-  text-align: center;
-}
-.spacing-block {
-  background: var(--gold);
-  opacity: 0.4;
-  width: 48px;
-  margin: 0 auto 6px;
-  border-radius: 2px;
-}
-.spacing-val {
-  font-size: 11px;
-  font-family: monospace;
-  color: #888;
-}
-
-/* nav demo */
-.nav-demo {
-  background: rgba(8,40,70,0.97);
-  padding: 0 32px;
-  height: 64px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-radius: 4px;
-  border-bottom: 1px solid rgba(200,146,42,0.25);
-}
-.nav-demo-brand {
-  font-family: 'Playfair Display', serif;
-  font-size: 18px;
-  color: white;
-}
-.nav-demo-links {
-  display: flex;
-  gap: 28px;
-}
-.nav-demo-links a {
-  color: rgba(255,255,255,0.8);
-  text-decoration: none;
-  font-size: 14px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-.nav-demo-links a:hover { color: var(--gold-light); }
-
-/* code blocks */
-.code {
-  background: #1e2a3a;
-  color: #c8d8e8;
-  padding: 16px 20px;
-  border-radius: 4px;
-  font-family: 'Courier New', monospace;
-  font-size: 13px;
-  line-height: 1.7;
-  overflow-x: auto;
-  margin-top: 10px;
-}
-.code .kw { color: #e8b45a; }
-.code .val { color: #a8d8a8; }
-.code .com { color: #607080; }
-
-/* page section backgrounds */
-.bg-demo {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-}
-.bg-swatch {
-  padding: 24px;
-  border-radius: 4px;
-  border: 1px solid rgba(0,0,0,0.08);
-}
-.bg-swatch-name {
-  font-size: 12px;
-  font-weight: 500;
-  margin-bottom: 4px;
-}
-.bg-swatch-use {
-  font-size: 11px;
-  opacity: 0.7;
-}
-
-/* do / dont */
-.do-dont {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-.do-box, .dont-box {
-  padding: 20px 24px;
-  border-radius: 4px;
-  font-size: 14px;
   line-height: 1.75;
 }
-.do-box {
-  background: #f0faf0;
-  border-left: 4px solid #4caf50;
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(24,54,47,0.97);
+  color: var(--white);
+  padding: 18px 24px;
+  border-bottom: 2px solid var(--gold);
 }
-.dont-box {
-  background: #fff5f5;
-  border-left: 4px solid #ef5350;
+.nav-inner {
+  max-width: 1040px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
 }
-.do-box strong { color: #2e7d32; display: block; margin-bottom: 6px; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; }
-.dont-box strong { color: #c62828; display: block; margin-bottom: 6px; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; }
+.brand {
+  font-family: "Playfair Display", serif;
+  color: var(--white);
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 700;
+}
+.nav-link {
+  color: rgba(255,255,255,0.82);
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.hero {
+  background: linear-gradient(rgba(24,54,47,0.86), rgba(24,54,47,0.92)), url('/assets/images/hero-placeholder.svg') center/cover;
+  color: var(--white);
+  padding: 92px 24px 76px;
+  text-align: center;
+}
+.hero h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(34px, 6vw, 64px);
+  line-height: 1.1;
+  margin-bottom: 18px;
+}
+.hero p {
+  max-width: 720px;
+  margin: 0 auto;
+  color: rgba(255,255,255,0.78);
+  font-size: 17px;
+}
+main {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 56px 24px 80px;
+}
+section {
+  margin-bottom: 56px;
+}
+.label {
+  display: block;
+  color: var(--gold);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+h2 {
+  font-family: "Playfair Display", serif;
+  color: var(--navy);
+  font-size: clamp(26px, 4vw, 38px);
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+h3 {
+  font-family: "Playfair Display", serif;
+  color: var(--navy);
+  font-size: 22px;
+  margin: 28px 0 10px;
+}
+p {
+  color: var(--text-mid);
+  margin-bottom: 16px;
+}
+ul, ol {
+  padding-left: 24px;
+  color: var(--text-mid);
+  margin: 12px 0 22px;
+}
+li { margin-bottom: 8px; }
+code {
+  background: rgba(24,54,47,0.08);
+  color: var(--navy);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.92em;
+}
+pre {
+  overflow-x: auto;
+  background: #10231f;
+  color: #f6f1e8;
+  padding: 18px;
+  border-radius: 6px;
+  margin: 18px 0 24px;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 18px;
+}
+.swatch {
+  background: var(--white);
+  border-left: 5px solid var(--gold);
+  padding: 18px;
+  border-radius: 6px;
+}
+.swatch strong {
+  display: block;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+.color-chip {
+  height: 46px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  border: 1px solid rgba(0,0,0,0.08);
+}
+.callout {
+  background: var(--white);
+  border-left: 5px solid var(--gold);
+  padding: 22px;
+  border-radius: 6px;
+  margin: 24px 0;
+}
+footer {
+  background: #10231f;
+  color: rgba(255,255,255,0.6);
+  text-align: center;
+  padding: 32px 20px;
+  font-size: 13px;
+}
+@media (max-width: 700px) {
+  .nav-inner { align-items: flex-start; flex-direction: column; }
+  .hero { padding-top: 70px; }
+}
 </style>
 <link rel="stylesheet" href="/assets/css/site-enhancements.css">
 </head>
 <body>
-
-<!-- HEADER -->
-<div class="guide-header">
-  <div class="badge">Brand Document</div>
-  <h1>Example Church</h1>
-  <p>Visual Style Guide — Website Edition &nbsp;·&nbsp; Last updated May 2026</p>
-</div>
-
-<!-- STICKY NAV -->
-<nav class="guide-nav">
-  <a href="#colors">Colors</a>
-  <a href="#typography">Typography</a>
-  <a href="#spacing">Spacing</a>
-  <a href="#buttons">Buttons</a>
-  <a href="#components">Components</a>
-  <a href="#forms">Forms</a>
-  <a href="#backgrounds">Backgrounds</a>
-  <a href="#nav-style">Navigation</a>
-  <a href="#links">Links</a>
-  <a href="#icons">Icons</a>
-  <a href="#cards">Cards</a>
-  <a href="#pageheader">Page Header</a>
-  <a href="#steps">Steps</a>
-  <a href="#responsive">Responsive</a>
-  <a href="#imagery">Imagery</a>
-  <a href="#accessibility">Accessibility</a>
-  <a href="#voice">Voice & Tone</a>
-  <a href="#usage">Usage Rules</a>
-  <a href="#filemap">File Map</a>
+<nav>
+  <div class="nav-inner">
+    <a href="/index.html" class="brand">Church Starter Template</a>
+    <a href="/index.html" class="nav-link">Back to Site</a>
+  </div>
 </nav>
 
-<div class="guide-body">
+<header class="hero">
+  <h1>How to Make a Church Style Guide</h1>
+  <p>Use this page as a working checklist for turning the starter design into a clear, consistent visual identity for a real church.</p>
+</header>
 
-  <!-- ── COLORS ── -->
-  <section class="sg-section" id="colors">
-    <h2 class="sg-section-title">Colors</h2>
-    <p class="sg-section-desc">The palette is built around deep navy and warm antique gold — serious, trustworthy, and timeless. Every color has a specific role and should not be used interchangeably.</p>
+<main>
+  <section>
+    <span class="label">Purpose</span>
+    <h2>What a Style Guide Does</h2>
+    <p>A style guide gives volunteers and future editors one place to check before changing the site. It explains the colors, fonts, images, buttons, tone, page structure, and common rules that keep the website from feeling patched together over time.</p>
+    <p>For a church website, the goal is not to sound corporate or overly polished. The goal is clarity, trust, warmth, and consistency.</p>
+  </section>
 
-    <span class="sg-sub-label">Primary Palette</span>
-    <div class="swatches">
-      <div class="swatch">
-        <div class="swatch-color" style="background:#082846;"></div>
-        <div class="swatch-info">
-          <span class="swatch-name">Navy</span>
-          <span class="swatch-hex">#082846</span>
-          <span class="swatch-var">--navy</span>
-        </div>
-      </div>
-      <div class="swatch">
-        <div class="swatch-color" style="background:#0d3b66;"></div>
-        <div class="swatch-info">
-          <span class="swatch-name">Navy Mid</span>
-          <span class="swatch-hex">#0d3b66</span>
-          <span class="swatch-var">--navy-mid</span>
-        </div>
-      </div>
-      <div class="swatch">
-        <div class="swatch-color" style="background:#c8922a;"></div>
-        <div class="swatch-info">
-          <span class="swatch-name">Gold</span>
-          <span class="swatch-hex">#c8922a</span>
-          <span class="swatch-var">--gold</span>
-        </div>
-      </div>
-      <div class="swatch">
-        <div class="swatch-color" style="background:#e8b45a;"></div>
-        <div class="swatch-info">
-          <span class="swatch-name">Gold Light</span>
-          <span class="swatch-hex">#e8b45a</span>
-          <span class="swatch-var">--gold-light</span>
-        </div>
-      </div>
+  <section>
+    <span class="label">Step 1</span>
+    <h2>Write Down the Church Identity</h2>
+    <p>Begin with plain answers before choosing colors or layouts. A good design flows from who the church is and who the site is serving.</p>
+    <ul>
+      <li>Church name and short name</li>
+      <li>City and community served</li>
+      <li>Primary audience: first-time guests, members, families, seekers, or all of the above</li>
+      <li>Three words that describe the desired feel, such as warm, reverent, simple, joyful, historic, or modern</li>
+      <li>One sentence that explains the church mission</li>
+    </ul>
+    <div class="callout">
+      <p><strong>Tip:</strong> If the church already has printed bulletins, signage, or a logo, use those as clues. A website should feel like the same church people visit on Sunday.</p>
     </div>
+  </section>
 
-    <br>
-    <span class="sg-sub-label">Background & Text</span>
-    <div class="swatches">
+  <section>
+    <span class="label">Step 2</span>
+    <h2>Choose a Color Palette</h2>
+    <p>Pick a small set of colors and use them everywhere. Most church websites only need a dark anchor color, one accent color, a light background, and readable text colors.</p>
+    <div class="grid">
       <div class="swatch">
-        <div class="swatch-color" style="background:#f9f5ee; border:1px solid #e0ddd7;"></div>
-        <div class="swatch-info">
-          <span class="swatch-name">Cream</span>
-          <span class="swatch-hex">#f9f5ee</span>
-          <span class="swatch-var">--cream</span>
-        </div>
+        <div class="color-chip" style="background:#18362f;"></div>
+        <strong>Primary</strong>
+        <code>#18362f</code>
+        <p>Used for navigation, dark sections, headings, and strong visual anchors.</p>
       </div>
       <div class="swatch">
-        <div class="swatch-color" style="background:#ffffff; border:1px solid #e0e0e0;"></div>
-        <div class="swatch-info">
-          <span class="swatch-name">White</span>
-          <span class="swatch-hex">#ffffff</span>
-          <span class="swatch-var">--white</span>
-        </div>
+        <div class="color-chip" style="background:#2f5d50;"></div>
+        <strong>Secondary</strong>
+        <code>#2f5d50</code>
+        <p>Used for hover states, secondary panels, and quiet supporting elements.</p>
       </div>
       <div class="swatch">
-        <div class="swatch-color" style="background:#1a1a1a;"></div>
-        <div class="swatch-info">
-          <span class="swatch-name">Text Dark</span>
-          <span class="swatch-hex">#1a1a1a</span>
-          <span class="swatch-var">--text-dark</span>
-        </div>
+        <div class="color-chip" style="background:#b86f3a;"></div>
+        <strong>Accent</strong>
+        <code>#b86f3a</code>
+        <p>Used for buttons, borders, labels, and small moments of emphasis.</p>
       </div>
       <div class="swatch">
-        <div class="swatch-color" style="background:#4a4a4a;"></div>
-        <div class="swatch-info">
-          <span class="swatch-name">Text Mid</span>
-          <span class="swatch-hex">#4a4a4a</span>
-          <span class="swatch-var">--text-mid</span>
-        </div>
-      </div>
-      <div class="swatch">
-        <div class="swatch-color" style="background:#050f1a;"></div>
-        <div class="swatch-info">
-          <span class="swatch-name">Footer</span>
-          <span class="swatch-hex">#050f1a</span>
-          <span class="swatch-var">—</span>
-        </div>
+        <div class="color-chip" style="background:#f6f1e8;"></div>
+        <strong>Background</strong>
+        <code>#f6f1e8</code>
+        <p>Used for warm page backgrounds that are easier on the eyes than pure white.</p>
       </div>
     </div>
+    <p>Update the color variables in each page's `:root` block and in `assets/css/site-enhancements.css` when changing the palette.</p>
   </section>
 
-  <!-- ── TYPOGRAPHY ── -->
-  <section class="sg-section" id="typography">
-    <h2 class="sg-section-title">Typography</h2>
-    <p class="sg-section-desc">Two typefaces — Playfair Display for all headings and display text, Ubuntu for all body copy, UI labels, and navigation. Never mix their roles.</p>
-
-    <span class="sg-sub-label">Typefaces</span>
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:28px;">
-      <div style="background:var(--white); border:1px solid rgba(0,0,0,0.08); border-radius:4px; padding:28px;">
-        <div style="font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); margin-bottom:12px;">Display · Headings · Quotes</div>
-        <div style="font-family:'Playfair Display',serif; font-size:36px; color:var(--navy); line-height:1.2; margin-bottom:8px;">Playfair Display</div>
-        <div style="font-family:'Playfair Display',serif; font-size:18px; font-style:italic; color:var(--text-mid);">Aa Bb Cc — Regular & Bold</div>
-        <div style="margin-top:12px; font-size:12px; color:#aaa; font-family:monospace;">Google Fonts · weights: 400, 700</div>
-      </div>
-      <div style="background:var(--white); border:1px solid rgba(0,0,0,0.08); border-radius:4px; padding:28px;">
-        <div style="font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); margin-bottom:12px;">Body · UI · Navigation</div>
-        <div style="font-family:'Ubuntu',sans-serif; font-size:36px; color:var(--navy); line-height:1.2; margin-bottom:8px;">Ubuntu</div>
-        <div style="font-family:'Ubuntu',sans-serif; font-size:18px; color:var(--text-mid);">Aa Bb Cc — Light, Regular & Medium</div>
-        <div style="margin-top:12px; font-size:12px; color:#aaa; font-family:monospace;">Google Fonts · weights: 300, 400, 500</div>
-      </div>
-    </div>
-
-    <span class="sg-sub-label">Type Scale</span>
-    <div class="type-specimen">
-      <div class="type-meta">
-        <span class="type-meta-name">Page Title / Hero</span>
-        <span class="type-meta-detail">Playfair Display 700<br>clamp(36px, 6vw, 64px)<br>color: --white or --navy</span>
-      </div>
-      <div class="type-sample" style="font-family:'Playfair Display',serif; font-size:52px; font-weight:700; color:var(--navy); line-height:1.15;">Welcome to Example Church</div>
-    </div>
-    <div class="type-specimen">
-      <div class="type-meta">
-        <span class="type-meta-name">Section Title</span>
-        <span class="type-meta-detail">Playfair Display 700<br>clamp(26px, 4vw, 38px)<br>color: --navy</span>
-      </div>
-      <div class="type-sample" style="font-family:'Playfair Display',serif; font-size:34px; font-weight:700; color:var(--navy);">What We Believe</div>
-    </div>
-    <div class="type-specimen">
-      <div class="type-meta">
-        <span class="type-meta-name">Card Title / H3</span>
-        <span class="type-meta-detail">Playfair Display 700<br>18–22px<br>color: --navy</span>
-      </div>
-      <div class="type-sample" style="font-family:'Playfair Display',serif; font-size:20px; font-weight:700; color:var(--navy);">Salvation</div>
-    </div>
-    <div class="type-specimen">
-      <div class="type-meta">
-        <span class="type-meta-name">Section Label</span>
-        <span class="type-meta-detail">Ubuntu 500<br>11px / uppercase<br>letter-spacing: 0.2em<br>color: --gold</span>
-      </div>
-      <div class="type-sample" style="font-size:11px; letter-spacing:0.2em; text-transform:uppercase; font-weight:500; color:var(--gold);">Our Foundation</div>
-    </div>
-    <div class="type-specimen">
-      <div class="type-meta">
-        <span class="type-meta-name">Body Text</span>
-        <span class="type-meta-detail">Ubuntu 400<br>15–16px<br>line-height: 1.8–1.9<br>color: --text-mid</span>
-      </div>
-      <div class="type-sample" style="font-size:16px; color:var(--text-mid); line-height:1.85;">At Example Church, you will find a community gathered around one purpose — the Word of God. We read it, sing it, and teach it together every week.</div>
-    </div>
-    <div class="type-specimen">
-      <div class="type-meta">
-        <span class="type-meta-name">Navigation</span>
-        <span class="type-meta-detail">Ubuntu 400<br>14px / uppercase<br>letter-spacing: 0.05em<br>color: rgba(255,255,255,0.8)</span>
-      </div>
-      <div class="type-sample" style="font-size:14px; letter-spacing:0.05em; text-transform:uppercase; color:var(--navy);">About &nbsp;·&nbsp; Pastor &nbsp;·&nbsp; Beliefs &nbsp;·&nbsp; Sermons</div>
-    </div>
-    <div class="type-specimen">
-      <div class="type-meta">
-        <span class="type-meta-name">Scripture Quote</span>
-        <span class="type-meta-detail">Playfair Display 400<br>17–18px / italic<br>color: --text-dark</span>
-      </div>
-      <div class="type-sample" style="font-family:'Playfair Display',serif; font-size:18px; font-style:italic; color:var(--text-dark); line-height:1.7;">"For all have sinned and fall short of the glory of God."</div>
-    </div>
-    <div class="type-specimen">
-      <div class="type-meta">
-        <span class="type-meta-name">Button / Label</span>
-        <span class="type-meta-detail">Ubuntu 500<br>14px / uppercase<br>letter-spacing: 0.08em</span>
-      </div>
-      <div class="type-sample" style="font-size:14px; letter-spacing:0.08em; text-transform:uppercase; font-weight:500; color:var(--navy);">Plan Your Visit</div>
-    </div>
+  <section>
+    <span class="label">Step 3</span>
+    <h2>Choose Fonts</h2>
+    <p>This starter uses one serif font for headings and one sans-serif font for body copy. That is usually enough.</p>
+    <ul>
+      <li>Heading font: should feel appropriate for worship, Scripture, and church history.</li>
+      <li>Body font: should be easy to read on phones.</li>
+      <li>Avoid using more than two font families unless there is a strong reason.</li>
+    </ul>
+    <pre><code>font-family: 'Playfair Display', serif;
+font-family: 'Ubuntu', sans-serif;</code></pre>
   </section>
 
-  <!-- ── SPACING ── -->
-  <section class="sg-section" id="spacing">
-    <h2 class="sg-section-title">Spacing</h2>
-    <p class="sg-section-desc">Consistent spacing creates rhythm. Use multiples of 8px for most spacing. Section padding is always 60–80px vertical, 20px horizontal. Max content width is 960px.</p>
-
-    <span class="sg-sub-label">Spacing Scale</span>
-    <div class="spacing-row">
-      <div class="spacing-item"><div class="spacing-block" style="height:4px;"></div><div class="spacing-val">4px</div></div>
-      <div class="spacing-item"><div class="spacing-block" style="height:8px;"></div><div class="spacing-val">8px</div></div>
-      <div class="spacing-item"><div class="spacing-block" style="height:12px;"></div><div class="spacing-val">12px</div></div>
-      <div class="spacing-item"><div class="spacing-block" style="height:16px;"></div><div class="spacing-val">16px</div></div>
-      <div class="spacing-item"><div class="spacing-block" style="height:20px;"></div><div class="spacing-val">20px</div></div>
-      <div class="spacing-item"><div class="spacing-block" style="height:24px;"></div><div class="spacing-val">24px</div></div>
-      <div class="spacing-item"><div class="spacing-block" style="height:28px;"></div><div class="spacing-val">28px</div></div>
-      <div class="spacing-item"><div class="spacing-block" style="height:32px;"></div><div class="spacing-val">32px</div></div>
-      <div class="spacing-item"><div class="spacing-block" style="height:40px;"></div><div class="spacing-val">40px</div></div>
-      <div class="spacing-item"><div class="spacing-block" style="height:48px;"></div><div class="spacing-val">48px</div></div>
-      <div class="spacing-item"><div class="spacing-block" style="height:60px;"></div><div class="spacing-val">60px</div></div>
-      <div class="spacing-item"><div class="spacing-block" style="height:80px;"></div><div class="spacing-val">80px</div></div>
-    </div>
-
-    <br>
-    <span class="sg-sub-label">Layout Rules</span>
-    <div class="code">
-<span class="com">/* Container */</span>
-.container { max-width: <span class="val">960px</span>; margin: 0 auto; padding: 0 <span class="val">20px</span>; }
-
-<span class="com">/* Section padding */</span>
-section { padding: <span class="val">80px 20px</span>; }
-
-<span class="com">/* Nav height */</span>
-nav { height: <span class="val">64px</span>; }
-
-<span class="com">/* Section divider */</span>
-.section-divider { width: <span class="val">40–48px</span>; height: <span class="val">2px</span>; background: <span class="val">var(--gold)</span>; }
-
-<span class="com">/* Card border accent */</span>
-border-top: <span class="val">3px solid var(--gold)</span>; border-radius: <span class="val">0 0 2px 2px</span>;
-
-<span class="com">/* Left-border accent */</span>
-border-left: <span class="val">4px solid var(--gold)</span>; border-radius: <span class="val">0 2px 2px 0</span>;
-    </div>
+  <section>
+    <span class="label">Step 4</span>
+    <h2>Define Image Rules</h2>
+    <p>Write down what kind of photos belong on the site. This keeps the site from drifting into random stock imagery.</p>
+    <ul>
+      <li>Use real photos of the building, worship space, people, staff, and community when possible.</li>
+      <li>Keep photos bright, clear, and welcoming.</li>
+      <li>Avoid images that are dark, blurry, overly filtered, or emotionally vague.</li>
+      <li>Always use meaningful `alt` text for important images.</li>
+    </ul>
   </section>
 
-  <!-- ── BUTTONS ── -->
-  <section class="sg-section" id="buttons">
-    <h2 class="sg-section-title">Buttons</h2>
-    <p class="sg-section-desc">Four button styles. Use Primary for the main CTA on any page or section. Use Secondary on dark backgrounds alongside a Primary. Use Outline for secondary actions on light backgrounds. Use Submit for form submission.</p>
-
-    <div class="btn-row dark">
-      <span class="btn-label light">Primary</span>
-      <button class="btn-primary">Plan Your Visit</button>
-      <div class="code" style="flex:1; margin-top:0; font-size:12px;">background: <span class="val">--gold</span> · hover: <span class="val">--gold-light</span> · padding: <span class="val">14px 36px</span></div>
-    </div>
-    <div class="btn-row dark">
-      <span class="btn-label light">Secondary</span>
-      <button class="btn-secondary">Watch Live</button>
-      <div class="code" style="flex:1; margin-top:0; font-size:12px;">border: <span class="val">rgba(255,255,255,0.4)</span> · on dark bg only · padding: <span class="val">13px 36px</span></div>
-    </div>
-    <div class="btn-row">
-      <span class="btn-label">Outline</span>
-      <button class="btn-outline-navy">I'd Like to Reach Out</button>
-      <div class="code" style="flex:1; margin-top:0; font-size:12px;">border: <span class="val">--navy</span> · on light bg only · hover fills navy</div>
-    </div>
-    <div class="btn-row">
-      <span class="btn-label">Submit</span>
-      <button class="btn-submit">Send Message</button>
-      <div class="code" style="flex:1; margin-top:0; font-size:12px;">background: <span class="val">--navy</span> · hover: <span class="val">--gold</span> · full width on forms</div>
-    </div>
+  <section>
+    <span class="label">Step 5</span>
+    <h2>Document Buttons and Links</h2>
+    <p>Decide which button style is used for primary actions and which is used for secondary actions. Keep the wording clear and visitor-focused.</p>
+    <ul>
+      <li>Primary buttons: Plan Your Visit, Watch Sermons, Contact Us</li>
+      <li>Secondary buttons: Learn More, Back to Home, View Archive</li>
+      <li>Inline links: use them for supporting references, not major page actions</li>
+    </ul>
   </section>
 
-  <!-- ── COMPONENTS ── -->
-  <section class="sg-section" id="components">
-    <h2 class="sg-section-title">Components</h2>
-    <p class="sg-section-desc">Reusable UI patterns used consistently across every page.</p>
-
-    <div class="sg-sub">
-      <span class="sg-sub-label">Section Header</span>
-      <div style="background:var(--white); padding:32px; border:1px solid rgba(0,0,0,0.08); border-radius:4px;">
-        <span class="section-label">Our Foundation</span>
-        <h2 class="section-title">What We Believe</h2>
-        <div class="section-divider"></div>
-        <p style="font-size:15px; color:var(--text-mid);">Every section on the site follows this pattern — label, title, gold divider, then content.</p>
-      </div>
-    </div>
-
-    <div class="sg-sub">
-      <span class="sg-sub-label">Belief Card</span>
-      <div class="component-row">
-        <div class="belief-card">
-          <h4>Salvation</h4>
-          <p>Salvation is by Grace alone, through Faith alone, in Jesus Christ alone — not earned by any effort of our own.</p>
-          <span class="scripture">Ephesians 2:8–9 · Romans 5:1</span>
-          <a href="#" class="belief-more">Read more ›</a>
-        </div>
-        <div class="belief-card">
-          <h4>The Church</h4>
-          <p>The Church is the body of Christ — gathered to worship God, proclaim the gospel, and faithfully administer the Word.</p>
-          <span class="scripture">Matthew 16:18 · Acts 2:41–42</span>
-          <a href="#" class="belief-more">Read more ›</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="sg-sub">
-      <span class="sg-sub-label">Verse Block</span>
-      <div style="max-width:560px;">
-        <div class="verse-block">
-          <span class="verse-ref">Romans 3:23</span>
-          <p class="verse-text">"For all have sinned and fall short of the glory of God."</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="sg-sub">
-      <span class="sg-sub-label">Curious Step Card</span>
-      <div class="component-row">
-        <div class="curious-step">
-          <div class="curious-num">01</div>
-          <h4>Just show up</h4>
-          <p>You don't need to have it all figured out. Come as you are — our doors open every Sunday at 9:15 AM.</p>
-        </div>
-        <div class="curious-step">
-          <div class="curious-num">02</div>
-          <h4>See what it's like</h4>
-          <p>An expository message, music, and prayer. About an hour and a half. You're never put on the spot.</p>
-        </div>
-      </div>
-    </div>
+  <section>
+    <span class="label">Step 6</span>
+    <h2>Set the Writing Voice</h2>
+    <p>For a church website, writing should usually be warm, plain, and direct. Avoid vague slogans that could belong to any organization.</p>
+    <ul>
+      <li>Say what visitors need to know.</li>
+      <li>Use normal words before churchy words.</li>
+      <li>Explain theological words when they appear.</li>
+      <li>Keep page introductions short.</li>
+      <li>Use a hopeful tone without exaggerating.</li>
+    </ul>
   </section>
 
-  <!-- ── FORMS ── -->
-  <section class="sg-section" id="forms">
-    <h2 class="sg-section-title">Forms</h2>
-    <p class="sg-section-desc">Form elements are minimal and consistent. Labels are uppercase, small, and spaced. Inputs have a 1px border that turns navy on focus. Border-radius is 2px throughout.</p>
-
-    <div class="form-demo" style="max-width:480px;">
-      <label>Your Name</label>
-      <input type="text" placeholder="Jane Smith">
-      <label>How Can We Help?</label>
-      <select>
-        <option>Select a reason…</option>
-        <option>I'd like to plan a visit</option>
-        <option>I have a prayer request</option>
-      </select>
-      <label>Message</label>
-      <textarea rows="3" placeholder="How can we help?"></textarea>
-      <button class="btn-submit" style="width:100%;">Send Message</button>
-    </div>
-
-    <div class="code" style="margin-top:16px;">
-<span class="com">/* Input / Select / Textarea */</span>
-border: <span class="val">1px solid #ddd</span>;
-border-radius: <span class="val">2px</span>;
-padding: <span class="val">12px 16px</span>;
-font-family: <span class="val">Ubuntu</span>;
-font-size: <span class="val">14px</span>;
-
-<span class="com">/* Focus state */</span>
-border-color: <span class="val">var(--navy-mid)</span>;
-    </div>
+  <section>
+    <span class="label">Step 7</span>
+    <h2>Record Page Patterns</h2>
+    <p>List the page sections that should repeat across the site. This makes future pages easier to build.</p>
+    <pre><code>Page header
+Short introduction
+Main content sections
+Clear next step
+Footer with contact information</code></pre>
+    <p>When a new page is added, copy an existing page with a similar structure and then change the content.</p>
   </section>
 
-  <!-- ── BACKGROUNDS ── -->
-  <section class="sg-section" id="backgrounds">
-    <h2 class="sg-section-title">Page Backgrounds</h2>
-    <p class="sg-section-desc">Sections alternate between three backgrounds to create visual rhythm without introducing new colors. Navy sections are used sparingly for emphasis.</p>
-
-    <div class="bg-demo">
-      <div class="bg-swatch" style="background:var(--cream);">
-        <div class="bg-swatch-name" style="color:var(--text-dark);">Cream — #f9f5ee</div>
-        <div class="bg-swatch-use" style="color:var(--text-mid);">Default page background · odd sections</div>
-      </div>
-      <div class="bg-swatch" style="background:var(--white); border:1px solid #e0e0e0;">
-        <div class="bg-swatch-name" style="color:var(--text-dark);">White — #ffffff</div>
-        <div class="bg-swatch-use" style="color:var(--text-mid);">Even sections · cards · forms</div>
-      </div>
-      <div class="bg-swatch" style="background:var(--navy);">
-        <div class="bg-swatch-name" style="color:white;">Navy — #082846</div>
-        <div class="bg-swatch-use" style="color:rgba(255,255,255,0.6);">Hero · CTAs · livestream · footer</div>
-      </div>
-    </div>
+  <section>
+    <span class="label">Step 8</span>
+    <h2>Keep a Maintenance Checklist</h2>
+    <p>At the bottom of the style guide, keep a short checklist for future edits.</p>
+    <ul>
+      <li>Does the page use the approved colors?</li>
+      <li>Are the fonts consistent?</li>
+      <li>Are images clear and properly described?</li>
+      <li>Does the page have one obvious next step?</li>
+      <li>Does it work on a phone?</li>
+      <li>Are contact details still correct?</li>
+    </ul>
   </section>
 
-  <!-- ── NAVIGATION ── -->
-  <section class="sg-section" id="nav-style">
-    <h2 class="sg-section-title">Navigation</h2>
-    <p class="sg-section-desc">The nav is fixed, 64px tall, with a navy background at 97% opacity and a subtle gold bottom border. Brand name uses Playfair Display. Links use Ubuntu uppercase. Dropdowns use the same nav background with a 2px gold top border.</p>
+  <section>
+    <span class="label">Template</span>
+    <h2>Copy This Starter Outline</h2>
+    <pre><code># Church Style Guide
 
-    <div class="nav-demo">
-      <div class="nav-demo-brand">Example Church</div>
-      <div class="nav-demo-links">
-        <a href="#">About</a>
-        <a href="#" style="color:var(--gold-light);">Beliefs ▾</a>
-        <a href="#">Sermons</a>
-        <a href="#">Contact</a>
-      </div>
-    </div>
+## Identity
+Church name:
+Mission sentence:
+Audience:
+Personality words:
 
-    <div class="code" style="margin-top:16px;">
-<span class="com">/* Nav bar */</span>
-height: <span class="val">64px</span>;
-background: <span class="val">rgba(8, 40, 70, 0.97)</span>;
-border-bottom: <span class="val">1px solid rgba(200, 146, 42, 0.25)</span>;
+## Colors
+Primary:
+Secondary:
+Accent:
+Background:
+Text:
 
-<span class="com">/* Dropdown */</span>
-background: <span class="val">#082846</span>;
-border-top: <span class="val">2px solid #c8922a</span>;
-min-width: <span class="val">210px</span>;
+## Fonts
+Headings:
+Body:
 
-<span class="com">/* Hamburger breakpoint */</span>
-@media (max-width: <span class="val">1080px</span>) { .nav-links { display: none; } }
-    </div>
+## Images
+Photo style:
+What to avoid:
+Alt text rules:
+
+## Buttons
+Primary actions:
+Secondary actions:
+
+## Writing Voice
+Tone:
+Words to use:
+Words to avoid:
+
+## Page Patterns
+Header:
+Main sections:
+Next step:
+Footer:
+
+## Maintenance Checklist
+Before publishing, check:</code></pre>
   </section>
+</main>
 
-  <!-- ── LINKS ── -->
-  <section class="sg-section" id="links">
-    <h2 class="sg-section-title">Links</h2>
-    <p class="sg-section-desc">Links have distinct styles depending on context. Never use a plain underline on body links — use the gold dotted border-bottom pattern instead.</p>
-
-    <span class="sg-sub-label">Link Styles</span>
-    <div style="background:var(--white); border:1px solid rgba(0,0,0,0.08); border-radius:4px; overflow:hidden;">
-      <table style="width:100%; border-collapse:collapse; font-size:14px;">
-        <thead>
-          <tr style="background:var(--navy); color:white;">
-            <th style="padding:12px 16px; text-align:left; font-size:12px; text-transform:uppercase; letter-spacing:0.05em; font-weight:500;">Type</th>
-            <th style="padding:12px 16px; text-align:left; font-size:12px; text-transform:uppercase; letter-spacing:0.05em; font-weight:500;">Example</th>
-            <th style="padding:12px 16px; text-align:left; font-size:12px; text-transform:uppercase; letter-spacing:0.05em; font-weight:500;">CSS</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr style="border-bottom:1px solid rgba(0,0,0,0.06);">
-            <td style="padding:12px 16px; font-weight:500;">Scripture reference</td>
-            <td style="padding:12px 16px;"><a href="#" style="color:var(--gold); text-decoration:none; border-bottom:1px dotted rgba(200,146,42,0.6);">Romans 3:23</a></td>
-            <td style="padding:12px 16px; font-family:monospace; font-size:12px; color:#888;">color: --gold; border-bottom: 1px dotted rgba(200,146,42,0.6)</td>
-          </tr>
-          <tr style="border-bottom:1px solid rgba(0,0,0,0.06); background:var(--cream);">
-            <td style="padding:12px 16px; font-weight:500;">Inline body link</td>
-            <td style="padding:12px 16px;"><a href="#" style="color:var(--navy-mid); text-decoration:none; border-bottom:1px solid rgba(13,59,102,0.3);">ESV Bible online</a></td>
-            <td style="padding:12px 16px; font-family:monospace; font-size:12px; color:#888;">color: --navy-mid; border-bottom: 1px solid rgba(13,59,102,0.3)</td>
-          </tr>
-          <tr style="border-bottom:1px solid rgba(0,0,0,0.06);">
-            <td style="padding:12px 16px; font-weight:500;">"Read more" link</td>
-            <td style="padding:12px 16px;"><a href="#" style="font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--navy-mid); text-decoration:none; border-bottom:1px solid rgba(13,59,102,0.3); padding-bottom:1px; font-weight:500;">Read more ›</a></td>
-            <td style="padding:12px 16px; font-family:monospace; font-size:12px; color:#888;">11–12px · uppercase · letter-spacing: 0.08em</td>
-          </tr>
-          <tr style="border-bottom:1px solid rgba(0,0,0,0.06); background:var(--cream);">
-            <td style="padding:12px 16px; font-weight:500;">Footer link</td>
-            <td style="padding:12px 16px; background:var(--navy);"><a href="#" style="color:var(--gold-light); text-decoration:none;">555-555-5555</a></td>
-            <td style="padding:12px 16px; font-family:monospace; font-size:12px; color:#888;">color: --gold-light; no underline</td>
-          </tr>
-          <tr>
-            <td style="padding:12px 16px; font-weight:500;">External link</td>
-            <td style="padding:12px 16px;"><a href="#" style="color:var(--gold); text-decoration:none; border-bottom:1px dotted rgba(200,146,42,0.5);">LifeWay ↗</a></td>
-            <td style="padding:12px 16px; font-family:monospace; font-size:12px; color:#888;">Always target="_blank" rel="noopener" · add ↗ symbol</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <!-- ── ICONS ── -->
-  <section class="sg-section" id="icons">
-    <h2 class="sg-section-title">Icons</h2>
-    <p class="sg-section-desc">All icons are inline SVGs — no icon font, no external library. They follow a consistent style: stroke-based, no fill, 1.8px stroke-width, rounded caps and joins. Default size is 16×16px in UI contexts, larger where used decoratively.</p>
-
-    <span class="sg-sub-label">Icon Style Rules</span>
-    <div class="code">
-<span class="com">/* Standard icon — UI context (contact details, meta info) */</span>
-&lt;svg viewBox="0 0 24 24" style="width:16px; height:16px;"&gt;
-  stroke="<span class="val">currentColor</span>"   <span class="com">/* inherits text color */</span>
-  fill="<span class="val">none</span>"
-  stroke-width="<span class="val">1.8</span>"
-  stroke-linecap="<span class="val">round</span>"
-  stroke-linejoin="<span class="val">round</span>"
-&lt;/svg&gt;
-
-<span class="com">/* Decorative icon — placeholder / empty state */</span>
-fill="<span class="val">rgba(200,146,42,0.35)</span>"   <span class="com">/* muted gold */</span>
-width: <span class="val">40–72px</span>
-
-<span class="com">/* Play button — video thumbnails */</span>
-fill="<span class="val">white</span>"
-filter="<span class="val">drop-shadow(0 2px 8px rgba(0,0,0,0.5))</span>"
-width: <span class="val">44–64px</span>
-    </div>
-
-    <br>
-    <span class="sg-sub-label">Icons in Use</span>
-    <div style="background:var(--white); border:1px solid rgba(0,0,0,0.08); border-radius:4px; padding:24px; display:flex; flex-wrap:wrap; gap:32px; align-items:center;">
-      <div style="text-align:center;">
-        <svg viewBox="0 0 24 24" style="width:24px;height:24px;stroke:var(--gold);fill:none;stroke-width:1.8;display:block;margin:0 auto 8px;"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-        <div style="font-size:11px;color:#aaa;">Map pin</div>
-      </div>
-      <div style="text-align:center;">
-        <svg viewBox="0 0 24 24" style="width:24px;height:24px;stroke:var(--gold);fill:none;stroke-width:1.8;display:block;margin:0 auto 8px;"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-        <div style="font-size:11px;color:#aaa;">Phone</div>
-      </div>
-      <div style="text-align:center;">
-        <svg viewBox="0 0 24 24" style="width:24px;height:24px;stroke:var(--gold);fill:none;stroke-width:1.8;display:block;margin:0 auto 8px;"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-        <div style="font-size:11px;color:#aaa;">Email</div>
-      </div>
-      <div style="text-align:center;">
-        <svg viewBox="0 0 24 24" style="width:24px;height:24px;stroke:var(--gold);fill:none;stroke-width:1.8;display:block;margin:0 auto 8px;"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg>
-        <div style="font-size:11px;color:#aaa;">Calendar</div>
-      </div>
-      <div style="text-align:center;">
-        <svg viewBox="0 0 24 24" style="width:24px;height:24px;stroke:var(--gold);fill:none;stroke-width:1.8;display:block;margin:0 auto 8px;"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
-        <div style="font-size:11px;color:#aaa;">Clock</div>
-      </div>
-      <div style="text-align:center;">
-        <svg viewBox="0 0 24 24" style="width:24px;height:24px;fill:var(--gold);display:block;margin:0 auto 8px;"><path d="M8 5v14l11-7z"/></svg>
-        <div style="font-size:11px;color:#aaa;">Play</div>
-      </div>
-      <div style="text-align:center;">
-        <svg viewBox="0 0 64 64" fill="none" style="width:32px;height:32px;display:block;margin:0 auto 8px;"><circle cx="32" cy="32" r="30" stroke="var(--gold)" stroke-width="2"/><polyline points="18,33 27,42 46,22" stroke="var(--gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <div style="font-size:11px;color:#aaa;">Checkmark</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── CARDS ── -->
-  <section class="sg-section" id="cards">
-    <h2 class="sg-section-title">Cards</h2>
-    <p class="sg-section-desc">Three card patterns are used across the site. All share the gold top-border treatment. Border-radius is always 2px. Cards never have drop shadows except on hover.</p>
-
-    <div class="sg-sub">
-      <span class="sg-sub-label">Book Card — Resources Page</span>
-      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px;">
-        <div style="background:var(--white); border-top:3px solid var(--gold); border-radius:0 0 2px 2px; padding:22px 20px;">
-          <span style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold); font-weight:500; display:block; margin-bottom:6px;">Theology</span>
-          <h3 style="font-family:'Playfair Display',serif; font-size:17px; color:var(--navy); font-weight:700; margin-bottom:6px; line-height:1.3;">Knowing God</h3>
-          <p style="font-size:13px; color:#aaa; font-style:italic; margin-bottom:10px;">J.I. Packer</p>
-          <p style="font-size:14px; color:var(--text-mid); line-height:1.75;">A rich, warm study of the character of God — who He is and what it means to truly know Him.</p>
-        </div>
-        <div style="background:var(--cream); border-top:3px solid var(--gold); border-radius:0 0 2px 2px; padding:22px 20px;">
-          <span style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold); font-weight:500; display:block; margin-bottom:6px;">Classic</span>
-          <h3 style="font-family:'Playfair Display',serif; font-size:17px; color:var(--navy); font-weight:700; margin-bottom:6px; line-height:1.3;">Mere Christianity</h3>
-          <p style="font-size:13px; color:#aaa; font-style:italic; margin-bottom:10px;">C.S. Lewis</p>
-          <p style="font-size:14px; color:var(--text-mid); line-height:1.75;">One of the most influential Christian books of the 20th century.</p>
-        </div>
-        <div style="background:rgba(255,255,255,0.06); border-top:3px solid var(--gold-light); border-radius:0 0 2px 2px; padding:22px 20px; background:var(--navy);">
-          <span style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold-light); font-weight:500; display:block; margin-bottom:6px;">Start Here</span>
-          <h3 style="font-family:'Playfair Display',serif; font-size:17px; color:var(--white); font-weight:700; margin-bottom:6px; line-height:1.3;">Pastor's Pick variant</h3>
-          <p style="font-size:13px; color:rgba(255,255,255,0.5); font-style:italic; margin-bottom:10px;">Navy bg · gold-light border</p>
-          <p style="font-size:14px; color:rgba(255,255,255,0.75); line-height:1.75;">Used only in the Pastor's Picks section. Navy background, gold-light top border.</p>
-        </div>
-      </div>
-      <div class="code" style="margin-top:12px;">
-<span class="com">/* Standard book card */</span>
-background: <span class="val">var(--white)</span> <span class="com">or</span> <span class="val">var(--cream)</span> <span class="com">(alternates with section)</span>;
-border-top: <span class="val">3px solid var(--gold)</span>;
-border-radius: <span class="val">0 0 2px 2px</span>;
-padding: <span class="val">22px 20px</span>;
-hover: transform: <span class="val">translateY(-2px)</span>; box-shadow: <span class="val">0 6px 20px rgba(0,0,0,0.08)</span>;
-      </div>
-    </div>
-
-    <div class="sg-sub">
-      <span class="sg-sub-label">Online Resource Card — Left Border</span>
-      <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:16px;">
-        <a href="#" style="display:block; text-decoration:none; background:var(--white); border-left:4px solid var(--gold); border-radius:0 2px 2px 0; padding:20px 22px; color:inherit;">
-          <div style="font-family:'Playfair Display',serif; font-size:17px; color:var(--navy); font-weight:700; margin-bottom:6px; display:flex; justify-content:space-between;"><span>Ligonier Ministries</span><span style="font-size:13px; color:var(--gold); font-family:'Ubuntu',sans-serif; font-weight:400;">↗</span></div>
-          <p style="font-size:14px; color:var(--text-mid); line-height:1.75;">R.C. Sproul's ministry — a treasure of sermons and teaching on theology and the Christian life.</p>
-        </a>
-        <a href="#" style="display:block; text-decoration:none; background:var(--white); border-left:4px solid var(--gold); border-radius:0 2px 2px 0; padding:20px 22px; color:inherit;">
-          <div style="font-family:'Playfair Display',serif; font-size:17px; color:var(--navy); font-weight:700; margin-bottom:6px; display:flex; justify-content:space-between;"><span>Desiring God</span><span style="font-size:13px; color:var(--gold); font-family:'Ubuntu',sans-serif; font-weight:400;">↗</span></div>
-          <p style="font-size:14px; color:var(--text-mid); line-height:1.75;">John Piper's ministry — thousands of free sermons, articles, and devotionals.</p>
-        </a>
-      </div>
-      <div class="code" style="margin-top:12px;">
-<span class="com">/* Online resource card */</span>
-border-left: <span class="val">4px solid var(--gold)</span>;
-border-radius: <span class="val">0 2px 2px 0</span>;
-padding: <span class="val">20px 22px</span>;
-hover: transform: <span class="val">translateY(-2px)</span>; box-shadow: <span class="val">0 6px 20px rgba(0,0,0,0.08)</span>;
-      </div>
-    </div>
-  </section>
-
-  <!-- ── PAGE HEADER ── -->
-  <section class="sg-section" id="pageheader">
-    <h2 class="sg-section-title">Page Header Pattern</h2>
-    <p class="sg-section-desc">Every sub-page (all pages except index) uses this identical header pattern. It provides consistent orientation and visual identity across the site.</p>
-
-    <div style="border-radius:4px; overflow:hidden; border:1px solid rgba(0,0,0,0.1);">
-      <div style="background:var(--navy); padding:80px 40px 48px; text-align:center; border-bottom:3px solid var(--gold);">
-        <span style="font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold-light); font-weight:500; display:block; margin-bottom:12px;">The Word Preached</span>
-        <h1 style="font-family:'Playfair Display',serif; font-size:48px; font-weight:700; color:var(--white); margin-bottom:20px; line-height:1.2;">Sermons</h1>
-        <div style="width:48px; height:2px; background:var(--gold); margin:0 auto 20px;"></div>
-        <p style="max-width:560px; margin:0 auto; font-size:16px; color:rgba(255,255,255,0.7); line-height:1.8;">Every message is an expository, verse-by-verse walk through Scripture.</p>
-      </div>
-    </div>
-
-    <div class="code" style="margin-top:16px;">
-<span class="com">/* Page header structure */</span>
-background: <span class="val">var(--navy)</span>;
-padding: <span class="val">120px 20px 60px</span>; <span class="com">/* top padding accounts for fixed nav */</span>
-border-bottom: <span class="val">3px solid var(--gold)</span>;
-text-align: <span class="val">center</span>;
-
-<span class="com">/* Elements in order: */</span>
-1. .section-label   <span class="com">→ gold-light, 11px, uppercase, 0.2em spacing</span>
-2. h1               <span class="com">→ Playfair 700, clamp(32px, 5vw, 52px), white</span>
-3. .header-divider  <span class="com">→ 48px wide, 2px tall, gold, centered</span>
-4. p                <span class="com">→ max-width 580px, 16px, rgba(255,255,255,0.7)</span>
-    </div>
-  </section>
-
-  <!-- ── STEPS & CONNECTORS ── -->
-  <section class="sg-section" id="steps">
-    <h2 class="sg-section-title">Steps & Connectors</h2>
-    <p class="sg-section-desc">Used on the Romans Road and New Believer pages. Numbered steps with a fading gold connector line between them. The connector creates visual flow without cluttering the layout.</p>
-
-    <div style="max-width:600px;">
-      <div style="display:grid; grid-template-columns:48px 1fr; gap:28px; margin-bottom:0; align-items:start;">
-        <div style="width:48px; height:48px; border-radius:50%; background:var(--navy); border:2px solid var(--gold); display:flex; align-items:center; justify-content:center; font-family:'Playfair Display',serif; font-size:20px; color:var(--gold-light); flex-shrink:0; margin-top:4px;">1</div>
-        <div style="background:var(--white); border:1px solid rgba(0,0,0,0.08); border-radius:4px; padding:20px 24px;">
-          <h3 style="font-family:'Playfair Display',serif; font-size:22px; color:var(--navy); margin-bottom:8px;">Step title here</h3>
-          <div style="width:32px; height:2px; background:var(--gold); margin-bottom:12px;"></div>
-          <p style="font-size:15px; color:var(--text-mid); line-height:1.85;">Step content — explanation, scripture, and exposition go here.</p>
-        </div>
-      </div>
-      <div style="width:2px; height:32px; background:linear-gradient(to bottom, var(--gold), transparent); margin:-16px 0 -8px 23px; opacity:0.4;"></div>
-      <div style="display:grid; grid-template-columns:48px 1fr; gap:28px; align-items:start;">
-        <div style="width:48px; height:48px; border-radius:50%; background:var(--navy); border:2px solid var(--gold); display:flex; align-items:center; justify-content:center; font-family:'Playfair Display',serif; font-size:20px; color:var(--gold-light); flex-shrink:0; margin-top:4px;">2</div>
-        <div style="background:var(--white); border:1px solid rgba(0,0,0,0.08); border-radius:4px; padding:20px 24px;">
-          <h3 style="font-family:'Playfair Display',serif; font-size:22px; color:var(--navy); margin-bottom:8px;">Next step</h3>
-          <div style="width:32px; height:2px; background:var(--gold); margin-bottom:12px;"></div>
-          <p style="font-size:15px; color:var(--text-mid); line-height:1.85;">The connector line above fades from gold to transparent, indicating downward flow.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="code" style="margin-top:16px;">
-<span class="com">/* Step number circle */</span>
-width/height: <span class="val">48px</span>;
-border-radius: <span class="val">50%</span>;
-background: <span class="val">var(--navy)</span>;
-border: <span class="val">2px solid var(--gold)</span>;
-font-family: <span class="val">Playfair Display</span>; font-size: <span class="val">20px</span>; color: <span class="val">var(--gold-light)</span>;
-
-<span class="com">/* Connector line */</span>
-width: <span class="val">2px</span>; height: <span class="val">32px</span>;
-background: <span class="val">linear-gradient(to bottom, var(--gold), transparent)</span>;
-margin: <span class="val">-40px 0 -16px 23px</span>; <span class="com">/* 23px = half of 48px circle - 1px for border */</span>
-opacity: <span class="val">0.4</span>;
-    </div>
-  </section>
-
-  <!-- ── RESPONSIVE ── -->
-  <section class="sg-section" id="responsive">
-    <h2 class="sg-section-title">Responsive Behavior</h2>
-    <p class="sg-section-desc">The site has one primary breakpoint at 1080px where the hamburger menu kicks in. Most layout changes happen at this point. A few components have additional adjustments.</p>
-
-    <span class="sg-sub-label">Breakpoint Rules</span>
-    <div style="background:var(--white); border:1px solid rgba(0,0,0,0.08); border-radius:4px; overflow:hidden;">
-      <table style="width:100%; border-collapse:collapse; font-size:14px;">
-        <thead>
-          <tr style="background:var(--navy); color:white;">
-            <th style="padding:12px 16px; text-align:left; font-size:12px; text-transform:uppercase; letter-spacing:0.05em; font-weight:500;">Element</th>
-            <th style="padding:12px 16px; text-align:left; font-size:12px; text-transform:uppercase; letter-spacing:0.05em; font-weight:500;">Desktop (&gt;1080px)</th>
-            <th style="padding:12px 16px; text-align:left; font-size:12px; text-transform:uppercase; letter-spacing:0.05em; font-weight:500;">Mobile (≤1080px)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr style="border-bottom:1px solid rgba(0,0,0,0.06);">
-            <td style="padding:12px 16px; font-weight:500;">Navigation</td>
-            <td style="padding:12px 16px; color:var(--text-mid);">Full horizontal link list</td>
-            <td style="padding:12px 16px; color:var(--text-mid);">Hamburger → vertical slide-down menu</td>
-          </tr>
-          <tr style="border-bottom:1px solid rgba(0,0,0,0.06); background:var(--cream);">
-            <td style="padding:12px 16px; font-weight:500;">Book / card grids</td>
-            <td style="padding:12px 16px; color:var(--text-mid);">auto-fill, minmax(260–280px, 1fr)</td>
-            <td style="padding:12px 16px; color:var(--text-mid);">Single column</td>
-          </tr>
-          <tr style="border-bottom:1px solid rgba(0,0,0,0.06);">
-            <td style="padding:12px 16px; font-weight:500;">Pastor grid</td>
-            <td style="padding:12px 16px; color:var(--text-mid);">280px photo + 1fr bio</td>
-            <td style="padding:12px 16px; color:var(--text-mid);">Single column, photo max-width 240px</td>
-          </tr>
-          <tr style="border-bottom:1px solid rgba(0,0,0,0.06); background:var(--cream);">
-            <td style="padding:12px 16px; font-weight:500;">Contact grid</td>
-            <td style="padding:12px 16px; color:var(--text-mid);">1fr + 1fr (info + form)</td>
-            <td style="padding:12px 16px; color:var(--text-mid);">Single column, info above form</td>
-          </tr>
-          <tr style="border-bottom:1px solid rgba(0,0,0,0.06);">
-            <td style="padding:12px 16px; font-weight:500;">Sermon featured</td>
-            <td style="padding:12px 16px; color:var(--text-mid);">1fr video + 1fr info</td>
-            <td style="padding:12px 16px; color:var(--text-mid);">Single column, video above info</td>
-          </tr>
-          <tr style="border-bottom:1px solid rgba(0,0,0,0.06); background:var(--cream);">
-            <td style="padding:12px 16px; font-weight:500;">Step number circles</td>
-            <td style="padding:12px 16px; color:var(--text-mid);">48px circles, 28px gap</td>
-            <td style="padding:12px 16px; color:var(--text-mid);">36px circles, 16px gap, connector at 17px</td>
-          </tr>
-          <tr style="border-bottom:1px solid rgba(0,0,0,0.06);">
-            <td style="padding:12px 16px; font-weight:500;">Hero buttons</td>
-            <td style="padding:12px 16px; color:var(--text-mid);">Primary + Secondary side by side</td>
-            <td style="padding:12px 16px; color:var(--text-mid);">Secondary button hidden (display:none)</td>
-          </tr>
-          <tr style="background:var(--cream);">
-            <td style="padding:12px 16px; font-weight:500;">Sticky TOC (resources)</td>
-            <td style="padding:12px 16px; color:var(--text-mid);">position: sticky, top: 64px</td>
-            <td style="padding:12px 16px; color:var(--text-mid);">position: static, separators hidden</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="code" style="margin-top:16px;">
-<span class="com">/* Primary breakpoint */</span>
-@media (max-width: <span class="val">1080px</span>) {
-  nav { padding: <span class="val">0 20px</span>; }
-  .nav-links { display: <span class="val">none</span>; }
-  .hamburger { display: <span class="val">flex</span>; }
-}
-    </div>
-  </section>
-
-  <!-- ── IMAGERY ── -->
-  <section class="sg-section" id="imagery">
-    <h2 class="sg-section-title">Imagery</h2>
-    <p class="sg-section-desc">The site uses photography sparingly and purposefully. All photos are overlaid with a navy gradient to maintain brand consistency and text legibility.</p>
-
-    <span class="sg-sub-label">Photo Guidelines</span>
-    <div style="background:var(--white); border:1px solid rgba(0,0,0,0.08); border-radius:4px; overflow:hidden;">
-      <table style="width:100%; border-collapse:collapse; font-size:14px;">
-        <thead>
-          <tr style="background:var(--navy); color:white;">
-            <th style="padding:12px 16px; text-align:left; font-size:12px; text-transform:uppercase; letter-spacing:0.05em; font-weight:500;">Photo</th>
-            <th style="padding:12px 16px; text-align:left; font-size:12px; text-transform:uppercase; letter-spacing:0.05em; font-weight:500;">File</th>
-            <th style="padding:12px 16px; text-align:left; font-size:12px; text-transform:uppercase; letter-spacing:0.05em; font-weight:500;">Aspect Ratio</th>
-            <th style="padding:12px 16px; text-align:left; font-size:12px; text-transform:uppercase; letter-spacing:0.05em; font-weight:500;">Notes</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr style="border-bottom:1px solid rgba(0,0,0,0.06);">
-            <td style="padding:12px 16px; font-weight:500;">Hero background</td>
-            <td style="padding:12px 16px; font-family:monospace; font-size:13px;">/assets/images/hero-placeholder.svg</td>
-            <td style="padding:12px 16px; color:var(--text-mid);">Any — center/cover</td>
-            <td style="padding:12px 16px; color:var(--text-mid);">Navy gradient overlay at 82–92% opacity. Subject should be centered.</td>
-          </tr>
-          <tr style="border-bottom:1px solid rgba(0,0,0,0.06); background:var(--cream);">
-            <td style="padding:12px 16px; font-weight:500;">Pastor photo</td>
-            <td style="padding:12px 16px; font-family:monospace; font-size:13px;">/assets/images/pastor-placeholder.svg</td>
-            <td style="padding:12px 16px; color:var(--text-mid);">3:4 portrait</td>
-            <td style="padding:12px 16px; color:var(--text-mid);">object-fit: cover. Container has gold top border. Avoid busy backgrounds.</td>
-          </tr>
-          <tr style="border-bottom:1px solid rgba(0,0,0,0.06);">
-            <td style="padding:12px 16px; font-weight:500;">Sermon thumbnails</td>
-            <td style="padding:12px 16px; font-family:monospace; font-size:13px;">YouTube API</td>
-            <td style="padding:12px 16px; color:var(--text-mid);">16:9</td>
-            <td style="padding:12px 16px; color:var(--text-mid);">Auto-pulled from YouTube. Play overlay appears on hover.</td>
-          </tr>
-          <tr>
-            <td style="padding:12px 16px; font-weight:500;">Favicon</td>
-            <td style="padding:12px 16px; font-family:monospace; font-size:13px;">/assets/icons/favicon.svg / /assets/icons/favicon.svg</td>
-            <td style="padding:12px 16px; color:var(--text-mid);">1:1</td>
-            <td style="padding:12px 16px; color:var(--text-mid);">SVG for browser tabs. PNG (512×512+) for PWA home screen.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="code" style="margin-top:16px;">
-<span class="com">/* Hero overlay */</span>
-background: linear-gradient(to bottom,
-  <span class="val">rgba(8,40,70,0.82)</span> 0%,
-  <span class="val">rgba(8,40,70,0.92)</span> 100%),
-  url('<span class="val">/assets/images/hero-placeholder.svg</span>') center/cover no-repeat;
-
-<span class="com">/* Pastor photo container */</span>
-aspect-ratio: <span class="val">3/4</span>;
-border-top: <span class="val">3px solid var(--gold)</span>;
-img { width: <span class="val">100%</span>; height: <span class="val">100%</span>; object-fit: <span class="val">cover</span>; }
-    </div>
-  </section>
-
-  <!-- ── ACCESSIBILITY ── -->
-  <section class="sg-section" id="accessibility">
-    <h2 class="sg-section-title">Accessibility</h2>
-    <p class="sg-section-desc">The site aims for WCAG 2.1 AA compliance. Every interactive element must be keyboard accessible, every image must have meaningful alt text, and color contrast must meet minimum ratios.</p>
-
-    <span class="sg-sub-label">Color Contrast</span>
-    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:28px;">
-      <div style="background:var(--white); border:1px solid rgba(0,0,0,0.08); border-radius:4px; padding:16px; text-align:center;">
-        <div style="background:var(--navy); color:white; padding:12px; border-radius:2px; font-size:16px; margin-bottom:8px;">White on Navy</div>
-        <div style="font-size:12px; color:#4caf50; font-weight:500;">✓ Passes AA (10.4:1)</div>
-      </div>
-      <div style="background:var(--white); border:1px solid rgba(0,0,0,0.08); border-radius:4px; padding:16px; text-align:center;">
-        <div style="background:var(--cream); color:var(--text-dark); padding:12px; border-radius:2px; font-size:16px; margin-bottom:8px; border:1px solid #e0ddd7;">Dark on Cream</div>
-        <div style="font-size:12px; color:#4caf50; font-weight:500;">✓ Passes AA (14.1:1)</div>
-      </div>
-      <div style="background:var(--white); border:1px solid rgba(0,0,0,0.08); border-radius:4px; padding:16px; text-align:center;">
-        <div style="background:var(--navy); color:var(--gold); padding:12px; border-radius:2px; font-size:16px; margin-bottom:8px;">Gold on Navy</div>
-        <div style="font-size:12px; color:#ff9800; font-weight:500;">⚠ Use for labels only (4.3:1)</div>
-      </div>
-    </div>
-
-    <span class="sg-sub-label">ARIA & Semantic Rules</span>
-    <div class="code">
-<span class="com">/* Navigation */</span>
-&lt;nav aria-label="<span class="val">Main navigation</span>"&gt;
-&lt;ul role="<span class="val">list</span>"&gt;
-&lt;button aria-label="<span class="val">Open menu</span>" aria-expanded="<span class="val">false/true</span>"&gt;
-
-<span class="com">/* Images */</span>
-&lt;img alt="<span class="val">Pastor First Last</span>"&gt;          <span class="com">/* meaningful alt */</span>
-aria-hidden="<span class="val">true</span>"                     <span class="com">/* decorative SVGs */</span>
-
-<span class="com">/* Sections */</span>
-&lt;section aria-labelledby="<span class="val">section-heading-id</span>"&gt;
-
-<span class="com">/* Forms */</span>
-&lt;label for="<span class="val">input-id</span>"&gt;             <span class="com">/* always explicit for= */</span>
-role="<span class="val">status</span>"                       <span class="com">/* success/error messages */</span>
-
-<span class="com">/* Links */</span>
-target="_blank" rel="<span class="val">noopener</span>"        <span class="com">/* all external links */</span>
-aria-label="<span class="val">YouTube channel</span>"         <span class="com">/* icon-only links */</span>
-    </div>
-
-    <br>
-    <div class="do-dont">
-      <div class="do-box">
-        <strong>✓ Accessibility Do</strong>
-        Use semantic HTML elements (nav, main, section, footer). Give every form input an explicit label. Add aria-label to icon-only buttons and links. Use aria-labelledby to connect sections to their headings. Test keyboard navigation — every interactive element must be reachable by Tab.
-      </div>
-      <div class="dont-box">
-        <strong>✗ Accessibility Don't</strong>
-        Use color alone to convey information. Use placeholder text as a substitute for labels. Add decorative images without aria-hidden="true". Create click targets smaller than 44×44px. Remove focus outlines without providing an alternative focus indicator.
-      </div>
-    </div>
-  </section>
-
-  <!-- ── VOICE & TONE ── (moved here from original position) -->
-  <section class="sg-section" id="voice">
-    <h2 class="sg-section-title">Voice & Tone</h2>
-    <p class="sg-section-desc">The writing across the site should feel like Your Pastor speaking — warm, honest, direct, and doctrinally serious without being academic. Never preachy. Never corporate. Never vague.</p>
-
-    <div class="do-dont">
-      <div class="do-box">
-        <strong>✓ Do</strong>
-        Write in plain, honest sentences. Use the em dash for natural pauses. Be direct about what the church believes. Speak warmly to first-time visitors. Use "we" for the church. Let Scripture do the heavy lifting. End invitations with genuine warmth, not pressure.
-      </div>
-      <div class="dont-box">
-        <strong>✗ Don't</strong>
-        Use church jargon without explanation. Be vague about doctrine to avoid offending. Use corporate language ("community," "journey," "space"). Over-explain or pad with filler sentences. Make visitors feel guilty for not coming. Use exclamation points excessively.
-      </div>
-    </div>
-
-    <br>
-    <span class="sg-sub-label">Tone by Context</span>
-    <div style="background:var(--white); border:1px solid rgba(0,0,0,0.08); border-radius:4px; overflow:hidden;">
-      <table style="width:100%; border-collapse:collapse; font-size:14px;">
-        <thead>
-          <tr style="background:var(--navy); color:white;">
-            <th style="padding:12px 16px; text-align:left; font-weight:500; letter-spacing:0.05em; font-size:12px; text-transform:uppercase;">Context</th>
-            <th style="padding:12px 16px; text-align:left; font-weight:500; letter-spacing:0.05em; font-size:12px; text-transform:uppercase;">Tone</th>
-            <th style="padding:12px 16px; text-align:left; font-weight:500; letter-spacing:0.05em; font-size:12px; text-transform:uppercase;">Example</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr style="border-bottom:1px solid rgba(0,0,0,0.06);">
-            <td style="padding:12px 16px; font-weight:500;">Homepage / Hero</td>
-            <td style="padding:12px 16px; color:var(--text-mid);">Welcoming, clear, unhurried</td>
-            <td style="padding:12px 16px; color:var(--text-mid); font-style:italic;">"Come as you are — we mean that."</td>
-          </tr>
-          <tr style="border-bottom:1px solid rgba(0,0,0,0.06); background:var(--cream);">
-            <td style="padding:12px 16px; font-weight:500;">Romans Road</td>
-            <td style="padding:12px 16px; color:var(--text-mid);">Honest, plain, serious, hopeful</td>
-            <td style="padding:12px 16px; color:var(--text-mid); font-style:italic;">"This isn't meant to shame us. It's meant to be honest."</td>
-          </tr>
-          <tr style="border-bottom:1px solid rgba(0,0,0,0.06);">
-            <td style="padding:12px 16px; font-weight:500;">New Believer</td>
-            <td style="padding:12px 16px; color:var(--text-mid);">Pastoral, warm, practical</td>
-            <td style="padding:12px 16px; color:var(--text-mid); font-style:italic;">"You were not saved to figure this out on your own."</td>
-          </tr>
-          <tr style="border-bottom:1px solid rgba(0,0,0,0.06); background:var(--cream);">
-            <td style="padding:12px 16px; font-weight:500;">Beliefs</td>
-            <td style="padding:12px 16px; color:var(--text-mid);">Confident, precise, grounded</td>
-            <td style="padding:12px 16px; color:var(--text-mid); font-style:italic;">"We believe in one sovereign God, eternally existing as Father, Son, and Holy Spirit."</td>
-          </tr>
-          <tr>
-            <td style="padding:12px 16px; font-weight:500;">Contact / Prayer</td>
-            <td style="padding:12px 16px; color:var(--text-mid);">Gentle, no pressure, personal</td>
-            <td style="padding:12px 16px; color:var(--text-mid); font-style:italic;">"We believe God hears and answers prayer. Whatever you are carrying right now — we would be honored to carry it with you."</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <!-- ── USAGE RULES ── -->
-  <section class="sg-section" id="usage">
-    <h2 class="sg-section-title">Usage Rules</h2>
-    <p class="sg-section-desc">A few hard rules that keep the site consistent as it grows.</p>
-
-    <div class="do-dont">
-      <div class="do-box">
-        <strong>✓ Always</strong>
-        Use Playfair Display for all headings and display text. Use gold as an accent — borders, labels, dividers, and CTAs. Keep section padding at 60–80px. Link all scripture references to ESV.org. Keep the max content width at 960px. Use the gold 2px divider after every section title.
-      </div>
-      <div class="dont-box">
-        <strong>✗ Never</strong>
-        Use gold as a background color for large areas. Use more than two typefaces. Add a new color outside the defined palette. Use border-radius larger than 4px. Stack two navy sections back to back without a light section between. Add inline styles that override the CSS variables.
-      </div>
-    </div>
-
-    <br>
-    <span class="sg-sub-label">CSS Variables Reference</span>
-    <div class="code">
-<span class="kw">:root</span> {
-  <span class="com">/* Brand colors */</span>
-  --navy:       <span class="val">#082846</span>;   <span class="com">/* Primary dark — nav, hero, CTAs */</span>
-  --navy-mid:   <span class="val">#0d3b66</span>;   <span class="com">/* Secondary dark — hover states */</span>
-  --gold:       <span class="val">#c8922a</span>;   <span class="com">/* Accent — borders, labels, buttons */</span>
-  --gold-light: <span class="val">#e8b45a</span>;   <span class="com">/* Hover state for gold */</span>
-
-  <span class="com">/* Backgrounds */</span>
-  --cream:      <span class="val">#f9f5ee</span>;   <span class="com">/* Default page background */</span>
-  --white:      <span class="val">#ffffff</span>;   <span class="com">/* Cards, forms, even sections */</span>
-
-  <span class="com">/* Text */</span>
-  --text-dark:  <span class="val">#1a1a1a</span>;   <span class="com">/* Headings on light backgrounds */</span>
-  --text-mid:   <span class="val">#4a4a4a</span>;   <span class="com">/* Body copy */</span>
-}
-    </div>
-  </section>
-
-  <!-- ── FILE MAP ── -->
-  <section class="sg-section" id="filemap">
-    <h2 class="sg-section-title">File Map</h2>
-    <p class="sg-section-desc">All files live in the same root directory. No subdirectories except <code style="background:#eee; padding:2px 6px; border-radius:2px; font-size:13px;">icons/</code> for PWA assets.</p>
-
-    <span class="sg-sub-label">Pages</span>
-    <div style="background:var(--white); border:1px solid rgba(0,0,0,0.08); border-radius:4px; overflow:hidden; margin-bottom:24px;">
-      <table style="width:100%; border-collapse:collapse; font-size:14px;">
-        <thead>
-          <tr style="background:var(--navy); color:white;">
-            <th style="padding:12px 16px; text-align:left; font-size:12px; text-transform:uppercase; letter-spacing:0.05em; font-weight:500;">File</th>
-            <th style="padding:12px 16px; text-align:left; font-size:12px; text-transform:uppercase; letter-spacing:0.05em; font-weight:500;">Page</th>
-            <th style="padding:12px 16px; text-align:left; font-size:12px; text-transform:uppercase; letter-spacing:0.05em; font-weight:500;">Notes</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr style="border-bottom:1px solid rgba(0,0,0,0.06);">
-            <td style="padding:12px 16px; font-family:monospace; font-size:13px;">/index.html</td>
-            <td style="padding:12px 16px; font-weight:500;">Homepage</td>
-            <td style="padding:12px 16px; color:var(--text-mid);">Hero, About, Pastor, Beliefs, Livestream, Curious?, Contact</td>
-          </tr>
-          <tr style="border-bottom:1px solid rgba(0,0,0,0.06); background:var(--cream);">
-            <td style="padding:12px 16px; font-family:monospace; font-size:13px;">/pages/sermons.html</td>
-            <td style="padding:12px 16px; font-weight:500;">Sermons</td>
-            <td style="padding:12px 16px; color:var(--text-mid);">Auto-loads through Netlify function. Requires YT_API_KEY environment variable; YT_CHANNEL_ID is optional.</td>
-          </tr>
-          <tr style="border-bottom:1px solid rgba(0,0,0,0.06);">
-            <td style="padding:12px 16px; font-family:monospace; font-size:13px;">/pages/plan-your-visit.html</td>
-            <td style="padding:12px 16px; font-weight:500;">Plan Your Visit</td>
-            <td style="padding:12px 16px; color:var(--text-mid);">First-time visitor page with service times, expectations, kids note, location, and contact CTA.</td>
-          </tr>
-          <tr style="border-bottom:1px solid rgba(0,0,0,0.06); background:var(--cream);">
-            <td style="padding:12px 16px; font-family:monospace; font-size:13px;">/pages/beliefs.html</td>
-            <td style="padding:12px 16px; font-weight:500;">Statement of Faith</td>
-            <td style="padding:12px 16px; color:var(--text-mid);">7 doctrine sections with TOC. Has print stylesheet.</td>
-          </tr>
-          <tr style="border-bottom:1px solid rgba(0,0,0,0.06); background:var(--cream);">
-            <td style="padding:12px 16px; font-family:monospace; font-size:13px;">/pages/romans-road.html</td>
-            <td style="padding:12px 16px; font-weight:500;">The Romans Road</td>
-            <td style="padding:12px 16px; color:var(--text-mid);">5-step gospel presentation with common questions and decision CTA.</td>
-          </tr>
-          <tr style="border-bottom:1px solid rgba(0,0,0,0.06);">
-            <td style="padding:12px 16px; font-family:monospace; font-size:13px;">/pages/new-believer.html</td>
-            <td style="padding:12px 16px; font-weight:500;">New Believer</td>
-            <td style="padding:12px 16px; color:var(--text-mid);">8-step guide for new Christians. Links to contact with pre-filled reason.</td>
-          </tr>
-          <tr style="border-bottom:1px solid rgba(0,0,0,0.06); background:var(--cream);">
-            <td style="padding:12px 16px; font-family:monospace; font-size:13px;">/pages/prayer-request.html</td>
-            <td style="padding:12px 16px; font-weight:500;">Prayer Request</td>
-            <td style="padding:12px 16px; color:var(--text-mid);">Netlify form. Confidentiality checkbox. Optional name/contact fields.</td>
-          </tr>
-          <tr style="border-bottom:1px solid rgba(0,0,0,0.06);">
-            <td style="padding:12px 16px; font-family:monospace; font-size:13px;">/pages/resources.html</td>
-            <td style="padding:12px 16px; font-weight:500;">Resources</td>
-            <td style="padding:12px 16px; color:var(--text-mid);">10 book categories + 12 online resources. Sticky TOC on desktop.</td>
-          </tr>
-          <tr style="border-bottom:1px solid rgba(0,0,0,0.06); background:var(--cream);">
-            <td style="padding:12px 16px; font-family:monospace; font-size:13px;">/pages/glossary.html</td>
-            <td style="padding:12px 16px; font-weight:500;">Church Glossary</td>
-            <td style="padding:12px 16px; color:var(--text-mid);">Searchable plain-language glossary for first-time visitors and new believers.</td>
-          </tr>
-          <tr style="border-bottom:1px solid rgba(0,0,0,0.06);">
-            <td style="padding:12px 16px; font-family:monospace; font-size:13px;">404.html</td>
-            <td style="padding:12px 16px; font-weight:500;">Not Found</td>
-            <td style="padding:12px 16px; color:var(--text-mid);">Custom 404 page. Routed via netlify.toml.</td>
-          </tr>
-          <tr>
-            <td style="padding:12px 16px; font-family:monospace; font-size:13px;">/pages/thank-you.html</td>
-            <td style="padding:12px 16px; font-weight:500;">Thank You (unused)</td>
-            <td style="padding:12px 16px; color:var(--text-mid);">No longer used — forms now show popup. Can be deleted.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <span class="sg-sub-label">Assets & Config</span>
-    <div style="background:var(--white); border:1px solid rgba(0,0,0,0.08); border-radius:4px; overflow:hidden; margin-bottom:24px;">
-      <table style="width:100%; border-collapse:collapse; font-size:14px;">
-        <thead>
-          <tr style="background:var(--navy); color:white;">
-            <th style="padding:12px 16px; text-align:left; font-size:12px; text-transform:uppercase; letter-spacing:0.05em; font-weight:500;">File</th>
-            <th style="padding:12px 16px; text-align:left; font-size:12px; text-transform:uppercase; letter-spacing:0.05em; font-weight:500;">Purpose</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr style="border-bottom:1px solid rgba(0,0,0,0.06);">
-            <td style="padding:12px 16px; font-family:monospace; font-size:13px;">/assets/images/hero-placeholder.svg</td>
-            <td style="padding:12px 16px; color:var(--text-mid);">Hero background image. Any size — displayed center/cover with navy overlay.</td>
-          </tr>
-          <tr style="border-bottom:1px solid rgba(0,0,0,0.06); background:var(--cream);">
-            <td style="padding:12px 16px; font-family:monospace; font-size:13px;">/assets/images/pastor-placeholder.svg</td>
-            <td style="padding:12px 16px; color:var(--text-mid);">Pastor photo. Displayed at 3:4 aspect ratio, object-fit: cover.</td>
-          </tr>
-          <tr style="border-bottom:1px solid rgba(0,0,0,0.06);">
-            <td style="padding:12px 16px; font-family:monospace; font-size:13px;">/assets/icons/favicon.svg</td>
-            <td style="padding:12px 16px; color:var(--text-mid);">Browser tab icon. Gold cross in rounded square, transparent background.</td>
-          </tr>
-          <tr style="border-bottom:1px solid rgba(0,0,0,0.06); background:var(--cream);">
-            <td style="padding:12px 16px; font-family:monospace; font-size:13px;">/assets/icons/favicon.svg</td>
-            <td style="padding:12px 16px; color:var(--text-mid);">PWA home screen icon. Must be at least 512×512px.</td>
-          </tr>
-          <tr style="border-bottom:1px solid rgba(0,0,0,0.06);">
-            <td style="padding:12px 16px; font-family:monospace; font-size:13px;">/assets/manifest.json</td>
-            <td style="padding:12px 16px; color:var(--text-mid);">PWA manifest. Defines app name, colors, icons, shortcuts.</td>
-          </tr>
-          <tr style="border-bottom:1px solid rgba(0,0,0,0.06); background:var(--cream);">
-            <td style="padding:12px 16px; font-family:monospace; font-size:13px;">sw.js</td>
-            <td style="padding:12px 16px; color:var(--text-mid);">Service worker. Enables offline support. Must be in root directory.</td>
-          </tr>
-          <tr>
-            <td style="padding:12px 16px; font-family:monospace; font-size:13px;">netlify.toml</td>
-            <td style="padding:12px 16px; color:var(--text-mid);">Netlify config. Routes all 404s to custom 404.html.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <span class="sg-sub-label">Nav Structure</span>
-    <div class="code">
-<span class="com">/* Desktop nav order */</span>
-About · Pastor · Beliefs ▾ · Sermons · Livestream · Curious? ▾ · Contact · Prayer · Resources
-
-<span class="com">/* Beliefs dropdown */</span>
-→ Statement of Faith (/pages/beliefs.html)
-→ The Romans Road (/pages/romans-road.html)
-
-<span class="com">/* Curious? dropdown */</span>
-→ The Romans Road (/pages/romans-road.html)
-→ New Believer (/pages/new-believer.html)
-    </div>
-  </section>
-
-</div>
-
-<!-- FOOTER -->
-<div style="background:var(--navy); text-align:center; padding:32px 20px; font-size:13px; color:rgba(255,255,255,0.4); border-top:1px solid rgba(200,146,42,0.15);">
-  Example Church — Style Guide · Internal Document · Not for public distribution
-</div>
-
+<footer>
+  <p>Church Starter Template style guide instructions</p>
+</footer>
 <script src="/assets/js/site-enhancements.js" defer></script>
 </body>
 </html>
