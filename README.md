@@ -2,7 +2,7 @@
 
 This is a ready-to-customize static website for a local church.
 
-It is designed for a church that needs a simple, clear, visitor-friendly website without starting from a blank page. You can replace the example church information, update the pages, add your own photos, connect sermons from YouTube, and publish the site with Netlify.
+It is designed for a church that needs a simple, clear, visitor-friendly website without starting from a blank page. You can replace the example church information, update the pages, add your own photos, optionally connect sermons from YouTube, and publish the site on the host you prefer.
 
 You do not need a database. You do not need a complicated build system. Most edits are normal text edits inside `.html`, `.json`, and image files.
 
@@ -26,8 +26,59 @@ This starter includes:
 - Mobile navigation
 - Basic search engine metadata
 - Offline/service worker support
-- Netlify configuration
+- Optional Netlify configuration
 - A local preview server
+
+## Tools And Accounts You Need
+
+You can edit the basic website with only a text editor. A few extra tools make previewing, saving, and publishing easier.
+
+### Required For Basic Editing
+
+Text editor:
+
+- Easiest option: Visual Studio Code
+- Download: `https://code.visualstudio.com`
+- Use it to open the whole project folder and edit files.
+
+Web browser:
+
+- Chrome, Edge, Firefox, or Safari
+- Use it to preview the site.
+
+### Strongly Recommended
+
+Node.js:
+
+- Download: `https://nodejs.org`
+- Needed for the local preview server.
+- Needed for `node tools/customize-site.js`.
+
+Git:
+
+- Download: `https://git-scm.com`
+- Helps save versions of the site.
+- Helpful if you use GitHub, Netlify, Vercel, or Cloudflare Pages.
+
+GitHub account:
+
+- Website: `https://github.com`
+- Useful for storing the website and connecting it to a host.
+- Not strictly required if someone uploads files manually to a host.
+
+### Optional Depending On Hosting
+
+Hosting account:
+
+- Netlify: easiest path for this template's sermon API
+- Vercel: good static hosting, but sermon API needs an adapter
+- Cloudflare Pages: good static hosting, but sermon API needs an adapter
+- Traditional web host/cPanel: works for the static pages, but sermon API may need to be disabled or rebuilt in PHP/another backend
+
+YouTube API key:
+
+- Only needed if you want the sermon page to load recent YouTube videos automatically.
+- Not needed if you manually link to YouTube or keep the placeholder sermon page.
 
 ## Best First Step
 
@@ -71,7 +122,7 @@ Holds individual testimony placeholder pages.
 netlify/
 ```
 
-Holds the Netlify serverless function for loading recent sermons from YouTube.
+Holds an optional Netlify serverless function for loading recent sermons from YouTube. The static pages can still be hosted somewhere else.
 
 ```text
 tools/
@@ -86,7 +137,7 @@ The root folder also has important files:
 - `README.md`: this guide
 - `SETUP.md`: short setup checklist
 - `PROJECT_OVERVIEW.md`: maintenance notes
-- `netlify.toml`: Netlify hosting settings
+- `netlify.toml`: optional Netlify hosting settings
 - `sw.js`: service worker for caching
 - `sitemap.xml`: list of public pages for search engines
 - `robots.txt`: search engine instructions
@@ -236,9 +287,27 @@ Use 24-hour time:
 - `10:30` means 10:30 AM
 - `18:00` means 6:00 PM
 
-## Step 5: Configure Sermons
+## Step 5: Choose How Sermons Should Work
 
-The sermons page can load recent videos from YouTube.
+The sermons page can work in three ways.
+
+### Option A: Manual Sermon Links
+
+This is the simplest option.
+
+Edit:
+
+```text
+pages/sermons.html
+```
+
+Replace the placeholder archive links with links to your YouTube channel, Facebook page, podcast, or sermon archive.
+
+You do not need an API key for this option.
+
+### Option B: Automatic YouTube Feed With Netlify
+
+This starter includes a Netlify function that can load recent YouTube videos automatically.
 
 The browser does not call YouTube directly. Instead:
 
@@ -265,6 +334,24 @@ For local testing:
 Do not commit `.env` to GitHub. The `.gitignore` file is already set up to keep it private.
 
 If you do not want YouTube sermons yet, the site still works. The sermon page will show a setup message instead of recent videos.
+
+### Option C: Automatic Feed With Another Host
+
+This is possible, but someone technical will need to adapt the sermon function.
+
+Use this file as the starting point:
+
+```text
+netlify/functions/youtube-sermons.js
+```
+
+Then adapt it for your host:
+
+- Vercel: convert it to a Vercel serverless function
+- Cloudflare Pages: convert it to a Pages Function or Worker
+- Traditional hosting: rebuild it in whatever backend your host supports
+
+If your host only supports plain static files, use Option A.
 
 ## Step 6: Preview The Website On Your Computer
 
@@ -300,9 +387,13 @@ To stop the preview, press:
 Ctrl + C
 ```
 
-## Step 7: Publish With Netlify
+## Step 7: Choose A Hosting Option
 
-This starter is already prepared for Netlify.
+This is a static website, so the normal pages can be hosted in many places.
+
+### Hosting Option 1: Netlify
+
+Netlify is the easiest path if you want the included automatic sermon feed.
 
 Recommended Netlify settings:
 
@@ -316,6 +407,48 @@ The `netlify.toml` file already tells Netlify how to:
 - serve the sermon function
 - redirect older page URLs
 - handle the not-found page
+
+### Hosting Option 2: Vercel
+
+Vercel can host the static pages.
+
+Basic idea:
+
+- Connect the GitHub repo to Vercel.
+- Leave the build command blank.
+- Use `.` as the output/static directory if asked.
+
+Important: the included `/api/sermons` function is written for Netlify. If you want automatic YouTube sermons on Vercel, a technical helper needs to convert the function.
+
+### Hosting Option 3: Cloudflare Pages
+
+Cloudflare Pages can host the static pages.
+
+Basic idea:
+
+- Connect the GitHub repo to Cloudflare Pages.
+- Leave the build command blank.
+- Use `/` or `.` as the output directory if asked.
+
+Important: the included `/api/sermons` function is written for Netlify. If you want automatic YouTube sermons on Cloudflare, a technical helper needs to convert the function to a Pages Function or Worker.
+
+### Hosting Option 4: Traditional Web Hosting
+
+If your church already has hosting with cPanel, FTP, or a file manager, you can upload the site files.
+
+This works well for:
+
+- home page
+- interior pages
+- images
+- CSS
+- JavaScript
+
+This may not work for:
+
+- automatic YouTube sermon loading through `/api/sermons`
+
+For traditional hosting, use manual sermon links unless someone can build the API endpoint for that host.
 
 ## What To Edit For Each Common Change
 
@@ -355,8 +488,14 @@ Sermons:
 
 ```text
 pages/sermons.html
-netlify/functions/youtube-sermons.js
 .env.example
+```
+
+If using Netlify automatic sermons:
+
+```text
+netlify/functions/youtube-sermons.js
+netlify.toml
 ```
 
 Weekly schedule:
@@ -395,7 +534,15 @@ Do not put API keys in:
 - files in `assets/js/`
 - `README.md`
 
-Use Netlify environment variables for secrets.
+Use your hosting provider's environment variable or secret setting for secrets.
+
+Examples:
+
+- Netlify: Environment variables
+- Vercel: Environment Variables
+- Cloudflare: Variables and Secrets
+
+If your host does not support secrets, do not use the automatic sermon API on that host.
 
 The private local `.env` file should stay on your computer only.
 
@@ -416,9 +563,9 @@ If images do not show:
 
 If the sermon page does not load videos:
 
-- Make sure the YouTube API key is set in Netlify.
+- Make sure the YouTube API key is set in your hosting provider.
 - Make sure `SERMONS_CHANNEL_ID` is correct.
-- Make sure the Netlify function is deployed.
+- Make sure the sermon API function is deployed.
 - Try opening `/api/sermons` on the live site.
 
 If old pages return 404:
@@ -448,7 +595,7 @@ Use this checklist:
 - Prayer and contact forms point where you want them to go.
 - `sitemap.xml` uses your real domain.
 - `robots.txt` uses your real domain.
-- Netlify environment variables are set.
+- Hosting environment variables are set if you use automatic sermons.
 - The site has been tested on a phone.
 
 ## For Developers Or Volunteers

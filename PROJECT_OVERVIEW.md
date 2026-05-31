@@ -70,15 +70,17 @@ This project is a static website starter for a local church. Most pages are plai
 
 - `/assets/manifest.json` provides installable app metadata for browsers and mobile devices.
 
-- `netlify.toml` tells Netlify to publish the project root and route `/api/sermons` to the sermon function.
+- `netlify.toml` is an optional Netlify adapter. It publishes the project root and routes `/api/sermons` to the included sermon function when hosted on Netlify.
 
 ## Sermon Feed
 
-The sermon page does not call YouTube directly from the browser. Instead:
+The static site works without an automatic sermon feed. Churches can manually link to sermons in `pages/sermons.html`.
+
+If using the included Netlify sermon feed, the sermon page does not call YouTube directly from the browser. Instead:
 
 1. `/pages/sermons.html` calls `/api/sermons`.
 2. Netlify redirects that request to `netlify/functions/youtube-sermons.js`.
-3. The Netlify function uses the YouTube API key stored in Netlify environment variables.
+3. The Netlify function uses the YouTube API key stored in hosting environment variables.
 4. The function returns a small JSON list of recent videos.
 5. `/pages/sermons.html` renders the newest video as the featured sermon and the rest as cards.
 
@@ -90,6 +92,8 @@ SERMONS_CHANNEL_ID=optional-channel-id
 ```
 
 `SERMONS_API_KEY` is required for the live sermon feed. `SERMONS_CHANNEL_ID` is optional if the function has a default channel ID configured.
+
+Other hosts can be used, but the sermon function must be adapted for that host's serverless/API format.
 
 The `.env` file is for local development only and should never be committed to Git. `.env.example` documents the variable names without exposing real secrets.
 
@@ -123,3 +127,4 @@ http://localhost:3000/
 - Update `/assets/data/site-events.json` for regular weekly schedule changes or special events.
 - If cached files change and visitors are not seeing updates, update `CACHE_NAME` in `sw.js`.
 - When moving pages, update `netlify.toml`, `sitemap.xml`, and `sw.js` together.
+- If not using Netlify, keep the static pages and replace or remove the Netlify-specific function/redirect behavior.
