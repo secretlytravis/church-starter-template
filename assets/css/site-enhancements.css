@@ -6,7 +6,7 @@
   top: -48px;
   left: 16px;
   background: #ffffff;
-  color: #18362f;
+  color: #16324f;
   padding: 10px 14px;
   border-radius: 2px;
   z-index: 10000;
@@ -24,9 +24,9 @@
   right: 0;
   bottom: 0;
   z-index: 900;
-  background: #18362f;
+  background: #16324f;
   color: #ffffff;
-  border-top: 2px solid #b86f3a;
+  border-top: 2px solid #b7791f;
   box-shadow: 0 -8px 24px rgba(0,0,0,0.24);
 }
 
@@ -50,7 +50,7 @@
 }
 
 .this-sunday-text strong {
-  color: #d99a5e;
+  color: #d9a441;
   font-family: 'Playfair Display', serif;
   font-size: 18px;
   font-weight: 700;
@@ -84,8 +84,8 @@
 }
 
 .this-sunday-actions a:first-child {
-  background: #b86f3a;
-  border-color: #b86f3a;
+  background: #b7791f;
+  border-color: #b7791f;
 }
 
 .this-sunday-actions button {
@@ -132,8 +132,8 @@ body.has-this-sunday { padding-bottom: 62px; }
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  background: #18362f;
-  border-top: 2px solid #b86f3a;
+  background: #16324f;
+  border-top: 2px solid #b7791f;
   border-radius: 0 0 2px 2px;
   min-width: 220px;
   box-shadow: 0 8px 24px rgba(0,0,0,0.35);
@@ -176,7 +176,7 @@ body.has-this-sunday { padding-bottom: 62px; }
 
 .dropdown-menu a:hover {
   background: rgba(255,255,255,0.07);
-  color: #d99a5e;
+  color: #d9a441;
 }
 
 .mobile-menu {
@@ -185,10 +185,10 @@ body.has-this-sunday { padding-bottom: 62px; }
   top: 64px;
   left: 0;
   width: 100%;
-  background: #18362f;
+  background: #16324f;
   z-index: 999;
   padding: 18px 0;
-  border-bottom: 1px solid rgba(184,111,58,0.2);
+  border-bottom: 1px solid rgba(183,121,31,0.2);
 }
 
 .mobile-menu.open { display: block; }
@@ -210,7 +210,7 @@ body.has-this-sunday { padding-bottom: 62px; }
 }
 
 .mobile-menu a:hover {
-  color: #d99a5e;
+  color: #d9a441;
   background: rgba(255,255,255,0.04);
 }
 

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="lorem ipsum dolor sit amet consectetu">
 <meta name="description" content="lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et ">
-<title>lorem ipsum dolor sit amet</title>
+<title>Resource Library</title>
 <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Ubuntu:wght@300;400;500&display=swap" rel="stylesheet">
@@ -13,14 +13,14 @@
 html { scroll-behavior: smooth; }
 
 :root {
-  --navy: #18362f;
-  --navy-mid: #2f5d50;
-  --gold: #b86f3a;
-  --gold-light: #d99a5e;
+  --navy: #16324f;
+  --navy-mid: #315f7a;
+  --gold: #b7791f;
+  --gold-light: #d9a441;
   --cream: #f6f1e8;
   --white: #ffffff;
-  --text-dark: #17211d;
-  --text-mid: #52615a;
+  --text-dark: #1f2933;
+  --text-mid: #52616b;
 }
 
 body {
@@ -35,7 +35,7 @@ nav {
   position: fixed;
   width: 100%;
   top: 0;
-  background: rgba(24, 54, 47, 0.97);
+  background: rgba(22, 50, 79, 0.97);
   backdrop-filter: blur(8px);
   padding: 0 40px;
   display: flex;
@@ -43,7 +43,7 @@ nav {
   align-items: center;
   z-index: 1000;
   height: 64px;
-  border-bottom: 1px solid rgba(184, 111, 58, 0.25);
+  border-bottom: 1px solid rgba(183, 121, 31, 0.25);
 }
 .nav-brand {
   font-family: 'Playfair Display', serif;
@@ -80,8 +80,8 @@ nav {
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  background: #18362f;
-  border-top: 2px solid #b86f3a;
+  background: #16324f;
+  border-top: 2px solid #b7791f;
   border-radius: 0 0 2px 2px;
   min-width: 210px;
   box-shadow: 0 8px 24px rgba(0,0,0,0.35);
@@ -115,7 +115,7 @@ nav {
   box-sizing: border-box;
 }
 .dropdown-menu a:last-child { border-bottom: none; }
-.dropdown-menu a:hover { background: rgba(255,255,255,0.07); color: #d99a5e; }
+.dropdown-menu a:hover { background: rgba(255,255,255,0.07); color: #d9a441; }
 
 /* Hamburger */
 .hamburger {
@@ -143,7 +143,7 @@ nav {
   background: var(--navy);
   z-index: 999;
   padding: 20px 0;
-  border-bottom: 1px solid rgba(184,111,58,0.2);
+  border-bottom: 1px solid rgba(183,121,31,0.2);
 }
 .mobile-menu.open { display: block; }
 .mobile-menu a {
@@ -224,7 +224,7 @@ nav {
   gap: 8px;
 }
 .resource-filters button {
-  border: 1px solid rgba(24,54,47,0.18);
+  border: 1px solid rgba(22,50,79,0.18);
   background: var(--white);
   color: var(--navy-mid);
   padding: 9px 12px;
@@ -377,12 +377,12 @@ nav {
 
 /* ── FOOTER ── */
 footer {
-  background: #10231f;
+  background: #0f2538;
   text-align: center;
   padding: 40px 20px;
   font-size: 13px;
   color: rgba(255,255,255,0.4);
-  border-top: 1px solid rgba(184,111,58,0.15);
+  border-top: 1px solid rgba(183,121,31,0.15);
 }
 footer a { color: var(--gold-light); text-decoration: none; }
 
@@ -401,72 +401,72 @@ footer a { color: var(--gold-light); text-decoration: none; }
 <body>
 
 <!-- NAV -->
-<nav aria-label="lorem ipsum dol">
-  <a href="/index.html" class="nav-brand">lorem ipsum do</a>
+<nav aria-label="Main navigation">
+  <a href="/index.html" class="nav-brand">Example Church</a>
   <ul class="nav-links" role="list">
     
-    <li><a href="/index.html">lore</a></li>
-    <li><a href="/pages/plan-your-visit.html">lorem</a></li>
-    <li><a href="/pages/sermons.html">lorem i</a></li>
+    <li><a href="/index.html">Home</a></li>
+    <li><a href="/pages/plan-your-visit.html">Visit</a></li>
+    <li><a href="/pages/sermons.html">Sermons</a></li>
     <li class="nav-dropdown">
-      <a href="/pages/beliefs.html">lorem i</a>
+      <a href="/pages/beliefs.html">Beliefs</a>
       <div class="dropdown-menu">
-        <a href="/pages/beliefs.html">lorem ipsum dolor </a>
-        <a href="/pages/new-believer.html">lorem ipsum </a>
+        <a href="/pages/beliefs.html">Beliefs</a>
+        <a href="/pages/new-believer.html">New Believer</a>
       </div>
     </li>
     <li class="nav-dropdown">
-      <a href="/index.html#curious">lorem ip</a>
+      <a href="/index.html#curious">Questions</a>
       <div class="dropdown-menu">
-        <a href="/pages/romans-road.html">lorem ipsum dol</a>
-        <a href="/pages/ask-a-pastor.html">lorem ipsum </a>
-        <a href="/pages/questions.html">lorem ipsum dolor s</a>
+        <a href="/pages/romans-road.html">Romans Road</a>
+        <a href="/pages/ask-a-pastor.html">Ask a Pastor</a>
+        <a href="/pages/questions.html">Common Questions</a>
       </div>
     </li>
     <li class="nav-dropdown">
-      <a href="/pages/prayer-request.html">lorem </a>
+      <a href="/pages/prayer-request.html">Prayer</a>
       <div class="dropdown-menu">
-        <a href="/pages/need-help.html">lorem ipsum do</a>
-        <a href="/pages/prayer-request.html">lorem ipsum do</a>
+        <a href="/pages/need-help.html">Need Help</a>
+        <a href="/pages/prayer-request.html">Prayer</a>
       </div>
     </li>
     <li class="nav-dropdown">
-      <a href="/pages/resources.html">lorem ips</a>
+      <a href="/pages/resources.html">Resources</a>
       <div class="dropdown-menu">
-        <a href="/pages/resources.html">lorem ipsum dolo</a>
-        <a href="/pages/glossary.html">lorem ip</a>
+        <a href="/pages/resources.html">Resources</a>
+        <a href="/pages/glossary.html">Glossary</a>
       </div>
     </li>
-    <li><a href="/pages/staff.html">lorem</a></li>
+    <li><a href="/pages/staff.html">Staff</a></li>
   
   </ul>
-  <button class="hamburger" type="button" aria-label="lorem ips" aria-expanded="false">
+  <button class="hamburger" type="button" aria-label="Open menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
-<div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="lorem ipsum dolor">
-  <a href="/index.html" onclick="closeMenu()">lore</a>
-  <a href="/pages/plan-your-visit.html" onclick="closeMenu()">lorem ipsum dol</a>
-  <a href="/pages/sermons.html" onclick="closeMenu()">lorem i</a>
-  <a href="/pages/beliefs.html" onclick="closeMenu()">lorem i</a>
-  <a href="/pages/new-believer.html" onclick="closeMenu()" class="mobile-sub">lorem ipsum </a>
-  <a href="/index.html#curious" onclick="closeMenu()">lorem ip</a>
-  <a href="/pages/romans-road.html" onclick="closeMenu()" class="mobile-sub">lorem ipsum dol</a>
-  <a href="/pages/ask-a-pastor.html" onclick="closeMenu()" class="mobile-sub">lorem ipsum </a>
-  <a href="/pages/questions.html" onclick="closeMenu()" class="mobile-sub">lorem ipsum dolor s</a>
-  <a href="/pages/prayer-request.html" onclick="closeMenu()">lorem </a>
-  <a href="/pages/need-help.html" onclick="closeMenu()" class="mobile-sub">lorem ipsum do</a>
-  <a href="/pages/prayer-request.html" onclick="closeMenu()" class="mobile-sub">lorem ipsum do</a>
-  <a href="/pages/resources.html" onclick="closeMenu()">lorem ips</a>
-  <a href="/pages/glossary.html" onclick="closeMenu()" class="mobile-sub">lorem ip</a>
-  <a href="/pages/staff.html" onclick="closeMenu()">lorem</a>
+<div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile navigation">
+  <a href="/index.html" onclick="closeMenu()">Home</a>
+  <a href="/pages/plan-your-visit.html" onclick="closeMenu()">Visit</a>
+  <a href="/pages/sermons.html" onclick="closeMenu()">Sermons</a>
+  <a href="/pages/beliefs.html" onclick="closeMenu()">Beliefs</a>
+  <a href="/pages/new-believer.html" onclick="closeMenu()" class="mobile-sub">New Believer</a>
+  <a href="/index.html#curious" onclick="closeMenu()">Questions</a>
+  <a href="/pages/romans-road.html" onclick="closeMenu()" class="mobile-sub">Romans Road</a>
+  <a href="/pages/ask-a-pastor.html" onclick="closeMenu()" class="mobile-sub">Ask a Pastor</a>
+  <a href="/pages/questions.html" onclick="closeMenu()" class="mobile-sub">Common Questions</a>
+  <a href="/pages/prayer-request.html" onclick="closeMenu()">Prayer</a>
+  <a href="/pages/need-help.html" onclick="closeMenu()" class="mobile-sub">Need Help</a>
+  <a href="/pages/prayer-request.html" onclick="closeMenu()" class="mobile-sub">Prayer</a>
+  <a href="/pages/resources.html" onclick="closeMenu()">Resources</a>
+  <a href="/pages/glossary.html" onclick="closeMenu()" class="mobile-sub">Glossary</a>
+  <a href="/pages/staff.html" onclick="closeMenu()">Staff</a>
 </div>
 
 <!-- PAGE HEADER -->
 <div class="page-header">
-  <span class="section-label">lorem ipsum dol</span>
-  <h1>lorem ips</h1>
+  <span class="section-label">Resources</span>
+  <h1>Resource Library</h1>
   <div class="header-divider"></div>
   <p>lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim </p>
 </div>
@@ -476,11 +476,11 @@ footer a { color: var(--gold-light); text-decoration: none; }
   <div style="max-width: 760px; margin: 0 auto;">
     <div class="verse-intro-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 40px;">
       <div style="background: var(--cream); border-left: 4px solid var(--gold); padding: 24px 24px; border-radius: 0 2px 2px 0;">
-        <span style="font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); font-weight:500; display:block; margin-bottom:10px;"><a href="https://www.esv.org/2+Peter+3:18" target="_blank" rel="noopener" style="color:inherit; text-decoration:none; border-bottom:1px dotted rgba(184,111,58,0.6);">lorem ipsum </a></span>
+        <span style="font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); font-weight:500; display:block; margin-bottom:10px;"><a href="https://www.esv.org/2+Peter+3:18" target="_blank" rel="noopener" style="color:inherit; text-decoration:none; border-bottom:1px dotted rgba(183,121,31,0.6);">lorem ipsum </a></span>
         <p style="font-family:'Playfair Display',serif; font-size:17px; font-style:italic; color:var(--text-dark); line-height:1.7;">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod temp</p>
       </div>
       <div style="background: var(--cream); border-left: 4px solid var(--gold); padding: 24px 24px; border-radius: 0 2px 2px 0;">
-        <span style="font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); font-weight:500; display:block; margin-bottom:10px;"><a href="https://www.esv.org/Romans+12:2" target="_blank" rel="noopener" style="color:inherit; text-decoration:none; border-bottom:1px dotted rgba(184,111,58,0.6);">lorem ipsum</a></span>
+        <span style="font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); font-weight:500; display:block; margin-bottom:10px;"><a href="https://www.esv.org/Romans+12:2" target="_blank" rel="noopener" style="color:inherit; text-decoration:none; border-bottom:1px dotted rgba(183,121,31,0.6);">lorem ipsum</a></span>
         <p style="font-family:'Playfair Display',serif; font-size:17px; font-style:italic; color:var(--text-dark); line-height:1.7;">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco lab</p>
       </div>
     </div>
@@ -518,32 +518,32 @@ footer a { color: var(--gold-light); text-decoration: none; }
   <!-- PASTOR'S PICKS -->
   <div class="resource-section" id="pastorpicks" style="background: var(--navy);">
     <div class="container">
-      <span class="section-label" style="color:var(--gold-light);">lorem ipsum dolor sit ame</span>
-      <h2 class="section-title" style="color:var(--white);">lorem ipsum dolor s</h2>
+      <span class="section-label" style="color:var(--gold-light);">Pastor Picks</span>
+      <h2 class="section-title" style="color:var(--white);">Pastor Picks</h2>
       <div class="section-divider"></div>
       <p class="section-desc" style="color:rgba(255,255,255,0.7);">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam qui</p>
       <div class="book-grid">
-        <div class="book-card" style="background:rgba(255,255,255,0.06); border-top-color:#d99a5e;">
+        <div class="book-card" style="background:rgba(255,255,255,0.06); border-top-color:#d9a441;">
           <span class="book-tag" style="color:var(--gold-light);">lorem ipsu</span>
-          <h3 class="book-title" style="color:var(--white);">lorem ipsum</h3>
+          <h3 class="book-title" style="color:var(--white);">Resource Item 1</h3>
           <p class="book-author" style="color:rgba(255,255,255,0.5);">lorem ipsum</p>
           <p class="book-desc" style="color:rgba(255,255,255,0.75);">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam q</p>
         </div>
-        <div class="book-card" style="background:rgba(255,255,255,0.06); border-top-color:#d99a5e;">
+        <div class="book-card" style="background:rgba(255,255,255,0.06); border-top-color:#d9a441;">
           <span class="book-tag" style="color:var(--gold-light);">lorem ipsum</span>
-          <h3 class="book-title" style="color:var(--white);">lorem ipsum dolor sit amet consectetur adipi</h3>
+          <h3 class="book-title" style="color:var(--white);">Resource Item 2</h3>
           <p class="book-author" style="color:rgba(255,255,255,0.5);">lorem ipsum do</p>
           <p class="book-desc" style="color:rgba(255,255,255,0.75);">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis no</p>
         </div>
-        <div class="book-card" style="background:rgba(255,255,255,0.06); border-top-color:#d99a5e;">
+        <div class="book-card" style="background:rgba(255,255,255,0.06); border-top-color:#d9a441;">
           <span class="book-tag" style="color:var(--gold-light);">lorem ipsum</span>
-          <h3 class="book-title" style="color:var(--white);">lorem ipsum dolor s</h3>
+          <h3 class="book-title" style="color:var(--white);">Resource Item 3</h3>
           <p class="book-author" style="color:rgba(255,255,255,0.5);">lorem ipsum dolor sit amet consectet</p>
           <p class="book-desc" style="color:rgba(255,255,255,0.75);">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostru</p>
         </div>
-        <div class="book-card" style="background:rgba(255,255,255,0.06); border-top-color:#d99a5e;">
+        <div class="book-card" style="background:rgba(255,255,255,0.06); border-top-color:#d9a441;">
           <span class="book-tag" style="color:var(--gold-light);">lorem ipsum</span>
-          <h3 class="book-title" style="color:var(--white);">lorem ipsum dolor sit a</h3>
+          <h3 class="book-title" style="color:var(--white);">Resource Item 4</h3>
           <p class="book-author" style="color:rgba(255,255,255,0.5);">lorem ipsum d</p>
           <p class="book-desc" style="color:rgba(255,255,255,0.75);">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud ex</p>
         </div>
@@ -554,147 +554,147 @@ footer a { color: var(--gold-light); text-decoration: none; }
   <!-- FOUNDATIONS -->
   <div class="resource-section" id="foundations">
     <div class="container">
-      <span class="section-label">lorem ipsum do</span>
-      <h2 class="section-title">lorem ipsum</h2>
+      <span class="section-label">Foundations</span>
+      <h2 class="section-title">Foundations</h2>
       <div class="section-divider"></div>
       <p class="section-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis </p>
       <div class="book-grid">
         <div class="book-card">
           <span class="book-tag">lorem ipsum </span>
-          <h3 class="book-title">lorem ipsum do</h3>
+          <h3 class="book-title">Resource Item 5</h3>
           <p class="book-author">lorem ipsum </p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore ma</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ipsum </span>
-          <h3 class="book-title">lorem ipsum dolor </h3>
+          <h3 class="book-title">Resource Item 6</h3>
           <p class="book-author">lorem ipsum dolo</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim ve</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem </span>
-          <h3 class="book-title">lorem ipsu</h3>
+          <h3 class="book-title">Resource Item 7</h3>
           <p class="book-author">lorem ipsum </p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis n</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem </span>
-          <h3 class="book-title">lorem ipsum dolor s</h3>
+          <h3 class="book-title">Resource Item 8</h3>
           <p class="book-author">lorem ipsum </p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nos</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem i</span>
-          <h3 class="book-title">lorem ipsum dolor</h3>
+          <h3 class="book-title">Resource Item 9</h3>
           <p class="book-author">lorem ipsu</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim ven</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ipsum dolo</span>
-          <h3 class="book-title">lorem ipsum</h3>
+          <h3 class="book-title">Resource Item 10</h3>
           <p class="book-author">lorem ipsum</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad min</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ip</span>
-          <h3 class="book-title">lorem ipsum dolor sit a</h3>
+          <h3 class="book-title">Resource Item 11</h3>
           <p class="book-author">lorem ipsum d</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam qui</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem i</span>
-          <h3 class="book-title">lorem ipsum dolor </h3>
+          <h3 class="book-title">Resource Item 12</h3>
           <p class="book-author">lorem ipsu</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco </p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem i</span>
-          <h3 class="book-title">lorem ipsum dolor sit </h3>
+          <h3 class="book-title">Resource Item 13</h3>
           <p class="book-author">lorem ipsum</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliq</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ipsum</span>
-          <h3 class="book-title">lorem ipsum dolor sit amet consectetur adipi</h3>
+          <h3 class="book-title">Resource Item 14</h3>
           <p class="book-author">lorem ipsum do</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nost</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ipsum</span>
-          <h3 class="book-title">lorem ipsum dolor sit amet</h3>
+          <h3 class="book-title">Resource Item 15</h3>
           <p class="book-author">lorem ipsum do</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad </p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ipsum</span>
-          <h3 class="book-title">lorem ipsum dolor s</h3>
+          <h3 class="book-title">Resource Item 16</h3>
           <p class="book-author">lorem ipsum dolor sit amet consectet</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliq</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ipsu</span>
-          <h3 class="book-title">lorem ipsum dolor sit</h3>
+          <h3 class="book-title">Resource Item 17</h3>
           <p class="book-author">lorem ipsu</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco labori</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ipsum</span>
-          <h3 class="book-title">lorem ipsum dolor</h3>
+          <h3 class="book-title">Resource Item 18</h3>
           <p class="book-author">lorem ipsum dolor sit am</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nis</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ip</span>
-          <h3 class="book-title">lorem ipsum dolor sit amet consectetu</h3>
+          <h3 class="book-title">Resource Item 19</h3>
           <p class="book-author">lorem ipsum do</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco labor</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ipsum dolo</span>
-          <h3 class="book-title">lorem ipsum </h3>
+          <h3 class="book-title">Resource Item 20</h3>
           <p class="book-author">lorem ipsu</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut al</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ipsum</span>
-          <h3 class="book-title">lorem ipsum dolor </h3>
+          <h3 class="book-title">Resource Item 21</h3>
           <p class="book-author">lorem ipsum do</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco labori</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ip</span>
-          <h3 class="book-title">lorem ipsum d</h3>
+          <h3 class="book-title">Resource Item 22</h3>
           <p class="book-author">lorem ipsu</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitat</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem </span>
-          <h3 class="book-title">lorem ipsum dolor</h3>
+          <h3 class="book-title">Resource Item 23</h3>
           <p class="book-author">lorem ipsu</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud</p>
         </div>
 
         <div class="book-card">
           <span class="book-tag">lorem ips</span>
-          <h3 class="book-title">lorem ipsum dolor sit amet consec</h3>
+          <h3 class="book-title">Resource Item 24</h3>
           <p class="book-author">lorem ipsum</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation </p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ipsum d</span>
-          <h3 class="book-title">lorem ipsum dolor</h3>
+          <h3 class="book-title">Resource Item 25</h3>
           <p class="book-author">lorem ipsu</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nos</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ipsum dolo</span>
-          <h3 class="book-title">lorem ipsum dolor sit a</h3>
+          <h3 class="book-title">Resource Item 26</h3>
           <p class="book-author">lorem ipsum d</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim ven</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ips</span>
-          <h3 class="book-title">lorem ipsum dolor sit </h3>
+          <h3 class="book-title">Resource Item 27</h3>
           <p class="book-author">lorem ipsum dolor si</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna ali</p>
         </div>
@@ -705,94 +705,94 @@ footer a { color: var(--gold-light); text-decoration: none; }
   <!-- SOAR -->
   <div class="resource-section" id="theology">
     <div class="container">
-      <span class="section-label">lorem ipsum </span>
-      <h2 class="section-title">lorem ipsum dolor sit a</h2>
+      <span class="section-label">Growth</span>
+      <h2 class="section-title">Growth Resources</h2>
       <div class="section-divider"></div>
       <p class="section-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat </p>
       <div class="book-grid">
         <div class="book-card">
           <span class="book-tag">lorem ip</span>
-          <h3 class="book-title">lorem ipsum dolor s</h3>
+          <h3 class="book-title">Resource Item 28</h3>
           <p class="book-author">lorem ipsum </p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ul</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ip</span>
-          <h3 class="book-title">lorem ipsum dolor s</h3>
+          <h3 class="book-title">Resource Item 29</h3>
           <p class="book-author">lorem ipsum</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exerc</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ipsu</span>
-          <h3 class="book-title">lorem ipsum dolo</h3>
+          <h3 class="book-title">Resource Item 30</h3>
           <p class="book-author">lorem ipsum dolor </p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ipsum dolor</span>
-          <h3 class="book-title">lorem ipsum dolor sit amet</h3>
+          <h3 class="book-title">Resource Item 31</h3>
           <p class="book-author">lorem ipsum dolor sit amet consectetur adipiscing elit</p>
-          <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint oc <a href="https://www.lifeway.com" target="_blank" rel="noopener" style="color:var(--gold); text-decoration:none; border-bottom:1px dotted rgba(184,111,58,0.5);">lorem ips</a></p>
+          <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint oc <a href="https://www.lifeway.com" target="_blank" rel="noopener" style="color:var(--gold); text-decoration:none; border-bottom:1px dotted rgba(183,121,31,0.5);">lorem ips</a></p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ip</span>
-          <h3 class="book-title">lorem ipsum dolor sit</h3>
+          <h3 class="book-title">Resource Item 32</h3>
           <p class="book-author">lorem ipsu</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ulla</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ip</span>
-          <h3 class="book-title">lorem ipsum dolor</h3>
+          <h3 class="book-title">Resource Item 33</h3>
           <p class="book-author">lorem ipsum</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation u</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ip</span>
-          <h3 class="book-title">lorem ipsum dolor sit amet consectetur a</h3>
+          <h3 class="book-title">Resource Item 34</h3>
           <p class="book-author">lorem ipsum dolor sit </p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco labor</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ip</span>
-          <h3 class="book-title">lorem ipsum dolor </h3>
+          <h3 class="book-title">Resource Item 35</h3>
           <p class="book-author">lorem ipsum dolo</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ul</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ip</span>
-          <h3 class="book-title">lorem ipsum dolor </h3>
+          <h3 class="book-title">Resource Item 36</h3>
           <p class="book-author">lorem ipsum do</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit vo</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ipsum dolo</span>
-          <h3 class="book-title">lorem ipsum dolor sit amet conse</h3>
+          <h3 class="book-title">Resource Item 37</h3>
           <p class="book-author">lorem ipsum dolor sit amet </p>
-          <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim <a href="https://bfm.sbc.net/bfm2000/" target="_blank" rel="noopener" style="color:var(--gold); text-decoration:none; border-bottom:1px dotted rgba(184,111,58,0.5);">lorem ipsum dolor sit</a></p>
+          <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim <a href="https://bfm.sbc.net/bfm2000/" target="_blank" rel="noopener" style="color:var(--gold); text-decoration:none; border-bottom:1px dotted rgba(183,121,31,0.5);">lorem ipsum dolor sit</a></p>
         </div>
 
 
         <div class="book-card">
           <span class="book-tag">lorem ip</span>
-          <h3 class="book-title">lorem ipsum dolor sit a</h3>
+          <h3 class="book-title">Resource Item 38</h3>
           <p class="book-author">lorem ipsum</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim v</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ipsum dolor</span>
-          <h3 class="book-title">lorem ipsum dolor</h3>
+          <h3 class="book-title">Resource Item 39</h3>
           <p class="book-author">lorem ipsum dol</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad </p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ips</span>
-          <h3 class="book-title">lorem ipsum dolor sit </h3>
+          <h3 class="book-title">Resource Item 40</h3>
           <p class="book-author">lorem ipsum d</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labo</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ip</span>
-          <h3 class="book-title">lorem ipsum dolo</h3>
+          <h3 class="book-title">Resource Item 41</h3>
           <p class="book-author">lorem ipsum</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim venia</p>
         </div>
@@ -804,105 +804,105 @@ footer a { color: var(--gold-light); text-decoration: none; }
   <!-- APOLOGETICS -->
   <div class="resource-section" id="apologetics">
     <div class="container">
-      <span class="section-label">lorem ipsum dolor s</span>
-      <h2 class="section-title">lorem ipsum</h2>
+      <span class="section-label">Apologetics</span>
+      <h2 class="section-title">Apologetics</h2>
       <div class="section-divider"></div>
       <p class="section-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamc</p>
       <div class="book-grid">
         <div class="book-card">
           <span class="book-tag">lorem ipsum</span>
-          <h3 class="book-title">lorem ipsum dolor</h3>
+          <h3 class="book-title">Resource Item 42</h3>
           <p class="book-author">lorem ipsu</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitati</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ipsum</span>
-          <h3 class="book-title">lorem ipsum dolor s</h3>
+          <h3 class="book-title">Resource Item 43</h3>
           <p class="book-author">lorem ipsum</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercita</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ipsum</span>
-          <h3 class="book-title">lorem ipsum dolor </h3>
+          <h3 class="book-title">Resource Item 44</h3>
           <p class="book-author">lorem ipsum</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud ex</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ipsum</span>
-          <h3 class="book-title">lorem i</h3>
+          <h3 class="book-title">Resource Item 45</h3>
           <p class="book-author">lorem ipsu</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco lab</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ipsum</span>
-          <h3 class="book-title">lorem ipsum dolor sit amet consectetur adi</h3>
+          <h3 class="book-title">Resource Item 46</h3>
           <p class="book-author">lorem ipsum dolor sit amet conse</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud ex</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ipsum</span>
-          <h3 class="book-title">lorem ipsum dolo</h3>
+          <h3 class="book-title">Resource Item 47</h3>
           <p class="book-author">lorem ipsum dolor </p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ipsum</span>
-          <h3 class="book-title">lorem ipsum dolor sit </h3>
+          <h3 class="book-title">Resource Item 48</h3>
           <p class="book-author">lorem ipsum dolor</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ulla</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ipsum</span>
-          <h3 class="book-title">lorem ipsum dolor s</h3>
+          <h3 class="book-title">Resource Item 49</h3>
           <p class="book-author">lorem ipsu</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exerc</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ipsum</span>
-          <h3 class="book-title">lorem ipsum dolor s</h3>
+          <h3 class="book-title">Resource Item 50</h3>
           <p class="book-author">lorem ipsum dol</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco labor</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ipsum</span>
-          <h3 class="book-title">lorem ipsum dolor</h3>
+          <h3 class="book-title">Resource Item 51</h3>
           <p class="book-author">lorem ipsum</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ipsum</span>
-          <h3 class="book-title">lorem ip</h3>
+          <h3 class="book-title">Resource Item 52</h3>
           <p class="book-author">lorem ipsum dolor </p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ulla</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ips</span>
-          <h3 class="book-title">lorem ipsum dolor si</h3>
+          <h3 class="book-title">Resource Item 53</h3>
           <p class="book-author">lorem ipsu</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco lab</p>
         </div>
 
         <div class="book-card">
           <span class="book-tag">lorem ipsum</span>
-          <h3 class="book-title">lorem ipsum dolor sit ame</h3>
+          <h3 class="book-title">Resource Item 54</h3>
           <p class="book-author">lorem ipsum dolor</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna a</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ipsum </span>
-          <h3 class="book-title">lorem ipsum d</h3>
+          <h3 class="book-title">Resource Item 55</h3>
           <p class="book-author">lorem ipsum dolor </p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim a</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ipsu</span>
-          <h3 class="book-title">lorem ipsum dolor sit am</h3>
+          <h3 class="book-title">Resource Item 56</h3>
           <p class="book-author">lorem ipsum dolor </p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ips</span>
-          <h3 class="book-title">lorem ipsum dolor sit </h3>
+          <h3 class="book-title">Resource Item 57</h3>
           <p class="book-author">lorem ipsum d</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad mini</p>
         </div>
@@ -913,75 +913,75 @@ footer a { color: var(--gold-light); text-decoration: none; }
   <!-- PRAYER -->
   <div class="resource-section" id="prayer">
     <div class="container">
-      <span class="section-label">lorem ipsum dolor sit</span>
-      <h2 class="section-title">lorem </h2>
+      <span class="section-label">Prayer</span>
+      <h2 class="section-title">Prayer</h2>
       <div class="section-divider"></div>
       <p class="section-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim v</p>
       <div class="book-grid">
         <div class="book-card">
           <span class="book-tag">lorem </span>
-          <h3 class="book-title">lorem </h3>
+          <h3 class="book-title">Resource Item 58</h3>
           <p class="book-author">lorem ipsum do</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim </p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem </span>
-          <h3 class="book-title">lorem ipsum do</h3>
+          <h3 class="book-title">Resource Item 59</h3>
           <p class="book-author">lorem ipsum</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud ex</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem </span>
-          <h3 class="book-title">lorem ipsum dolor</h3>
+          <h3 class="book-title">Resource Item 60</h3>
           <p class="book-author">lorem ipsum do</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim v</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem </span>
-          <h3 class="book-title">lorem ipsum dolor si</h3>
+          <h3 class="book-title">Resource Item 61</h3>
           <p class="book-author">lorem ipsum dolor si</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitati</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem </span>
-          <h3 class="book-title">lorem ipsum dolor sit amet consecte</h3>
+          <h3 class="book-title">Resource Item 62</h3>
           <p class="book-author">lorem ipsum d</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis no</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem </span>
-          <h3 class="book-title">lorem ipsum dolor </h3>
+          <h3 class="book-title">Resource Item 63</h3>
           <p class="book-author">lorem ips</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco labor</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem </span>
-          <h3 class="book-title">lorem ipsum dolor sit amet consecte</h3>
+          <h3 class="book-title">Resource Item 64</h3>
           <p class="book-author">lorem ipsum dolo</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco labori</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem i</span>
-          <h3 class="book-title">lorem ipsum dolor</h3>
+          <h3 class="book-title">Resource Item 65</h3>
           <p class="book-author">lorem ipsum dolo</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco l</p>
         </div>
 
         <div class="book-card">
           <span class="book-tag">lorem </span>
-          <h3 class="book-title">lorem ipsum dolor</h3>
+          <h3 class="book-title">Resource Item 66</h3>
           <p class="book-author">lorem ipsum</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut e</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem </span>
-          <h3 class="book-title">lorem ipsum dolo</h3>
+          <h3 class="book-title">Resource Item 67</h3>
           <p class="book-author">lorem ips</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore </p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem </span>
-          <h3 class="book-title">lorem ipsum d</h3>
+          <h3 class="book-title">Resource Item 68</h3>
           <p class="book-author">lorem ipsum dol</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et d</p>
         </div>
@@ -993,87 +993,87 @@ footer a { color: var(--gold-light); text-decoration: none; }
   <!-- SUFFERING -->
   <div class="resource-section" id="suffering">
     <div class="container">
-      <span class="section-label">lorem ipsum d</span>
-      <h2 class="section-title">lorem ipsum dolor sit</h2>
+      <span class="section-label">Suffering</span>
+      <h2 class="section-title">Suffering and Care</h2>
       <div class="section-divider"></div>
       <p class="section-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris </p>
       <div class="book-grid">
         <div class="book-card">
           <span class="book-tag">lorem ips</span>
-          <h3 class="book-title">lorem ipsum dolor sit amet consectetur adip</h3>
+          <h3 class="book-title">Resource Item 69</h3>
           <p class="book-author">lorem ipsum do</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exerc</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ips</span>
-          <h3 class="book-title">lorem ipsum dolo</h3>
+          <h3 class="book-title">Resource Item 70</h3>
           <p class="book-author">lorem ipsu</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercita</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ips</span>
-          <h3 class="book-title">lorem ipsum dolor sit amet cons</h3>
+          <h3 class="book-title">Resource Item 71</h3>
           <p class="book-author">lorem ipsu</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nos</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ips</span>
-          <h3 class="book-title">lorem ipsum dolor sit amet consectet</h3>
+          <h3 class="book-title">Resource Item 72</h3>
           <p class="book-author">lorem ipsum dolor sit amet consectetu</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exerci</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ips</span>
-          <h3 class="book-title">lore</h3>
+          <h3 class="book-title">Resource Item 73</h3>
           <p class="book-author">lorem ipsum dolor s</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco l</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ips</span>
-          <h3 class="book-title">lorem ipsum dolor sit a</h3>
+          <h3 class="book-title">Resource Item 74</h3>
           <p class="book-author">lorem ipsum </p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitatio</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem </span>
-          <h3 class="book-title">lorem ipsum dolor sit a</h3>
+          <h3 class="book-title">Resource Item 75</h3>
           <p class="book-author">lorem ipsum do</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo cons</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem</span>
-          <h3 class="book-title">lorem ipsum dolo</h3>
+          <h3 class="book-title">Resource Item 76</h3>
           <p class="book-author">lorem ipsum dolor sit</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercita</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ips</span>
-          <h3 class="book-title">lorem ipsum dolo</h3>
+          <h3 class="book-title">Resource Item 77</h3>
           <p class="book-author">lorem ipsum dol</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequ</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ipsu</span>
-          <h3 class="book-title">lorem ipsum dolo</h3>
+          <h3 class="book-title">Resource Item 78</h3>
           <p class="book-author">lorem ipsu</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea co</p>
         </div>
 
         <div class="book-card">
           <span class="book-tag">lorem i</span>
-          <h3 class="book-title">lorem ipsum dolor s</h3>
+          <h3 class="book-title">Resource Item 79</h3>
           <p class="book-author">lorem ipsum dolo</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et d</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem</span>
-          <h3 class="book-title">lorem ipsum dolor</h3>
+          <h3 class="book-title">Resource Item 80</h3>
           <p class="book-author">lorem ipsum </p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliq</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ipsu</span>
-          <h3 class="book-title">lorem ipsum dolor </h3>
+          <h3 class="book-title">Resource Item 81</h3>
           <p class="book-author">lorem ipsum</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim ve</p>
         </div>
@@ -1084,63 +1084,63 @@ footer a { color: var(--gold-light); text-decoration: none; }
   <!-- MARRIAGE & FAMILY -->
   <div class="resource-section" id="family">
     <div class="container">
-      <span class="section-label">lorem ipsum dolo</span>
-      <h2 class="section-title">lorem ipsum dolor sit</h2>
+      <span class="section-label">Marriage and Family</span>
+      <h2 class="section-title">Marriage and Family</h2>
       <div class="section-divider"></div>
       <p class="section-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitatio</p>
       <div class="book-grid">
         <div class="book-card">
           <span class="book-tag">lorem ip</span>
-          <h3 class="book-title">lorem ipsum dolor sit a</h3>
+          <h3 class="book-title">Resource Item 82</h3>
           <p class="book-author">lorem ipsum dolor sit amet</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation u</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ip</span>
-          <h3 class="book-title">lorem ipsum dol</h3>
+          <h3 class="book-title">Resource Item 83</h3>
           <p class="book-author">lorem ipsum</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud </p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ip</span>
-          <h3 class="book-title">lorem ipsum do</h3>
+          <h3 class="book-title">Resource Item 84</h3>
           <p class="book-author">lorem ipsum do</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco lab</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ips</span>
-          <h3 class="book-title">lorem ipsum dolor sit amet </h3>
+          <h3 class="book-title">Resource Item 85</h3>
           <p class="book-author">lorem ipsu</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exerc</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ips</span>
-          <h3 class="book-title">lorem ipsum do</h3>
+          <h3 class="book-title">Resource Item 86</h3>
           <p class="book-author">lorem ipsum do</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud</p>
         </div>
 
         <div class="book-card">
           <span class="book-tag">lorem ip</span>
-          <h3 class="book-title">lorem ipsum dolor sit</h3>
+          <h3 class="book-title">Resource Item 87</h3>
           <p class="book-author">lorem ipsum</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ips</span>
-          <h3 class="book-title">lorem ips</h3>
+          <h3 class="book-title">Resource Item 88</h3>
           <p class="book-author">lorem ipsum dolo</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ips</span>
-          <h3 class="book-title">lorem ipsum dolor si</h3>
+          <h3 class="book-title">Resource Item 89</h3>
           <p class="book-author">lorem ipsum</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut en</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ipsum dolor s</span>
-          <h3 class="book-title">lorem ipsum dolor sit a</h3>
+          <h3 class="book-title">Resource Item 90</h3>
           <p class="book-author">lorem ipsum dolor sit</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim </p>
         </div>
@@ -1152,75 +1152,75 @@ footer a { color: var(--gold-light); text-decoration: none; }
   <!-- CHURCH -->
   <div class="resource-section" id="church">
     <div class="container">
-      <span class="section-label">lorem ipsum dolor </span>
-      <h2 class="section-title">lorem ipsu</h2>
+      <span class="section-label">Church Life</span>
+      <h2 class="section-title">Church Life</h2>
       <div class="section-divider"></div>
       <p class="section-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut</p>
       <div class="book-grid">
         <div class="book-card">
           <span class="book-tag">lorem ipsum </span>
-          <h3 class="book-title">lorem ipsu</h3>
+          <h3 class="book-title">Resource Item 91</h3>
           <p class="book-author">lorem ipsu</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullam</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ipsum d</span>
-          <h3 class="book-title">lorem ipsum dolor sit ame</h3>
+          <h3 class="book-title">Resource Item 92</h3>
           <p class="book-author">lorem ipsum dolor s</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostr</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ipsum</span>
-          <h3 class="book-title">lorem ipsum dolor</h3>
+          <h3 class="book-title">Resource Item 93</h3>
           <p class="book-author">lorem ipsum dolor sit am</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitati</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ipsum</span>
-          <h3 class="book-title">lorem ipsum dolor sit </h3>
+          <h3 class="book-title">Resource Item 94</h3>
           <p class="book-author">lorem ipsum dolor sit amet co</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ipsu</span>
-          <h3 class="book-title">lorem ipsum dolor</h3>
+          <h3 class="book-title">Resource Item 95</h3>
           <p class="book-author">lorem ipsum dolor sit am</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nos</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ips</span>
-          <h3 class="book-title">lorem ipsum dolor sit </h3>
+          <h3 class="book-title">Resource Item 96</h3>
           <p class="book-author">lorem ipsum dolor s</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exer</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ip</span>
-          <h3 class="book-title">lorem ipsum dolor sit</h3>
+          <h3 class="book-title">Resource Item 97</h3>
           <p class="book-author">lorem ipsum dolor sit amet cons</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ipsum dolor</span>
-          <h3 class="book-title">lorem ipsum dolor</h3>
+          <h3 class="book-title">Resource Item 98</h3>
           <p class="book-author">lorem ipsum dolor sit amet co</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco labori</p>
         </div>
 
         <div class="book-card">
           <span class="book-tag">lorem ipsu</span>
-          <h3 class="book-title">lorem ipsum dolor sit amet conse</h3>
+          <h3 class="book-title">Resource Item 99</h3>
           <p class="book-author">lorem ipsum dolor</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad min</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ipsu</span>
-          <h3 class="book-title">lorem ipsum dolor </h3>
+          <h3 class="book-title">Resource Item </h3>
           <p class="book-author">lorem ipsum dolor</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem</span>
-          <h3 class="book-title">lorem ipsum dolo</h3>
+          <h3 class="book-title">Resource Item </h3>
           <p class="book-author">lorem ipsum</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna </p>
         </div>
@@ -1231,75 +1231,75 @@ footer a { color: var(--gold-light); text-decoration: none; }
   <!-- EVANGELISM & MISSIONS -->
   <div class="resource-section" id="missions">
     <div class="container">
-      <span class="section-label">lorem ipsum dolor si</span>
-      <h2 class="section-title">lorem ipsum dolor sit ame</h2>
+      <span class="section-label">Evangelism and Missions</span>
+      <h2 class="section-title">Evangelism and Missions</h2>
       <div class="section-divider"></div>
       <p class="section-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad min</p>
       <div class="book-grid">
         <div class="book-card">
           <span class="book-tag">lorem ipsu</span>
-          <h3 class="book-title">lorem ipsum dolor sit amet consectetur </h3>
+          <h3 class="book-title">Resource Item </h3>
           <p class="book-author">lorem ipsum</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris ni</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ipsum</span>
-          <h3 class="book-title">lorem i</h3>
+          <h3 class="book-title">Resource Item </h3>
           <p class="book-author">lorem ipsu</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullam</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ip</span>
-          <h3 class="book-title">lorem ipsum dolor sit a</h3>
+          <h3 class="book-title">Resource Item </h3>
           <p class="book-author">lorem ipsu</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut ali</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ip</span>
-          <h3 class="book-title">lorem ipsum</h3>
+          <h3 class="book-title">Resource Item </h3>
           <p class="book-author">lorem ipsum do</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ips</span>
-          <h3 class="book-title">lorem ipsum dolor sit ame</h3>
+          <h3 class="book-title">Resource Item </h3>
           <p class="book-author">lorem ipsum dolo</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ull</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ip</span>
-          <h3 class="book-title">lorem ipsum dolor s</h3>
+          <h3 class="book-title">Resource Item </h3>
           <p class="book-author">lorem ipsu</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris n</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ip</span>
-          <h3 class="book-title">lorem ipsum dolo</h3>
+          <h3 class="book-title">Resource Item </h3>
           <p class="book-author">lorem ipsum</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea c</p>
         </div>
 
         <div class="book-card">
           <span class="book-tag">lorem ipsu</span>
-          <h3 class="book-title">lorem ipsum dolor</h3>
+          <h3 class="book-title">Resource Item </h3>
           <p class="book-author">lorem ips</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore e</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ip</span>
-          <h3 class="book-title">lorem ipsum dolor si</h3>
+          <h3 class="book-title">Resource Item </h3>
           <p class="book-author">lorem ipsum d</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ipsu</span>
-          <h3 class="book-title">lorem ipsum do</h3>
+          <h3 class="book-title">Resource Item </h3>
           <p class="book-author">lorem ipsum </p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolor</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ip</span>
-          <h3 class="book-title">lorem ipsum dolor </h3>
+          <h3 class="book-title">Resource Item </h3>
           <p class="book-author">lorem ipsum dolor sit amet conse</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua u</p>
         </div>
@@ -1310,38 +1310,38 @@ footer a { color: var(--gold-light); text-decoration: none; }
   <!-- DISCIPLESHIP -->
   <div class="resource-section" id="discipleship">
     <div class="container">
-      <span class="section-label">lorem ipsum dolo</span>
-      <h2 class="section-title">lorem ipsum </h2>
+      <span class="section-label">Discipleship</span>
+      <h2 class="section-title">Discipleship</h2>
       <div class="section-divider"></div>
       <p class="section-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat dui</p>
       <div class="book-grid">
         <div class="book-card">
           <span class="book-tag">lorem ipsum </span>
-          <h3 class="book-title">lorem ipsum dolor sit amet co</h3>
+          <h3 class="book-title">Resource Item </h3>
           <p class="book-author">lorem ipsum do</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris </p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ipsum </span>
-          <h3 class="book-title">lorem ipsu</h3>
+          <h3 class="book-title">Resource Item </h3>
           <p class="book-author">lorem ipsum dolor s</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ipsum </span>
-          <h3 class="book-title">lorem ipsum dolor sit am</h3>
+          <h3 class="book-title">Resource Item </h3>
           <p class="book-author">lorem ipsum dolor s</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ipsum </span>
-          <h3 class="book-title">lorem ip</h3>
+          <h3 class="book-title">Resource Item </h3>
           <p class="book-author">lorem ipsum </p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitati</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ipsum </span>
-          <h3 class="book-title">lorem ipsu</h3>
+          <h3 class="book-title">Resource Item </h3>
           <p class="book-author">lorem ipsum d</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip e</p>
         </div>
@@ -1349,25 +1349,25 @@ footer a { color: var(--gold-light); text-decoration: none; }
 
         <div class="book-card">
           <span class="book-tag">lorem ipsum dolo</span>
-          <h3 class="book-title">lorem ipsum dol</h3>
+          <h3 class="book-title">Resource Item </h3>
           <p class="book-author">lorem ipsum </p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ips</span>
-          <h3 class="book-title">lorem ipsum </h3>
+          <h3 class="book-title">Resource Item </h3>
           <p class="book-author">lorem ipsum dol</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua </p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ipsum </span>
-          <h3 class="book-title">lorem ipsum dolor sit amet c</h3>
+          <h3 class="book-title">Resource Item </h3>
           <p class="book-author">lorem ipsum dolor </p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna a</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ipsum dolo</span>
-          <h3 class="book-title">lorem ipsum dolor sit amet consectetur adipiscing</h3>
+          <h3 class="book-title">Resource Item </h3>
           <p class="book-author">lorem ipsum </p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore </p>
         </div>
@@ -1378,81 +1378,81 @@ footer a { color: var(--gold-light); text-decoration: none; }
   <!-- BIOGRAPHY & CHURCH HISTORY -->
   <div class="resource-section" id="biography">
     <div class="container">
-      <span class="section-label">lorem ipsum dolor sit </span>
-      <h2 class="section-title">lorem ipsum dolor sit amet con</h2>
+      <span class="section-label">Biography and History</span>
+      <h2 class="section-title">Biography and Church History</h2>
       <div class="section-divider"></div>
       <p class="section-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure do</p>
       <div class="book-grid">
         <div class="book-card">
           <span class="book-tag">lorem ips</span>
-          <h3 class="book-title">lorem ipsum </h3>
+          <h3 class="book-title">Resource Item </h3>
           <p class="book-author">lorem ipsum do</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo co</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ips</span>
-          <h3 class="book-title">lorem ipsum dolor</h3>
+          <h3 class="book-title">Resource Item </h3>
           <p class="book-author">lorem ipsum dolo</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris n</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ips</span>
-          <h3 class="book-title">lorem ipsum</h3>
+          <h3 class="book-title">Resource Item </h3>
           <p class="book-author">lorem ipsum dol</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ips</span>
-          <h3 class="book-title">lorem ipsum dol</h3>
+          <h3 class="book-title">Resource Item </h3>
           <p class="book-author">lorem ipsum</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliq</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ipsum d</span>
-          <h3 class="book-title">lorem ipsum dolor sit amet consect</h3>
+          <h3 class="book-title">Resource Item </h3>
           <p class="book-author">lorem ipsum d</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco </p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ips</span>
-          <h3 class="book-title">lorem ipsum dolo</h3>
+          <h3 class="book-title">Resource Item </h3>
           <p class="book-author">lorem ipsum dol</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ips</span>
-          <h3 class="book-title">lorem ipsum dolor sit ame</h3>
+          <h3 class="book-title">Resource Item </h3>
           <p class="book-author">lorem ipsum dolo</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi u</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ipsum do</span>
-          <h3 class="book-title">lorem ipsum dolor sit amet conse</h3>
+          <h3 class="book-title">Resource Item </h3>
           <p class="book-author">lorem ipsum d</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut a</p>
         </div>
 
         <div class="book-card">
           <span class="book-tag">lorem ipsum do</span>
-          <h3 class="book-title">lorem ipsum dolor sit ame</h3>
+          <h3 class="book-title">Resource Item </h3>
           <p class="book-author">lorem ipsum dolor</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et </p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ips</span>
-          <h3 class="book-title">lorem ipsum dol</h3>
+          <h3 class="book-title">Resource Item </h3>
           <p class="book-author">lorem ipsum dolo</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et </p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ips</span>
-          <h3 class="book-title">lorem ipsum dolor s</h3>
+          <h3 class="book-title">Resource Item </h3>
           <p class="book-author">lorem ipsum dolor</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et </p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ipsum do</span>
-          <h3 class="book-title">lorem ipsum dol</h3>
+          <h3 class="book-title">Resource Item </h3>
           <p class="book-author">lorem ipsum dol</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et d</p>
         </div>
@@ -1463,68 +1463,68 @@ footer a { color: var(--gold-light); text-decoration: none; }
   <!-- PREACHING -->
   <div class="resource-section" id="preaching">
     <div class="container">
-      <span class="section-label">lorem ipsum dolor sit amet co</span>
-      <h2 class="section-title">lorem ips</h2>
+      <span class="section-label">Preaching</span>
+      <h2 class="section-title">Preaching</h2>
       <div class="section-divider"></div>
       <p class="section-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliqui</p>
       <div class="book-grid">
         <div class="book-card">
           <span class="book-tag">lorem ipsu</span>
-          <h3 class="book-title">lorem ipsum dolor sit </h3>
+          <h3 class="book-title">Resource Item </h3>
           <p class="book-author">lorem ipsu</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis </p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ips</span>
-          <h3 class="book-title">lorem ipsum dolor sit a</h3>
+          <h3 class="book-title">Resource Item </h3>
           <p class="book-author">lorem ipsum dolor sit</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et </p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ips</span>
-          <h3 class="book-title">lorem ipsum dolor sit ame</h3>
+          <h3 class="book-title">Resource Item </h3>
           <p class="book-author">lorem ipsum d</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliq</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ipsu</span>
-          <h3 class="book-title">lorem ipsum dolor </h3>
+          <h3 class="book-title">Resource Item </h3>
           <p class="book-author">lorem ipsum dol</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et </p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ips</span>
-          <h3 class="book-title">lorem ipsum dolor </h3>
+          <h3 class="book-title">Resource Item </h3>
           <p class="book-author">lorem ipsu</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliq</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ipsum</span>
-          <h3 class="book-title">lorem ipsum dolor sit </h3>
+          <h3 class="book-title">Resource Item </h3>
           <p class="book-author">lorem ips</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magn</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ips</span>
-          <h3 class="book-title">lorem ipsum dolor sit amet consec</h3>
+          <h3 class="book-title">Resource Item </h3>
           <p class="book-author">lorem ipsu</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut </p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ip</span>
-          <h3 class="book-title">lorem ipsum dolor sit am</h3>
+          <h3 class="book-title">Resource Item </h3>
           <p class="book-author">lorem ipsum dolo</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ipsum dolor</span>
-          <h3 class="book-title">lorem ipsum dolor</h3>
+          <h3 class="book-title">Resource Item </h3>
           <p class="book-author">lorem ipsum do</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim</p>
         </div>
         <div class="book-card">
           <span class="book-tag">lorem ipsum </span>
-          <h3 class="book-title">lorem ipsum dolor sit amet consectetu</h3>
+          <h3 class="book-title">Resource Item </h3>
           <p class="book-author">lorem ipsum dolor sit amet consectetur a</p>
           <p class="book-desc">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad </p>
         </div>
@@ -1535,8 +1535,8 @@ footer a { color: var(--gold-light); text-decoration: none; }
   <!-- ONLINE RESOURCES -->
   <div class="resource-section" id="online" style="background: var(--navy);">
     <div class="container">
-      <span class="section-label" style="color:var(--gold-light);">lorem ipsum dolo</span>
-      <h2 class="section-title" style="color:var(--white);">lorem ipsum dolo</h2>
+      <span class="section-label" style="color:var(--gold-light);">Online Resources</span>
+      <h2 class="section-title" style="color:var(--white);">Online Resources</h2>
       <div class="section-divider"></div>
       <p class="section-desc" style="color:rgba(255,255,255,0.7);">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore ma</p>
       <div class="online-grid">

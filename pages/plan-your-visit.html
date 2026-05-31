@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="lorem ipsum dolor sit amet consectetu">
 <meta name="description" content="lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim">
-<title>lorem ipsum dolor sit amet conse</title>
+<title>Plan Your Visit</title>
 <link rel="manifest" href="/assets/manifest.json">
-<meta name="theme-color" content="#18362f">
+<meta name="theme-color" content="#16324f">
 <link rel="apple-touch-icon" href="/assets/icons/favicon.svg">
 <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,14 +15,14 @@
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 :root {
-  --navy: #18362f;
-  --navy-mid: #2f5d50;
-  --gold: #b86f3a;
-  --gold-light: #d99a5e;
+  --navy: #16324f;
+  --navy-mid: #315f7a;
+  --gold: #b7791f;
+  --gold-light: #d9a441;
   --cream: #f6f1e8;
   --white: #ffffff;
-  --text-dark: #17211d;
-  --text-mid: #52615a;
+  --text-dark: #1f2933;
+  --text-mid: #52616b;
 }
 body {
   font-family: 'Ubuntu', sans-serif;
@@ -34,7 +34,7 @@ nav {
   position: fixed;
   width: 100%;
   top: 0;
-  background: rgba(24, 54, 47, 0.97);
+  background: rgba(22, 50, 79, 0.97);
   backdrop-filter: blur(8px);
   padding: 0 40px;
   display: flex;
@@ -42,7 +42,7 @@ nav {
   align-items: center;
   z-index: 1000;
   height: 64px;
-  border-bottom: 1px solid rgba(184,111,58,0.25);
+  border-bottom: 1px solid rgba(183,121,31,0.25);
 }
 .nav-brand {
   font-family: 'Playfair Display', serif;
@@ -78,8 +78,8 @@ nav {
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  background: #18362f;
-  border-top: 2px solid #b86f3a;
+  background: #16324f;
+  border-top: 2px solid #b7791f;
   border-radius: 0 0 2px 2px;
   min-width: 210px;
   box-shadow: 0 8px 24px rgba(0,0,0,0.35);
@@ -113,7 +113,7 @@ nav {
   box-sizing: border-box;
 }
 .dropdown-menu a:last-child { border-bottom: none; }
-.dropdown-menu a:hover { background: rgba(255,255,255,0.07); color: #d99a5e; }
+.dropdown-menu a:hover { background: rgba(255,255,255,0.07); color: #d9a441; }
 .hamburger {
   display: none;
   flex-direction: column;
@@ -139,7 +139,7 @@ nav {
   background: var(--navy);
   z-index: 999;
   padding: 20px 0;
-  border-bottom: 1px solid rgba(184,111,58,0.2);
+  border-bottom: 1px solid rgba(183,121,31,0.2);
 }
 .mobile-menu.open { display: block; }
 .mobile-menu a {
@@ -152,7 +152,7 @@ nav {
 }
 .mobile-menu a:hover { color: var(--gold-light); background: rgba(255,255,255,0.04); }
 .page-header {
-  background: linear-gradient(rgba(24,54,47,0.88), rgba(24,54,47,0.92)), url('/assets/images/hero-placeholder.svg') center/cover;
+  background: linear-gradient(rgba(22,50,79,0.88), rgba(22,50,79,0.92)), url('/assets/images/hero-placeholder.svg') center/cover;
   padding: 140px 20px 76px;
   text-align: center;
   border-bottom: 3px solid var(--gold);
@@ -342,7 +342,7 @@ main { padding: 72px 20px 84px; }
 .visit-form input:focus,
 .visit-form textarea:focus,
 .visit-form select:focus {
-  outline: 2px solid rgba(184,111,58,0.25);
+  outline: 2px solid rgba(183,121,31,0.25);
   border-color: var(--navy-mid);
 }
 .visit-form textarea {
@@ -389,12 +389,12 @@ main { padding: 72px 20px 84px; }
   line-height: 1.8;
 }
 footer {
-  background: #10231f;
+  background: #0f2538;
   text-align: center;
   padding: 40px 20px;
   font-size: 13px;
   color: rgba(255,255,255,0.4);
-  border-top: 1px solid rgba(184,111,58,0.15);
+  border-top: 1px solid rgba(183,121,31,0.15);
 }
 footer a { color: var(--gold-light); text-decoration: none; }
 @media (max-width: 1080px) {
@@ -415,71 +415,71 @@ footer a { color: var(--gold-light); text-decoration: none; }
 <body>
 
 <!-- NAV -->
-<nav aria-label="lorem ipsum dol">
-  <a href="/index.html" class="nav-brand">lorem ipsum do</a>
+<nav aria-label="Main navigation">
+  <a href="/index.html" class="nav-brand">Example Church</a>
   <ul class="nav-links" role="list">
     
-    <li><a href="/index.html">lore</a></li>
-    <li><a href="/pages/plan-your-visit.html">lorem</a></li>
-    <li><a href="/pages/sermons.html">lorem i</a></li>
+    <li><a href="/index.html">Home</a></li>
+    <li><a href="/pages/plan-your-visit.html">Visit</a></li>
+    <li><a href="/pages/sermons.html">Sermons</a></li>
     <li class="nav-dropdown">
-      <a href="/pages/beliefs.html">lorem i</a>
+      <a href="/pages/beliefs.html">Beliefs</a>
       <div class="dropdown-menu">
-        <a href="/pages/beliefs.html">lorem ipsum dolor </a>
-        <a href="/pages/new-believer.html">lorem ipsum </a>
+        <a href="/pages/beliefs.html">Beliefs</a>
+        <a href="/pages/new-believer.html">New Believer</a>
       </div>
     </li>
     <li class="nav-dropdown">
-      <a href="/index.html#curious">lorem ip</a>
+      <a href="/index.html#curious">Questions</a>
       <div class="dropdown-menu">
-        <a href="/pages/romans-road.html">lorem ipsum dol</a>
-        <a href="/pages/ask-a-pastor.html">lorem ipsum </a>
-        <a href="/pages/questions.html">lorem ipsum dolor s</a>
+        <a href="/pages/romans-road.html">Romans Road</a>
+        <a href="/pages/ask-a-pastor.html">Ask a Pastor</a>
+        <a href="/pages/questions.html">Common Questions</a>
       </div>
     </li>
     <li class="nav-dropdown">
-      <a href="/pages/prayer-request.html">lorem </a>
+      <a href="/pages/prayer-request.html">Prayer</a>
       <div class="dropdown-menu">
-        <a href="/pages/need-help.html">lorem ipsum do</a>
-        <a href="/pages/prayer-request.html">lorem ipsum do</a>
+        <a href="/pages/need-help.html">Need Help</a>
+        <a href="/pages/prayer-request.html">Prayer</a>
       </div>
     </li>
     <li class="nav-dropdown">
-      <a href="/pages/resources.html">lorem ips</a>
+      <a href="/pages/resources.html">Resources</a>
       <div class="dropdown-menu">
-        <a href="/pages/resources.html">lorem ipsum dolo</a>
-        <a href="/pages/glossary.html">lorem ip</a>
+        <a href="/pages/resources.html">Resources</a>
+        <a href="/pages/glossary.html">Glossary</a>
       </div>
     </li>
-    <li><a href="/pages/staff.html">lorem</a></li>
+    <li><a href="/pages/staff.html">Staff</a></li>
   
   </ul>
-  <button class="hamburger" type="button" aria-label="lorem ips" aria-expanded="false">
+  <button class="hamburger" type="button" aria-label="Open menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
-<div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="lorem ipsum dolor">
-  <a href="/index.html" onclick="closeMenu()">lore</a>
-  <a href="/pages/plan-your-visit.html" onclick="closeMenu()">lorem ipsum dol</a>
-  <a href="/pages/sermons.html" onclick="closeMenu()">lorem i</a>
-  <a href="/pages/beliefs.html" onclick="closeMenu()">lorem i</a>
-  <a href="/pages/new-believer.html" onclick="closeMenu()" class="mobile-sub">lorem ipsum </a>
-  <a href="/index.html#curious" onclick="closeMenu()">lorem ip</a>
-  <a href="/pages/romans-road.html" onclick="closeMenu()" class="mobile-sub">lorem ipsum dol</a>
-  <a href="/pages/ask-a-pastor.html" onclick="closeMenu()" class="mobile-sub">lorem ipsum </a>
-  <a href="/pages/questions.html" onclick="closeMenu()" class="mobile-sub">lorem ipsum dolor s</a>
-  <a href="/pages/prayer-request.html" onclick="closeMenu()">lorem </a>
-  <a href="/pages/need-help.html" onclick="closeMenu()" class="mobile-sub">lorem ipsum do</a>
-  <a href="/pages/prayer-request.html" onclick="closeMenu()" class="mobile-sub">lorem ipsum do</a>
-  <a href="/pages/resources.html" onclick="closeMenu()">lorem ips</a>
-  <a href="/pages/glossary.html" onclick="closeMenu()" class="mobile-sub">lorem ip</a>
-  <a href="/pages/staff.html" onclick="closeMenu()">lorem</a>
+<div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile navigation">
+  <a href="/index.html" onclick="closeMenu()">Home</a>
+  <a href="/pages/plan-your-visit.html" onclick="closeMenu()">Visit</a>
+  <a href="/pages/sermons.html" onclick="closeMenu()">Sermons</a>
+  <a href="/pages/beliefs.html" onclick="closeMenu()">Beliefs</a>
+  <a href="/pages/new-believer.html" onclick="closeMenu()" class="mobile-sub">New Believer</a>
+  <a href="/index.html#curious" onclick="closeMenu()">Questions</a>
+  <a href="/pages/romans-road.html" onclick="closeMenu()" class="mobile-sub">Romans Road</a>
+  <a href="/pages/ask-a-pastor.html" onclick="closeMenu()" class="mobile-sub">Ask a Pastor</a>
+  <a href="/pages/questions.html" onclick="closeMenu()" class="mobile-sub">Common Questions</a>
+  <a href="/pages/prayer-request.html" onclick="closeMenu()">Prayer</a>
+  <a href="/pages/need-help.html" onclick="closeMenu()" class="mobile-sub">Need Help</a>
+  <a href="/pages/prayer-request.html" onclick="closeMenu()" class="mobile-sub">Prayer</a>
+  <a href="/pages/resources.html" onclick="closeMenu()">Resources</a>
+  <a href="/pages/glossary.html" onclick="closeMenu()" class="mobile-sub">Glossary</a>
+  <a href="/pages/staff.html" onclick="closeMenu()">Staff</a>
 </div>
 
 <div class="page-header">
-  <span class="section-label">lorem ipsum dolor si</span>
-  <h1>lorem ipsum dol</h1>
+  <span class="section-label">Visit</span>
+  <h1>Plan Your Visit</h1>
   <div class="header-divider"></div>
   <p>lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud ex</p>
   <div class="hero-actions">
@@ -491,44 +491,44 @@ footer a { color: var(--gold-light); text-decoration: none; }
 <main>
   <div class="container">
     <section id="times" aria-labelledby="times-heading">
-      <span class="section-label">lorem ipsum do</span>
-      <h2 class="section-title" id="times-heading">lorem ipsum dolor si</h2>
+      <span class="section-label">Before You Come</span>
+      <h2 class="section-title" id="times-heading">Service Times</h2>
       <div class="section-divider"></div>
       <div class="visit-grid">
         <div class="info-card">
-          <h2>lorem ipsum d</h2>
+          <h2>Location</h2>
           <p><strong>lorem i</strong><br>lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea c</p>
         </div>
         <div class="info-card">
-          <h2>lorem ipsum do</h2>
+          <h2>What to Expect</h2>
           <p><strong>lorem ip</strong><br>lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nost</p>
         </div>
         <div class="info-card">
-          <h2>lorem ipsum dolor sit</h2>
+          <h2>Children and Families</h2>
           <p><strong>lorem i</strong><br>lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad </p>
         </div>
       </div>
     </section>
 
     <section class="expect-section" aria-labelledby="expect-heading">
-      <span class="section-label">lorem ipsum do</span>
-      <h2 class="section-title" id="expect-heading">lorem ipsum dol</h2>
+      <span class="section-label">When You Arrive</span>
+      <h2 class="section-title" id="expect-heading">Plan Your Visit</h2>
       <div class="section-divider"></div>
       <div class="expect-grid">
         <div class="expect-item">
-          <h3>lorem ipsum dol</h3>
+          <h3>Service Times Detail</h3>
           <p>lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam</p>
         </div>
         <div class="expect-item">
-          <h3>lorem ipsum dolor sit </h3>
+          <h3>Location Detail</h3>
           <p>lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ull</p>
         </div>
         <div class="expect-item">
-          <h3>lorem ipsum dolor sit ame</h3>
+          <h3>What to Expect Detail</h3>
           <p>lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad mini</p>
         </div>
         <div class="expect-item">
-          <h3>lorem ipsum dolor si</h3>
+          <h3>Children and Families Detail</h3>
           <p>lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud</p>
         </div>
       </div>
@@ -538,7 +538,7 @@ footer a { color: var(--gold-light); text-decoration: none; }
     </section>
 
     <section class="visit-form-section" id="visit-form" aria-labelledby="visit-form-heading">
-      <span class="section-label">lorem ipsum</span>
+      <span class="section-label">Families</span>
       <h2 class="section-title" id="visit-form-heading">lorem ipsum dolor </h2>
       <div class="section-divider"></div>
       <p class="visit-form-intro">lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco labor</p>
