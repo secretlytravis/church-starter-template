@@ -6,6 +6,40 @@ It is designed for a church that needs a simple, clear, visitor-friendly website
 
 You do not need a database. You do not need a complicated build system. Most edits are normal text edits inside `.html`, `.json`, and image files.
 
+## Start Here If You Are New To Websites
+
+Open this file first:
+
+```text
+START_HERE.md
+```
+
+That file gives the easiest plain-language path.
+
+After that, use:
+
+```text
+FIRST_EDIT_CHECKLIST.md
+```
+
+That file walks through the first real edits one by one.
+
+The easiest setup method is the startup wizard.
+
+On Windows, double-click:
+
+```text
+start.bat
+```
+
+Or, in PowerShell, run:
+
+```powershell
+.\start.ps1
+```
+
+The wizard asks for your church name, address, phone, email, social links, and pastor information. Then it updates the starter website for you and can start the local preview server.
+
 ## What You Get
 
 This starter includes:
@@ -27,6 +61,7 @@ This starter includes:
 - Basic search engine metadata
 - Offline/service worker support
 - Optional Netlify configuration
+- A beginner startup wizard
 - A local preview server
 
 ## Tools And Accounts You Need
@@ -82,13 +117,25 @@ YouTube API key:
 
 ## Best First Step
 
-Start with this file:
+If you are new to websites, start with:
+
+```text
+START_HERE.md
+```
+
+Then run:
+
+```text
+start.bat
+```
+
+If you are already comfortable with files and commands, use:
 
 ```text
 SETUP.md
 ```
 
-That file gives the shorter checklist. This README explains the same project more slowly and more explicitly.
+`SETUP.md` gives the full setup checklist. This README explains the project structure and maintenance details.
 
 ## Folder Tour
 
@@ -135,14 +182,32 @@ The root folder also has important files:
 - `index.html`: the home page
 - `404.html`: the not-found page
 - `README.md`: this guide
+- `START_HERE.md`: simplest beginner instructions
+- `FIRST_EDIT_CHECKLIST.md`: step-by-step first editing checklist
 - `SETUP.md`: short setup checklist
 - `PROJECT_OVERVIEW.md`: maintenance notes
+- `start.bat`: easiest Windows startup wizard launcher
+- `start.ps1`: PowerShell startup wizard launcher
 - `netlify.toml`: optional Netlify hosting settings
 - `sw.js`: service worker for caching
 - `sitemap.xml`: list of public pages for search engines
 - `robots.txt`: search engine instructions
 
 ## Step 1: Change The Church Information
+
+Easiest method:
+
+```powershell
+.\start.ps1
+```
+
+or double-click:
+
+```text
+start.bat
+```
+
+Manual method:
 
 Open this file:
 

@@ -1,136 +1,313 @@
 # Setup Guide
 
-This starter is a static church website. The normal pages can be hosted on Netlify, Vercel, Cloudflare Pages, GitHub Pages with adjustments, or many traditional web hosts.
+This guide is written for a church volunteer who wants clear steps and does not want to guess.
 
-Netlify is the easiest option if you want to use the included automatic YouTube sermon feed. Other hosts can still use the static pages, but the sermon API may need to be adapted or replaced with manual sermon links.
+The short version is:
 
-## Tools You Need
+1. Install Node.js.
+2. Run the startup wizard.
+3. Preview the website.
+4. Replace images and edit page words.
+5. Put the website online.
 
-Required:
+## Before You Start
 
-- A text editor such as Visual Studio Code
-- A web browser
+You need three basic things:
 
-Strongly recommended:
+- A computer.
+- A web browser, such as Chrome, Edge, Firefox, or Safari.
+- Node.js, which lets the setup wizard and preview server run.
 
-- Node.js, for local preview and the customization script
-- Git, for saving versions
-- A GitHub account, if you want easy publishing through Netlify, Vercel, or Cloudflare Pages
+Install Node.js from:
 
-Optional:
-
-- A YouTube API key, only if you want automatic sermon loading
-- A hosting account such as Netlify, Vercel, Cloudflare Pages, or a traditional web host
-
-## 1. Edit Church Info
-
-Open `config/church.json` and replace the example values:
-
-- `churchName`
-- `domain`
-- `streetAddress`
-- `city`
-- `state`
-- `postalCode`
-- `phoneDisplay`
-- `phoneHref`
-- `email`
-- `youtubeHandle`
-- `youtubeChannelId`
-- `facebookUrl`
-- pastor fields
-
-Then run:
-
-```powershell
-node tools/customize-site.js
+```text
+https://nodejs.org
 ```
 
-That replaces the starter placeholders across the static files.
+Choose the normal recommended version. After installing, close and reopen your terminal or project folder.
 
-## 2. Replace Images
+## Step 1: Run The Startup Wizard
 
-Replace these placeholder SVGs with your own images:
+The startup wizard asks simple questions and fills in the church information for you.
 
-- `assets/images/hero-placeholder.svg`
-- `assets/images/pastor-placeholder.svg`
-- `assets/images/social-card-placeholder.svg`
-- `assets/icons/favicon.svg`
+### Easiest Windows Option
 
-If you use JPG or PNG files instead, update the matching paths in the HTML files, `assets/manifest.json`, and `assets/js/site-enhancements.js`.
+Double-click:
 
-## 3. Edit Content
+```text
+start.bat
+```
 
-Important pages:
+### PowerShell Option
 
-- `index.html`
-- `pages/plan-your-visit.html`
-- `pages/beliefs.html`
-- `pages/sermons.html`
-- `pages/staff.html`
-- `pages/prayer-request.html`
-- `pages/resources.html`
+If double-clicking does not work:
 
-Testimony pages live in `testimonies/`.
+1. Open this project folder.
+2. Hold `Shift`.
+3. Right-click inside the folder.
+4. Choose `Open PowerShell window here` or `Open in Terminal`.
+5. Type:
 
-## 4. Configure Sermons
+```powershell
+.\start.ps1
+```
 
-You have two simple choices:
+6. Press `Enter`.
 
-- Manual sermon links: edit `pages/sermons.html` and link directly to YouTube, Facebook, podcast pages, or your archive.
-- Automatic YouTube feed: use a serverless/API function so your YouTube API key is not exposed in browser code.
+### What To Type Into The Wizard
 
-The included automatic feed is written for Netlify.
+The wizard will show questions like this:
 
-Set these environment variables in Netlify:
+```text
+Church name [Example Church]:
+```
+
+The answer in brackets is the current answer.
+
+- Type a new answer and press `Enter`.
+- Or press `Enter` without typing to keep the current answer.
+
+If you do not know the YouTube channel ID yet, leave the placeholder there. The site can still work without automatic sermons.
+
+## Step 2: Preview The Website
+
+At the end of the wizard, choose `y` when it asks if you want to start the preview server.
+
+Then open this address in your browser:
+
+```text
+http://localhost:3000/
+```
+
+Leave the terminal window open while you preview.
+
+To stop the preview server:
+
+1. Click inside the terminal window.
+2. Press `Ctrl + C`.
+3. If it asks `Terminate batch job?`, type `y` and press `Enter`.
+
+## Step 3: Replace The Images
+
+The starter has placeholder images. Replace these with your church's real images:
+
+```text
+assets/images/hero-placeholder.svg
+assets/images/pastor-placeholder.svg
+assets/images/social-card-placeholder.svg
+assets/icons/favicon.svg
+```
+
+Plain-language suggestions:
+
+- `hero-placeholder.svg`: use a wide photo of the church building, sanctuary, or congregation.
+- `pastor-placeholder.svg`: use a photo of the pastor or main leader.
+- `social-card-placeholder.svg`: use a wide image that looks good when someone shares the website on Facebook.
+- `favicon.svg`: use a simple logo or icon.
+
+The easiest beginner path is to keep the same filenames. If you change file names, you must also update the matching file paths in the website files.
+
+## Step 4: Edit The Main Words
+
+Most church volunteers should edit these files first:
+
+```text
+index.html
+pages/plan-your-visit.html
+pages/staff.html
+pages/beliefs.html
+pages/sermons.html
+pages/prayer-request.html
+pages/resources.html
+```
+
+Open the file in Visual Studio Code or another text editor.
+
+Most edits are just changing words between tags.
+
+Example:
+
+```html
+<h1>Welcome to Your Church</h1>
+```
+
+Change it to:
+
+```html
+<h1>Welcome to First Baptist Church</h1>
+```
+
+Try not to delete:
+
+- `<`
+- `>`
+- quotation marks
+- closing tags such as `</p>`, `</h1>`, and `</section>`
+
+## Step 5: Update Weekly Events
+
+Weekly service/event times live here:
+
+```text
+assets/data/site-events.json
+```
+
+Day numbers work like this:
+
+- `0` means Sunday
+- `1` means Monday
+- `2` means Tuesday
+- `3` means Wednesday
+- `4` means Thursday
+- `5` means Friday
+- `6` means Saturday
+
+Time uses a 24-hour clock:
+
+- `09:15` means 9:15 AM
+- `10:30` means 10:30 AM
+- `18:00` means 6:00 PM
+
+## Step 6: Choose Sermon Setup
+
+You have two beginner-friendly choices.
+
+### Choice A: Manual Sermon Links
+
+This is the simplest choice.
+
+Use this if:
+
+- you do not want a YouTube API key
+- you already have a YouTube/Facebook/podcast page
+- you want fewer technical steps
+
+Edit:
+
+```text
+pages/sermons.html
+```
+
+Link buttons to your sermon archive or YouTube channel.
+
+### Choice B: Automatic YouTube Sermons
+
+Use this if:
+
+- your church uploads sermons to YouTube
+- you want the website to show recent sermons automatically
+- you are using Netlify, or you have a technical helper for another host
+
+For Netlify, set these environment variables:
 
 ```text
 SERMONS_API_KEY=your-youtube-api-key
 SERMONS_CHANNEL_ID=your-youtube-channel-id
 ```
 
-For local development, copy `.env.example` to `.env` and fill in the same values.
+Do not put secret API keys in normal website files.
 
-If you use Vercel, Cloudflare Pages, or another host, a technical helper needs to adapt `netlify/functions/youtube-sermons.js` for that platform.
+## Step 7: Put The Website Online
 
-## 5. Preview Locally
+This site can be hosted in several places.
 
-PowerShell:
+### Netlify
 
-```powershell
-.\preview.ps1
-```
+Good beginner choice, especially if you want automatic YouTube sermons.
 
-Command Prompt:
+Settings:
 
-```bat
-preview.bat
-```
-
-Then open:
-
-```text
-http://localhost:3000/
-```
-
-## 6. Deploy
-
-For Netlify:
-
+- Build command: leave blank
 - Publish directory: `.`
 - Functions directory: `netlify/functions`
+
+### Vercel
+
+Good for static pages.
+
+Settings:
+
 - Build command: leave blank
+- Output/static directory: `.`
 
-The included `netlify.toml` already contains the needed redirects and function settings.
+Automatic sermons need a function conversion.
 
-For Vercel or Cloudflare Pages:
+### Cloudflare Pages
 
-- Connect the repo.
-- Leave the build command blank.
-- Use `.` as the publish/output directory if asked.
-- Use manual sermon links, or have a technical helper convert the sermon function.
+Good for static pages.
 
-For traditional hosting:
+Settings:
 
-- Upload the files in this folder.
-- Use manual sermon links unless your host supports a backend/API function.
+- Build command: leave blank
+- Output directory: `.`
+
+Automatic sermons need a Pages Function or Worker conversion.
+
+### Traditional Hosting Or cPanel
+
+You can upload the files in this folder.
+
+Use manual sermon links unless your host supports a backend function.
+
+## Common Problems
+
+### The command says Node.js was not found
+
+Install Node.js:
+
+```text
+https://nodejs.org
+```
+
+Then close and reopen the terminal.
+
+### The website does not open at localhost
+
+Make sure the preview server is still running.
+
+You should see a terminal window that says the server is running. Leave it open.
+
+### The page looks broken
+
+Check the last file you edited.
+
+Look for:
+
+- a missing `<`
+- a missing `>`
+- a missing quote mark
+- a missing closing tag like `</p>`
+
+### Images do not show
+
+Check:
+
+- the image is actually in `assets/images/`
+- the filename is spelled exactly right
+- the file extension matches, such as `.jpg`, `.png`, or `.svg`
+
+### Sermons do not load
+
+If you are using manual links, check the links in `pages/sermons.html`.
+
+If you are using automatic YouTube sermons:
+
+- make sure the API key is set in your host
+- make sure the channel ID is correct
+- make sure the sermon function is deployed
+
+## Before Going Live
+
+Check these:
+
+- Church name is correct.
+- Address is correct.
+- Phone number is correct.
+- Email address is correct.
+- Service times are correct.
+- Staff information is correct.
+- Placeholder images are replaced.
+- Sermon links or sermon feed work.
+- Contact/prayer forms go where you expect.
+- The site works on a phone.
+- The site works on a desktop computer.
